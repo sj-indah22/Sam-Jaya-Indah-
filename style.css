@@ -121,4 +121,17 @@ footer {
   background: #f4f4f4;
   margin-top: 20px;
   border-top: 2px solid #ddd;
+}  background: url("images/kavling.jpg") center/cover no-repeat;
+}
+.katalog {
+  background: url("images/katalog.jpg") center/cover no-repeat;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #f4f4f4;
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
 }
