@@ -7,19 +7,20 @@
 
 /* Body */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #202124;
+  background: #fff;
 }
 
 /* Header */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px 30px;
-  background: #f4f4f4;
-  border-bottom: 2px solid #ddd;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 header .logo {
@@ -28,43 +29,48 @@ header .logo {
 }
 
 header .logo img {
-  height: 40px;
+  height: 32px;
   margin-right: 10px;
 }
 
-header .contact a {
-  margin-left: 15px;
-  font-size: 20px;
-  text-decoration: none;
+header .logo h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #202124;
 }
 
 /* Hero Section */
 .hero {
-  background: url("images/hero.jpg") center/cover no-repeat;
-  height: 60vh;
+  background: #fff;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.5);
-}
-
-.hero-text {
-  position: relative;
-  z-index: 1;
+  padding: 40px 20px;
 }
 
 .hero-text h2 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #202124;
+  margin-bottom: 20px;
+}
+
+.hero-text .subtext {
+  font-size: 1.25rem;
+  color: #5f6368;
+  margin-bottom: 30px;
+}
+
+.hero-text .alamat a {
+  font-size: 0.9rem;
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.hero-text .alamat a:hover {
+  text-decoration: underline;
 }
 
 /* Grid Section */
@@ -118,20 +124,9 @@ header .contact a {
 footer {
   text-align: center;
   padding: 15px;
-  background: #f4f4f4;
+  background: #f8f9fa;
   margin-top: 20px;
-  border-top: 2px solid #ddd;
-}  background: url("images/kavling.jpg") center/cover no-repeat;
-}
-.katalog {
-  background: url("images/katalog.jpg") center/cover no-repeat;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #f4f4f4;
-  margin-top: 20px;
-  border-top: 2px solid #ddd;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: #5f6368;
 }
