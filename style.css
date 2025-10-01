@@ -1,101 +1,121 @@
 /* Reset */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
 
 /* Body */
 body {
-font-family: Arial, sans-serif;
-line-height: 1.6;
-color: #333;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
 /* Header */
 header {
-display: flex;
-justify-content: flex-start;
-align-items: center;
-padding: 15px 30px;
-background: #f4f4f4;
-border-bottom: 2px solid #ddd;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 30px;
+  background: #f4f4f4;
+  border-bottom: 2px solid #ddd;
 }
 
 header .logo {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 header .logo img {
-height: 40px;
-margin-right: 10px;
+  height: 40px;
+  margin-right: 10px;
 }
 
 /* Grid Section */
 .grid-section {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 20px;
-padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 30px;
 }
 
 .grid-item {
-height: 200px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-color: white;
-font-size: 1.5em;
-font-weight: bold;
-border-radius: 10px;
-position: relative;
-overflow: hidden;
-text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none; /* biar teks link ga underline */
 }
 
 .grid-item::before {
-content: "";
-position: absolute;
-top: 0; left: 0; right: 0; bottom: 0;
-background: rgba(0,0,0,0.4);
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
 }
 
 .grid-item h2,
 .grid-item h3,
 .grid-item p {
-position: relative;
-z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero Container lebih besar */
 .hero-container {
-grid-column: span 2;
-height: 300px;
-background: url("images/hero.jpg") center/cover no-repeat;
+  grid-column: span 2;
+  height: 300px;
+  background: url("images/hero.jpg") center/cover no-repeat;
 }
 
 /* Background images */
 .project {
-background: url("images/project.jpg") center/cover no-repeat;
+  background: url("images/project.jpg") center/cover no-repeat;
 }
 .properti {
-background: url("images/properti.jpg") center/cover no-repeat;
+  background: url("images/properti.jpg") center/cover no-repeat;
 }
 .beton {
-background: url("images/kavling.jpg") center/cover no-repeat;
+  background: url("images/kavling.jpg") center/cover no-repeat;
 }
 .katalog {
-background: url("images/katalog.jpg") center/cover no-repeat;
+  background: url("images/katalog.jpg") center/cover no-repeat;
+}
+
+/* Content section bawah */
+.content-section {
+  padding: 60px 30px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+}
+.content-section h2 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+.content-section p {
+  font-size: 1.1em;
+  color: #555;
 }
 
 /* Footer */
 footer {
-text-align: center;
-padding: 15px;
-background: #f4f4f4;
-margin-top: 20px;
-border-top: 2px solid #ddd;
+  text-align: center;
+  padding: 15px;
+  background: #f4f4f4;
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
 }
