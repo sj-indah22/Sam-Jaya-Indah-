@@ -83,12 +83,12 @@ header .logo img {
 }
 /* Styling khusus Hero */
 .hero-container h2 {
-  font-size: 3em;   /* lebih besar */
+  font-size: 2.5em;   /* lebih besar */
   font-weight: bold;
 }
 
 .hero-container p {
-  font-size: 1.2em; /* lebih kecil */
+  font-size: 1em; /* lebih kecil */
   font-weight: normal; /* tidak bold */
   margin-top: 10px;
 }
