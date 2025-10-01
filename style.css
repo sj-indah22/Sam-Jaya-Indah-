@@ -81,17 +81,6 @@ header .logo img {
   height: 300px;
   background: url("images/hero.jpg") center/cover no-repeat;
 }
-/* Styling khusus Hero */
-.hero-container h2 {
-  font-size: 2.5em;   /* lebih besar */
-  font-weight: bold;
-}
-
-.hero-container p {
-  font-size: 1em; /* lebih kecil */
-  font-weight: normal; /* tidak bold */
-  margin-top: 10px;
-}
 
 /* Background images */
 .project {
@@ -118,7 +107,7 @@ header .logo img {
   font-size: 2em;
 }
 .content-section p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #555;
 }
 
