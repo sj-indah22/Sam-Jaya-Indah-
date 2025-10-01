@@ -58,7 +58,7 @@ header .logo img {
   position: relative;
   overflow: hidden;
   text-align: center;
-  text-decoration: none; /* biar teks link ga underline */
+  text-decoration: none;
 }
 
 .grid-item::before {
@@ -82,21 +82,24 @@ header .logo img {
   background: url("images/hero.jpg") center/cover no-repeat;
 }
 
-/* Background images */
-.project {
-  background: url("images/project.jpg") center/cover no-repeat;
+/* Styling khusus Hero */
+.hero-container h2 {
+  font-size: 3em;
+  font-weight: bold;
 }
-.properti {
-  background: url("images/properti.jpg") center/cover no-repeat;
-}
-.beton {
-  background: url("images/kavling.jpg") center/cover no-repeat;
-}
-.katalog {
-  background: url("images/katalog.jpg") center/cover no-repeat;
+.hero-container p {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-top: 10px;
 }
 
-/* Content section bawah */
+/* Background images */
+.project { background: url("images/project.jpg") center/cover no-repeat; }
+.properti { background: url("images/properti.jpg") center/cover no-repeat; }
+.beton { background: url("images/kavling.jpg") center/cover no-repeat; }
+.katalog { background: url("images/katalog.jpg") center/cover no-repeat; }
+
+/* Content section */
 .content-section {
   padding: 60px 30px;
   background: #f9f9f9;
@@ -107,8 +110,37 @@ header .logo img {
   font-size: 2em;
 }
 .content-section p {
-  font-size: 1em;
+  font-size: 1.1em;
   color: #555;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Alamat */
+.alamat {
+  margin-top: 20px;
+  font-size: 1em;
+  color: #444;
+}
+.alamat a {
+  color: #0077cc;
+  text-decoration: none;
+}
+.alamat a:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
