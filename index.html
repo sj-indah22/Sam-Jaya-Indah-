@@ -8,67 +8,71 @@
 </head>
 <body>
   <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo"> 
-      <img src="images/logo.png" alt="Logo"> 
-      <span>Sam Jaya Indah</span>
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
+      <h1>Sam Jaya Indah</h1>
     </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="project.html">Project</a>
-      <a href="beton.html">Beton</a>
-      <a href="liftcor.html">Lift Cor</a>
-      <a href="katalog.html">Katalog</a>
-      <a href="#contact">Kontak</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#service">Service</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <h1>Selamat Datang di Sam Jaya Indah</h1>
-    <p>Pusat perlengkapan bangunan, properti, dan renovasi dengan kualitas terjamin.</p>
+  <section class="hero" style="background-image: url('images/hero.jpg');">
+    <div class="hero-text">
+      <h2>Selamat Datang di Sam Jaya Indah</h2>
+      <p>Pusat perlengkapan bangunan, properti, dan renovasi dengan kualitas terjamin.</p>
+    </div>
   </section>
 
   <!-- About -->
-  <section class="about">
-    <div class="about-container">
+  <section id="about" class="about-section">
+    <div class="about-logo">
       <img src="images/logo.png" alt="Logo">
-      <div class="about-text">
-        <h2>Tentang Sam Jaya Indah</h2>
-        <p>Berdiri sejak 2003, Sam Jaya Indah menyediakan berbagai bahan bangunan dan jasa. Fokus kami adalah kualitas, kepercayaan, dan kepuasan pelanggan.</p>
-      </div>
+    </div>
+    <div class="about-text">
+      <h2>Tentang Sam Jaya Indah</h2>
+      <p>Berdiri sejak 2003, kami menyediakan berbagai bahan bangunan, jasa renovasi, serta perlengkapan konstruksi yang berkualitas dan terpercaya.</p>
     </div>
   </section>
 
-  <!-- Services -->
-  <section class="services">
-    <h2>Layanan Kami</h2>
-    <div class="service-container">
-      <a href="project.html" class="service-card"><h3>Project</h3></a>
-      <a href="beton.html" class="service-card"><h3>Beton</h3></a>
-      <a href="liftcor.html" class="service-card"><h3>Lift Cor</h3></a>
-      <a href="katalog.html" class="service-card"><h3>Katalog</h3></a>
-    </div>
+  <!-- Service -->
+  <section id="service" class="grid-section">
+    <a href="project.html" class="grid-item project">
+      <h3>Project</h3>
+    </a>
+    <a href="beton.html" class="grid-item beton">
+      <h3>Beton</h3>
+    </a>
+    <a href="liftcor.html" class="grid-item liftcor">
+      <h3>Lift Cor</h3>
+    </a>
+    <a href="katalog.html" class="grid-item katalog">
+      <h3>Katalog</h3>
+    </a>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Kontak Kami</h2>
-    <div class="contact-container">
-      <div class="contact-card">
-        <img src="images/wa.png" alt="WhatsApp">
-        <p><a href="https://wa.me/6281234567890">WhatsApp</a></p>
-      </div>
-      <div class="contact-card">
-        <img src="images/email.png" alt="Email">
-        <p><a href="mailto:email@example.com">Email</a></p>
-      </div>
+  <section id="contact" class="contact-section">
+    <div class="contact-box wa">
+      <h3>WhatsApp</h3>
+      <a href="https://wa.me/6281234567890" target="_blank">📱 Chat via WhatsApp</a>
+    </div>
+    <div class="contact-box email">
+      <h3>Email</h3>
+      <a href="mailto:email@example.com">📧 Kirim Email</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Sam Jaya Indah. All Rights Reserved.</p>
+    <p>© 2025 Sam Jaya Indah. All rights reserved.</p>
   </footer>
 </body>
 </html>
