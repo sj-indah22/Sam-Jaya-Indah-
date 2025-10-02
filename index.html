@@ -7,52 +7,54 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-      <h1>Sam Jaya Indah</h1>
-    </div>
-  </header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Sam Jaya Indah</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#properti">Properti</a></li>
+      <li><a href="#beton">Beton</a></li>
+      <li><a href="#katalog">Katalog</a></li>
+    </ul>
+  </nav>
 
-  <!-- Grid Section -->
-  <section class="grid-section">
-    <a href="#project" class="grid-item project hero-container">
-      <h2>Selamat Datang di Sam Jaya Indah</h2>
-      <p>Pusat perlengkapan bangunan dan renovasi dengan kualitas terjamin</p>
-    </a>
-    <a href="#properti" class="grid-item properti"><h3>Properti</h3></a>
-    <a href="#beton" class="grid-item beton"><h3>Beton</h3></a>
-    <a href="#katalog" class="grid-item katalog"><h3>Katalog</h3></a>
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-text">
+      <h1>Selamat Datang di Sam Jaya Indah</h1>
+      <p>Pusat perlengkapan bangunan, properti, dan renovasi dengan kualitas terjamin.</p>
+    </div>
   </section>
 
   <!-- Project -->
   <section id="project" class="content-section">
     <h2>Project</h2>
-    <p>Beberapa proyek yang telah kami tangani:</p>
-    <div class="gallery">
-      <img src="images/project1.jpg" alt="Project 1">
-      <img src="images/project2.jpg" alt="Project 2">
-      <img src="images/project3.jpg" alt="Project 3">
+    <p>Dokumentasi foto & video proyek pembangunan yang sudah kami selesaikan.</p>
+    <div class="grid-gallery">
+      <img src="images/project1.jpg" alt="Proyek 1">
+      <img src="images/project2.jpg" alt="Proyek 2">
+      <img src="images/project3.jpg" alt="Proyek 3">
+      <img src="images/project4.jpg" alt="Proyek 4">
     </div>
   </section>
 
   <!-- Properti -->
   <section id="properti" class="content-section">
     <h2>Properti</h2>
-    <p>Kami menyediakan berbagai pilihan properti terbaik:</p>
-    <div class="gallery">
-      <img src="images/properti1.jpg" alt="Properti 1">
-      <img src="images/properti2.jpg" alt="Properti 2">
-      <img src="images/properti3.jpg" alt="Properti 3">
-    </div>
+    <p>Informasi seputar properti yang tersedia untuk dijual maupun disewakan.</p>
+    <ul class="property-list">
+      <li>Rumah Type 36 – Gresik</li>
+      <li>Ruko 2 Lantai – Menganti</li>
+      <li>Kavling Tanah Strategis</li>
+    </ul>
   </section>
 
   <!-- Beton -->
   <section id="beton" class="content-section">
     <h2>Beton</h2>
-    <p>Kualitas beton yang kokoh dan tahan lama:</p>
-    <div class="gallery">
+    <p>Produk dan jasa terkait beton untuk konstruksi Anda.</p>
+    <div class="grid-gallery">
       <img src="images/beton1.jpg" alt="Beton 1">
       <img src="images/beton2.jpg" alt="Beton 2">
       <img src="images/beton3.jpg" alt="Beton 3">
@@ -62,22 +64,29 @@
   <!-- Katalog -->
   <section id="katalog" class="content-section">
     <h2>Katalog</h2>
-    <p>Pusat perlengkapan bangunan dengan harga bersaing:</p>
-    <div class="gallery">
-      <img src="images/katalog1.jpg" alt="Katalog 1">
-      <img src="images/katalog2.jpg" alt="Katalog 2">
-      <img src="images/katalog3.jpg" alt="Katalog 3">
+    <p>Lihat daftar lengkap produk dan material bangunan yang kami sediakan.</p>
+    <div class="product-list">
+      <div class="product-item">
+        <img src="images/semen.jpg" alt="Semen">
+        <h3>Semen 50kg</h3>
+        <p>Kualitas premium untuk semua kebutuhan konstruksi.</p>
+      </div>
+      <div class="product-item">
+        <img src="images/bata.jpg" alt="Bata">
+        <h3>Bata Merah</h3>
+        <p>Tahan lama dan kuat untuk pembangunan rumah.</p>
+      </div>
+      <div class="product-item">
+        <img src="images/besi.jpg" alt="Besi">
+        <h3>Besi Beton</h3>
+        <p>Besi beton SNI untuk konstruksi bertingkat.</p>
+      </div>
     </div>
-    <p class="alamat">
-      📍 Alamat: Jl. Raya Menganti Balong Dinding No.100, RT.22/RW.06, Pengampon, Setro, Kec. Menganti, Kabupaten Gresik, Jawa Timur 61174  
-      <br>
-      <a href="https://maps.app.goo.gl/t9cLJtKkV2Y5eQnb8" target="_blank">Lihat di Google Maps</a>
-    </p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
+    <p>© 2025 Sam Jaya Indah. All rights reserved.</p>
   </footer>
 </body>
 </html>
