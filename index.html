@@ -5,102 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sam Jaya Indah</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo">
+  <header class="navbar">
+    <div class="logo"> 
+      <img src="images/logo.png" alt="Logo"> 
       <span>Sam Jaya Indah</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li class="dropdown">
-        <a href="#services">Services</a>
-        <ul class="dropdown-menu">
-          <li><a href="#project">Project</a></li>
-          <li><a href="#beton">Beton</a></li>
-          <li><a href="#liftcor">Lift Cor</a></li>
-        </ul>
-      </li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-  </nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="project.html">Project</a>
+      <a href="beton.html">Beton</a>
+      <a href="liftcor.html">Lift Cor</a>
+      <a href="katalog.html">Katalog</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
 
   <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Selamat Datang di <br> Sam Jaya Indah</h1>
-      <p>Pusat perlengkapan bangunan, properti, dan renovasi dengan kualitas terjamin.</p>
-    </div>
+  <section class="hero">
+    <h1>Selamat Datang di Sam Jaya Indah</h1>
+    <p>Pusat perlengkapan bangunan, properti, dan renovasi dengan kualitas terjamin.</p>
   </section>
 
   <!-- About -->
-  <section id="about" class="about">
+  <section class="about">
     <div class="about-container">
-      <div class="about-logo">
-        <img src="images/logo.png" alt="Logo">
-      </div>
+      <img src="images/logo.png" alt="Logo">
       <div class="about-text">
         <h2>Tentang Sam Jaya Indah</h2>
-        <p>Berdiri sejak tahun 2003, Sam Jaya Indah hadir sebagai pusat penyedia bahan bangunan, properti, dan layanan renovasi. 
-        Dengan pengalaman lebih dari 20 tahun, kami berkomitmen memberikan produk berkualitas tinggi dan jasa terpercaya.</p>
+        <p>Berdiri sejak 2003, Sam Jaya Indah menyediakan berbagai bahan bangunan dan jasa. Fokus kami adalah kualitas, kepercayaan, dan kepuasan pelanggan.</p>
       </div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="services">
+  <section class="services">
     <h2>Layanan Kami</h2>
-    <div class="service-grid">
-      <div id="project" class="service-card">
-        <img src="images/project.jpg" alt="Project">
-        <h3>Project</h3>
-        <p>Dokumentasi proyek-proyek yang telah kami kerjakan dengan kualitas terjamin.</p>
-      </div>
-      <div id="beton" class="service-card">
-        <img src="images/kavling.jpg" alt="Beton">
-        <h3>Beton</h3>
-        <p>Penyediaan beton berkualitas tinggi untuk berbagai kebutuhan konstruksi.</p>
-      </div>
-      <div id="liftcor" class="service-card">
-        <img src="images/properti.jpg" alt="Lift Cor">
-        <h3>Lift Cor</h3>
-        <p>Layanan penyediaan lift cor dengan tenaga ahli berpengalaman.</p>
-      </div>
+    <div class="service-container">
+      <a href="project.html" class="service-card"><h3>Project</h3></a>
+      <a href="beton.html" class="service-card"><h3>Beton</h3></a>
+      <a href="liftcor.html" class="service-card"><h3>Lift Cor</h3></a>
+      <a href="katalog.html" class="service-card"><h3>Katalog</h3></a>
     </div>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="contact">
-    <h2>Hubungi Kami</h2>
+    <h2>Kontak Kami</h2>
     <div class="contact-container">
       <div class="contact-card">
-        <i class="fab fa-whatsapp"></i>
-        <p><a href="https://wa.me/6281234567890">Chat via WhatsApp</a></p>
+        <img src="images/wa.png" alt="WhatsApp">
+        <p><a href="https://wa.me/6281234567890">WhatsApp</a></p>
       </div>
       <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <p><a href="mailto:email@example.com">Kirim Email</a></p>
+        <img src="images/email.png" alt="Email">
+        <p><a href="mailto:email@example.com">Email</a></p>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Sam Jaya Indah. All rights reserved.</p>
+    <p>© 2025 Sam Jaya Indah. All Rights Reserved.</p>
   </footer>
-
-  <script>
-    // Toggle navbar mobile
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
 </body>
 </html>
