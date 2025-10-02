@@ -5,149 +5,173 @@
   box-sizing: border-box;
 }
 
-/* Smooth scroll */
+/* Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Body */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
 }
 
-/* Header */
-header {
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: #f4f4f4;
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
 }
 
-header .logo {
+.navbar .logo {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.navbar .nav-links {
+  list-style: none;
   display: flex;
-  align-items: center;
 }
 
-header .logo img {
-  height: 40px;
-  margin-right: 10px;
+.navbar .nav-links li {
+  margin-left: 20px;
 }
 
-/* Grid Section */
-.grid-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 30px;
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
-.grid-item {
-  height: 200px;
+.navbar .nav-links a:hover {
+  color: #0078ff;
+}
+
+/* Hero Section */
+.hero {
+  background: url("images/hero.jpg") center/cover no-repeat;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 1.5em;
-  font-weight: bold;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
   text-align: center;
-  text-decoration: none;
+  color: white;
+  position: relative;
+  padding-top: 60px; /* biar ga ketutup navbar */
 }
 
-.grid-item::before {
+.hero::before {
   content: "";
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.5);
 }
 
-.grid-item h2,
-.grid-item h3,
-.grid-item p {
+.hero-text {
   position: relative;
   z-index: 1;
 }
 
-/* Hero Container lebih besar */
-.hero-container {
-  grid-column: span 2;
-  height: 300px;
-  background: url("images/hero.jpg") center/cover no-repeat;
-}
-
-/* Styling khusus Hero */
-.hero-container h2 {
+.hero-text h1 {
   font-size: 3em;
-  font-weight: bold;
+  margin-bottom: 15px;
 }
-.hero-container p {
+
+.hero-text p {
   font-size: 1.2em;
-  font-weight: normal;
-  margin-top: 10px;
 }
 
-/* Background images */
-.project { background: url("images/project.jpg") center/cover no-repeat; }
-.properti { background: url("images/properti.jpg") center/cover no-repeat; }
-.beton { background: url("images/kavling.jpg") center/cover no-repeat; }
-.katalog { background: url("images/katalog.jpg") center/cover no-repeat; }
-
-/* Content section */
+/* Content Sections */
 .content-section {
-  padding: 60px 30px;
+  min-height: 80vh;
+  padding: 80px 30px;
   background: #f9f9f9;
-  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
+
+.content-section:nth-child(even) {
+  background: #fff;
+}
+
 .content-section h2 {
-  margin-bottom: 10px;
-  font-size: 2em;
+  font-size: 2.2em;
+  margin-bottom: 15px;
 }
+
 .content-section p {
   font-size: 1.1em;
   color: #555;
 }
 
-/* Gallery */
-.gallery {
+/* Grid Gallery */
+.grid-gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
-.gallery img {
+
+.grid-gallery img {
   width: 100%;
-  border-radius: 10px;
-  object-fit: cover;
   height: 200px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-/* Alamat */
-.alamat {
+/* Property List */
+.property-list {
   margin-top: 20px;
-  font-size: 1em;
-  color: #444;
+  padding-left: 20px;
 }
-.alamat a {
-  color: #0077cc;
-  text-decoration: none;
+.property-list li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
 }
-.alamat a:hover {
-  text-decoration: underline;
+
+/* Product List */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.product-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.product-item h3 {
+  margin-bottom: 8px;
+}
+
+.product-item p {
+  color: #666;
+  font-size: 0.95em;
 }
 
 /* Footer */
 footer {
   text-align: center;
-  padding: 15px;
+  padding: 20px;
   background: #f4f4f4;
-  margin-top: 20px;
-  border-top: 2px solid #ddd;
+  border-top: 1px solid #ddd;
 }
