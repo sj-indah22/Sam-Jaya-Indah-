@@ -25,12 +25,6 @@ body {
   z-index: 100;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.5em;
-  color: #b71c1c; /* merah khas Sam Jaya Indah */
-}
-
 .navbar ul {
   list-style: none;
   display: flex;
@@ -224,7 +218,7 @@ footer {
   }
 }
 
-/* === FIX LOGO NAVBAR === */
+/* === LOGO + TEKS NAVBAR (Seragam di Semua Halaman) === */
 .navbar .logo {
   display: flex;
   align-items: center;
@@ -232,13 +226,12 @@ footer {
 }
 
 .navbar .logo img {
-  width: 60px; /* atur di sini bro (50–70px enak) */
+  width: 55px;
   height: auto;
 }
 
 .navbar .logo span {
-  font-size: 1.4em;
-  font-weight: 600;
-  color: #333;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #b71c1c;
 }
-
