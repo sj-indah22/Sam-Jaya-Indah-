@@ -1,46 +1,58 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project - Sam Jaya Indah</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-      <h1>Sam Jaya Indah</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-      </ul>
-    </nav>
-  </header>
+<!doctype html>
+<div class="gallery-item" data-type="krawangan">
+<a href="#" class="gallery-link" data-img="images/project2.jpg">
+<img src="images/project2.jpg" alt="Krawangan">
+<div class="gallery-caption"><strong>Krawangan Minimalis</strong><br><span class="text-muted">Custom motif</span></div>
+</a>
+</div>
 
-  <!-- Hero khusus halaman -->
-  <section class="hero" style="background-image: url('images/project.jpg');">
-    <div class="hero-text">
-      <h2>Project Kami</h2>
-      <p>Dokumentasi proyek-proyek yang telah kami kerjakan.</p>
-    </div>
-  </section>
 
-  <!-- Isi konten -->
-  <section class="content-section">
-    <h2>Daftar Project</h2>
-    <p>Berikut adalah beberapa proyek yang telah kami selesaikan dengan kualitas terbaik:</p>
-    <ul>
-      <li>Proyek Pembangunan Rumah 2 Lantai - Gresik</li>
-      <li>Pengecoran Jalan Perumahan - Surabaya</li>
-      <li>Renovasi Ruko - Sidoarjo</li>
-    </ul>
-  </section>
+<div class="gallery-item" data-type="pagar">
+<a href="#" class="gallery-link" data-img="images/project3.jpg">
+<img src="images/project3.jpg" alt="Pagar Beton">
+<div class="gallery-caption"><strong>Pagar Beton Komersial</strong><br><span class="text-muted">Proyek perumahan</span></div>
+</a>
+</div>
 
-  <footer>
-    <p>© 2025 Sam Jaya Indah. All rights reserved.</p>
-  </footer>
+
+<!-- add more items as needed -->
+</div>
+</section>
+</main>
+
+
+<!-- simple lightbox modal -->
+<div id="lightbox" class="lightbox" style="display:none">
+<div class="lightbox-inner">
+<button id="lb-close">✕</button>
+<img id="lb-img" src="" alt="preview">
+</div>
+</div>
+
+
+<script>
+// Filter logic
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+btn.addEventListener('click', ()=>{
+const filter = btn.getAttribute('data-filter');
+document.querySelectorAll('#project-grid .gallery-item').forEach(item=>{
+if(filter==='all' || item.dataset.type===filter) item.style.display='block'; else item.style.display='none';
+})
+})
+})
+
+
+// Lightbox
+document.querySelectorAll('.gallery-link').forEach(link=>{
+link.addEventListener('click', e=>{
+e.preventDefault();
+const src = link.getAttribute('data-img');
+const lb = document.getElementById('lightbox');
+document.getElementById('lb-img').src = src;
+lb.style.display='flex';
+})
+})
+document.getElementById('lb-close').addEventListener('click', ()=>document.getElementById('lightbox').style.display='none')
+</script>
 </body>
 </html>
