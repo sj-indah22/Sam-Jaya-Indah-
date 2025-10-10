@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Katalog - Sam Jaya Indah</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Produk - Sam Jaya Indah</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-      <h1>Sam Jaya Indah</h1>
-    </div>
-    <nav><ul><li><a href="index.html">Home</a></li></ul></nav>
+
+  <header class="navbar">
+    <div class="logo">Sam Jaya Indah</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="beton.html">Beton</a></li>
+        <li><a href="liftcor.html">Lift Cor</a></li>
+        <li><a href="katalog.html" class="active">Katalog</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section class="hero" style="background-image: url('images/katalog.jpg');">
-    <div class="hero-text">
-      <h2>Katalog Produk</h2>
-      <p>Temukan berbagai produk terbaik dari Sam Jaya Indah.</p>
+  <section class="sub-hero" style="background-image:url('images/katalog.jpg');">
+    <div class="overlay">
+      <h1>Katalog Produk</h1>
+      <p>Berbagai produk material dan perlengkapan proyek kami</p>
     </div>
   </section>
 
-  <section class="content-section">
-    <h2>Produk Unggulan</h2>
-    <ul>
-      <li>Baut & Mur</li>
-      <li>Drilling</li>
-      <li>Peralatan Konstruksi</li>
-    </ul>
+  <section class="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/prod1.jpg" alt="Besi Hollow">
+        <p>Besi Hollow Galvanis</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/prod2.jpg" alt="Wiremesh">
+        <p>Wiremesh M8 - M12</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/prod3.jpg" alt="Beton Precast">
+        <p>Beton Precast</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/prod4.jpg" alt="Pagar Beton">
+        <p>Pagar Beton Polos</p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="images/prod5.jpg" alt="Lift Cor Unit">
+        <p>Unit Lift Cor</p>
+      </div>
+    </div>
   </section>
 
-  <footer><p>© 2025 Sam Jaya Indah</p></footer>
+  <footer>
+    <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
+  </footer>
+
 </body>
 </html>
