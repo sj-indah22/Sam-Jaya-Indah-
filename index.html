@@ -1,55 +1,89 @@
-<!doctype html>
-<section id="about" class="about">
-<div class="container">
-<h2 class="section-title">Tentang Sam Jaya Indah</h2>
-<p>Perusahaan kami menyediakan layanan kontruksi dan suplai produk beton dengan kualitas yang teruji. Tim kami berpengalaman dalam menyelesaikan proyek residensial hingga komersial.</p>
-</div>
-</section>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sam Jaya Indah - Kontraktor & Penyedia Material</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.png" />
+</head>
+<body>
 
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Sam Jaya Indah</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="beton.html">Beton</a></li>
+        <li><a href="liftcor.html">Lift Cor</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="contact" class="contact">
-<div class="container contact-inner">
-<div class="contact-left">
-<h2 class="section-title">Hubungi Kami</h2>
-<p>Untuk penawaran atau konsultasi, hubungi kami via WhatsApp atau isi form singkat.</p>
-<p><strong>WhatsApp:</strong> <a href="https://wa.me/6281123456789" target="_blank">+62 811-2345-6789</a></p>
-<p><strong>Email:</strong> info@samjayaindah.co.id</p>
-</div>
-<form class="contact-form" action="#" onsubmit="alert('Form demo — ganti action dengan backend mailer atau Netlify Forms'); return false;">
-<label>Nama
-<input type="text" name="name" required>
-</label>
-<label>Email
-<input type="email" name="email" required>
-</label>
-<label>Pesan
-<textarea name="message" rows="4" required></textarea>
-</label>
-<button class="btn" type="submit">Kirim Pesan</button>
-</form>
-</div>
-</section>
-</main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Solusi Bangunan Profesional</h1>
+      <p>Dari bahan material hingga jasa pengerjaan — Sam Jaya Indah siap membantu proyek Anda.</p>
+      <a href="#layanan" class="btn-primary">Lihat Layanan</a>
+    </div>
+  </section>
 
+  <!-- Layanan Kami -->
+  <section id="layanan" class="services">
+    <h2>Layanan Kami</h2>
+    <div class="service-grid">
+      <a href="project.html" class="service-card">
+        <img src="images/project.jpg" alt="Project" />
+        <h3>Project</h3>
+        <p>Berbagai pekerjaan seperti kanopi, krawangan, dan lain-lain.</p>
+      </a>
 
-<footer class="site-footer">
-<div class="container footer-inner">
-<p>&copy; <span id="year"></span> Sam Jaya Indah — Semua hak dilindungi.</p>
-<div class="footer-links">
-<a href="katalog.html">Katalog</a>
-<a href="project.html">Project</a>
-<a href="beton.html">Beton</a>
-</div>
-</div>
-</footer>
+      <a href="beton.html" class="service-card">
+        <img src="images/beton.jpg" alt="Beton" />
+        <h3>Beton</h3>
+        <p>Produk dan pemasangan material beton berkualitas tinggi.</p>
+      </a>
 
+      <a href="liftcor.html" class="service-card">
+        <img src="images/liftcor.jpg" alt="Lift Cor" />
+        <h3>Lift Cor</h3>
+        <p>Sistem lift cor modern untuk efisiensi pengecoran bangunan.</p>
+      </a>
 
-<script>
-// small scripts: year, mobile nav
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('nav-toggle').addEventListener('click', function(){
-document.getElementById('main-nav').classList.toggle('open');
-});
-</script>
+      <a href="katalog.html" class="service-card">
+        <img src="images/katalog.jpg" alt="Katalog" />
+        <h3>Katalog</h3>
+        <p>Kumpulan produk Sam Jaya Indah untuk kebutuhan proyek Anda.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section class="about">
+    <h2>Tentang Kami</h2>
+    <p>Sam Jaya Indah adalah perusahaan kontraktor dan penyedia material bangunan yang berkomitmen pada kualitas, ketepatan waktu, dan kepuasan pelanggan. Kami melayani berbagai proyek mulai dari perumahan hingga komersial dengan tenaga profesional berpengalaman.</p>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak" class="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Untuk pemesanan atau konsultasi proyek, hubungi kami melalui:</p>
+    <div class="contact-info">
+      <p>📞 0812-3456-7890</p>
+      <p>📧 samjayain@gmail.com</p>
+      <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Chat via WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
+  </footer>
+
 </body>
 </html>
