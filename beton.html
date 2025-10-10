@@ -6,13 +6,12 @@
   <title>Beton - Sam Jaya Indah</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* === STYLE TAMBAHAN UNTUK GALERI BETON === */
     .filter-btns {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin: 30px 0;
+      margin: 40px 0 20px;
     }
     .filter-btns button {
       background: #b71c1c;
@@ -32,7 +31,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 20px;
+      padding: 10px 20px 40px;
     }
 
     .gallery-item {
@@ -42,9 +41,7 @@
       overflow: hidden;
       text-align: center;
       transition: transform 0.3s ease;
-      position: relative;
     }
-
     .gallery-item:hover {
       transform: translateY(-5px);
     }
@@ -71,12 +68,10 @@
       margin-bottom: 15px;
       transition: 0.3s;
     }
-
     .btn-wa:hover {
       background: #1ebe5d;
     }
 
-    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -102,7 +97,6 @@
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="navbar">
     <div class="logo">
       <img src="images/logo.png" alt="Logo Sam Jaya Indah">
@@ -119,7 +113,6 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero" style="background-image: url('images/beton.jpg');">
     <div class="hero-text">
       <h2>Produk & Pekerjaan Beton</h2>
@@ -127,10 +120,7 @@
     </div>
   </section>
 
-  <!-- GALERI -->
   <section class="content-section">
-    <h2>Galeri Produk & Pekerjaan Beton</h2>
-
     <div class="filter-btns">
       <button class="active" onclick="filterGallery('all')">Semua</button>
       <button onclick="filterGallery('pagar')">Pagar Beton</button>
@@ -166,7 +156,6 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <img src="" alt="Preview">
   </div>
@@ -176,7 +165,6 @@
   </footer>
 
   <script>
-    // Filter
     function filterGallery(category) {
       const items = document.querySelectorAll('.gallery-item');
       const buttons = document.querySelectorAll('.filter-btns button');
@@ -192,7 +180,6 @@
       });
     }
 
-    // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     document.querySelectorAll('.gallery-item img').forEach(img => {
