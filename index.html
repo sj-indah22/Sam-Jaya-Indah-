@@ -1,117 +1,55 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sam Jaya Indah</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo">
-      <span>Sam Jaya Indah</span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li class="dropdown">
-        <a href="#services">Services</a>
-        <ul class="dropdown-menu">
-          <li><a href="#project">Project</a></li>
-          <li><a href="#beton">Beton</a></li>
-          <li><a href="#liftcor">Lift Cor</a></li>
-        </ul>
-      </li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-  </nav>
-
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Selamat Datang di <br> Sam Jaya Indah</h1>
-      <p>Pusat perlengkapan bangunan, properti, dan renovasi dengan kualitas terjamin.</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="about-container">
-      <div class="about-logo">
-        <img src="images/logo.png" alt="Logo">
-      </div>
-      <div class="about-text">
-        <h2>Tentang Sam Jaya Indah</h2>
-        <p>Berdiri sejak tahun 2003, Sam Jaya Indah hadir sebagai pusat penyedia bahan bangunan, properti, dan layanan renovasi. 
-        Dengan pengalaman lebih dari 20 tahun, kami berkomitmen memberikan produk berkualitas tinggi dan jasa terpercaya.</p>
-      </div>
-    </div>
-  </section>
-
-<!-- Services -->
-<section id="services" class="services">
-  <h2>Layanan Kami</h2>
-  <div class="service-grid">
-    
-    <a href="project.html" class="service-card">
-      <img src="images/project.jpg" alt="Project">
-      <h3>Project</h3>
-      <p>Dokumentasi proyek-proyek yang telah kami kerjakan dengan kualitas terjamin.</p>
-    </a>
-    
-    <a href="beton.html" class="service-card">
-      <img src="images/beton.jpg" alt="Betonan">
-      <h3>Beton</h3>
-      <p>Penyediaan beton berkualitas tinggi untuk berbagai kebutuhan konstruksi.</p>
-    </a>
-    
-    <a href="liftcor.html" class="service-card">
-      <img src="images/liftcor.jpg" alt="Lift Cor">
-      <h3>Lift Cor</h3>
-      <p>Layanan penyediaan lift cor dengan tenaga ahli berpengalaman.</p>
-    </a>
-    
-    <a href="katalog.html" class="service-card">
-      <img src="images/katalog.jpg" alt="Katalog">
-      <h3>Katalog</h3>
-      <p>Koleksi produk Sam Jaya Indah: baut, drilling, dan perlengkapan lainnya.</p>
-    </a>
-
-  </div>
+<!doctype html>
+<section id="about" class="about">
+<div class="container">
+<h2 class="section-title">Tentang Sam Jaya Indah</h2>
+<p>Perusahaan kami menyediakan layanan kontruksi dan suplai produk beton dengan kualitas yang teruji. Tim kami berpengalaman dalam menyelesaikan proyek residensial hingga komersial.</p>
+</div>
 </section>
 
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <h2>Hubungi Kami</h2>
-    <div class="contact-container">
-      <div class="contact-card">
-        <i class="fab fa-whatsapp"></i>
-        <p><a href="https://wa.me/6288902250632">Chat via WhatsApp</a></p>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-envelope"></i>
-        <p><a href="mailto:yuditiram22@gmail.com">Kirim Email</a></p>
-      </div>
-    </div>
-  </section>
+<section id="contact" class="contact">
+<div class="container contact-inner">
+<div class="contact-left">
+<h2 class="section-title">Hubungi Kami</h2>
+<p>Untuk penawaran atau konsultasi, hubungi kami via WhatsApp atau isi form singkat.</p>
+<p><strong>WhatsApp:</strong> <a href="https://wa.me/6281123456789" target="_blank">+62 811-2345-6789</a></p>
+<p><strong>Email:</strong> info@samjayaindah.co.id</p>
+</div>
+<form class="contact-form" action="#" onsubmit="alert('Form demo — ganti action dengan backend mailer atau Netlify Forms'); return false;">
+<label>Nama
+<input type="text" name="name" required>
+</label>
+<label>Email
+<input type="email" name="email" required>
+</label>
+<label>Pesan
+<textarea name="message" rows="4" required></textarea>
+</label>
+<button class="btn" type="submit">Kirim Pesan</button>
+</form>
+</div>
+</section>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Sam Jaya Indah. All rights reserved.</p>
-  </footer>
 
-  <script>
-    // Toggle navbar mobile
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>&copy; <span id="year"></span> Sam Jaya Indah — Semua hak dilindungi.</p>
+<div class="footer-links">
+<a href="katalog.html">Katalog</a>
+<a href="project.html">Project</a>
+<a href="beton.html">Beton</a>
+</div>
+</div>
+</footer>
+
+
+<script>
+// small scripts: year, mobile nav
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('nav-toggle').addEventListener('click', function(){
+document.getElementById('main-nav').classList.toggle('open');
+});
+</script>
 </body>
 </html>
