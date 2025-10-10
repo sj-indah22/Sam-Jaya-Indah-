@@ -1,58 +1,107 @@
-<!doctype html>
-<div class="gallery-item" data-type="krawangan">
-<a href="#" class="gallery-link" data-img="images/project2.jpg">
-<img src="images/project2.jpg" alt="Krawangan">
-<div class="gallery-caption"><strong>Krawangan Minimalis</strong><br><span class="text-muted">Custom motif</span></div>
-</a>
-</div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Kami - Sam Jaya Indah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Sam Jaya Indah</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
+        <li><a href="beton.html">Beton</a></li>
+        <li><a href="liftcor.html">Lift Cor</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="gallery-item" data-type="pagar">
-<a href="#" class="gallery-link" data-img="images/project3.jpg">
-<img src="images/project3.jpg" alt="Pagar Beton">
-<div class="gallery-caption"><strong>Pagar Beton Komersial</strong><br><span class="text-muted">Proyek perumahan</span></div>
-</a>
-</div>
+  <!-- Hero Section -->
+  <section class="sub-hero" style="background-image:url('images/project.jpg');">
+    <div class="overlay">
+      <h1>Project Kami</h1>
+      <p>Beberapa hasil pekerjaan terbaik Sam Jaya Indah</p>
+    </div>
+  </section>
 
+  <!-- Filter Project -->
+  <section class="filter-section">
+    <div class="filter-container">
+      <button class="filter-btn active" onclick="filterProjects('all')">Semua</button>
+      <button class="filter-btn" onclick="filterProjects('kanopi')">Kanopi</button>
+      <button class="filter-btn" onclick="filterProjects('krawangan')">Krawangan</button>
+      <button class="filter-btn" onclick="filterProjects('dak')">Dak Cor</button>
+      <button class="filter-btn" onclick="filterProjects('pagar')">Pagar</button>
+    </div>
+  </section>
 
-<!-- add more items as needed -->
-</div>
-</section>
-</main>
+  <!-- Galeri Project -->
+  <section class="gallery">
+    <div class="gallery-grid">
+      <div class="gallery-item kanopi">
+        <img src="images/project1.jpg" alt="Kanopi Baja Ringan">
+        <p>Kanopi Baja Ringan Rumah Pak Budi</p>
+      </div>
 
+      <div class="gallery-item krawangan">
+        <img src="images/project2.jpg" alt="Krawangan Besi">
+        <p>Krawangan Besi Rumah Ibu Lestari</p>
+      </div>
 
-<!-- simple lightbox modal -->
-<div id="lightbox" class="lightbox" style="display:none">
-<div class="lightbox-inner">
-<button id="lb-close">✕</button>
-<img id="lb-img" src="" alt="preview">
-</div>
-</div>
+      <div class="gallery-item dak">
+        <img src="images/project3.jpg" alt="Dak Cor Lantai 2">
+        <p>Pengecoran Dak Rumah 2 Lantai</p>
+      </div>
 
+      <div class="gallery-item pagar">
+        <img src="images/project4.jpg" alt="Pagar Besi">
+        <p>Pagar Besi Minimalis Rumah Pak Hendra</p>
+      </div>
 
-<script>
-// Filter logic
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-btn.addEventListener('click', ()=>{
-const filter = btn.getAttribute('data-filter');
-document.querySelectorAll('#project-grid .gallery-item').forEach(item=>{
-if(filter==='all' || item.dataset.type===filter) item.style.display='block'; else item.style.display='none';
-})
-})
-})
+      <div class="gallery-item kanopi">
+        <img src="images/project5.jpg" alt="Kanopi Atap Spandek">
+        <p>Kanopi Atap Spandek di Gudang Cikarang</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Kontak -->
+  <section id="kontak" class="contact">
+    <h2>Hubungi Kami</h2>
+    <p>Ingin tahu lebih lanjut tentang proyek kami atau konsultasi gratis?</p>
+    <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Chat via WhatsApp</a>
+  </section>
 
-// Lightbox
-document.querySelectorAll('.gallery-link').forEach(link=>{
-link.addEventListener('click', e=>{
-e.preventDefault();
-const src = link.getAttribute('data-img');
-const lb = document.getElementById('lightbox');
-document.getElementById('lb-img').src = src;
-lb.style.display='flex';
-})
-})
-document.getElementById('lb-close').addEventListener('click', ()=>document.getElementById('lightbox').style.display='none')
-</script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script Filter -->
+  <script>
+    function filterProjects(category) {
+      const items = document.querySelectorAll('.gallery-item');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
