@@ -235,3 +235,51 @@ footer {
   font-weight: 700;
   color: #b71c1c;
 }
+
+/* === PERBAIKAN RESPONSIF LOGO + NAVBAR === */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar .logo img {
+  width: 55px;
+  height: auto;
+  vertical-align: middle;
+}
+
+.navbar .logo span {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #333;
+  line-height: 1;
+}
+
+/* Atur pas di layar kecil (HP) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 15px 5%;
+  }
+
+  .navbar .logo {
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .navbar .logo img {
+    width: 45px;
+  }
+
+  .navbar .logo span {
+    font-size: 1.1em;
+  }
+
+  .navbar ul {
+    gap: 15px;
+  }
+}
+
