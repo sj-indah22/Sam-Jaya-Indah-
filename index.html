@@ -10,23 +10,22 @@
 <body>
 
   <!-- Navbar -->
- <header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-    <span>Sam Jaya Indah</span>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="project.html">Project</a></li>
-      <li><a href="beton.html">Beton</a></li>
-      <li><a href="liftcor.html">Lift Cor</a></li>
-      <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
-
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
+      <span>Sam Jaya Indah</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Beranda</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="beton.html">Beton</a></li>
+        <li><a href="liftcor.html">Lift Cor</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -76,11 +75,17 @@
   <!-- Kontak -->
   <section id="kontak" class="contact">
     <h2>Hubungi Kami</h2>
-    <p>Untuk pemesanan atau konsultasi proyek, hubungi kami melalui:</p>
+    <p>Untuk pemesanan atau konsultasi proyek, isi form di bawah ini untuk langsung terhubung via WhatsApp.</p>
+    
+    <form id="contactForm">
+      <input type="text" id="nama" placeholder="Nama Anda" required>
+      <input type="text" id="pesan" placeholder="Pesan atau kebutuhan proyek Anda" required>
+      <button type="submit" class="btn-whatsapp">Kirim ke WhatsApp</button>
+    </form>
+
     <div class="contact-info">
       <p>📞 0812-3456-7890</p>
       <p>📧 samjayain@gmail.com</p>
-      <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Chat via WhatsApp</a>
     </div>
   </section>
 
@@ -88,6 +93,17 @@
   <footer>
     <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // Kirim Form ke WhatsApp
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value;
+      const pesan = document.getElementById("pesan").value;
+      const text = `Halo, saya ${nama}. %0A%0A${pesan}`;
+      window.open(`https://wa.me/6281234567890?text=${text}`, "_blank");
+    });
+  </script>
 
 </body>
 </html>
