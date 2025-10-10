@@ -223,3 +223,22 @@ footer {
     padding: 60px 5%;
   }
 }
+
+/* === FIX LOGO NAVBAR === */
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .logo img {
+  width: 60px; /* atur di sini bro (50–70px enak) */
+  height: auto;
+}
+
+.navbar .logo span {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: #333;
+}
+
