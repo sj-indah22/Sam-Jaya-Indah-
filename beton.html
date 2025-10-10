@@ -6,6 +6,52 @@
   <title>Beton - Sam Jaya Indah</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    /* === BURGER MENU (RESPONSIVE NAVBAR) === */
+    .menu-btn {
+      display: none;
+      font-size: 1.8em;
+      color: #333;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+
+      .navbar {
+        position: relative;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        transition: right 0.4s ease;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .navbar ul {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+
+    /* === FILTER & GALERI === */
     .filter-btns {
       display: flex;
       flex-wrap: wrap;
@@ -102,8 +148,9 @@
       <img src="images/logo.png" alt="Logo Sam Jaya Indah">
       <span>Sam Jaya Indah</span>
     </div>
+    <button class="menu-btn" id="menu-btn">☰</button>
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Beranda</a></li>
         <li><a href="project.html">Project</a></li>
         <li><a href="beton.html" class="active">Beton</a></li>
@@ -165,6 +212,19 @@
   </footer>
 
   <script>
+    // === Burger Menu ===
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // === Filter Gallery ===
     function filterGallery(category) {
       const items = document.querySelectorAll('.gallery-item');
       const buttons = document.querySelectorAll('.filter-btns button');
@@ -180,6 +240,7 @@
       });
     }
 
+    // === Lightbox ===
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = lightbox.querySelector('img');
     document.querySelectorAll('.gallery-item img').forEach(img => {
