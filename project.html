@@ -5,91 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project - Sam Jaya Indah</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .filter-btns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 30px 0;
-    }
-    .filter-btns button {
-      background: #007bff;
-      border: none;
-      color: white;
-      padding: 8px 16px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .filter-btns button:hover,
-    .filter-btns button.active {
-      background: #0056b3;
-    }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 8px;
-      cursor: pointer;
-      position: relative;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-    .lightbox.active {
-      display: flex;
-    }
-  </style>
-<header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-    <span>Sam Jaya Indah</span>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="project.html">Project</a></li>
-      <li><a href="beton.html">Beton</a></li>
-      <li><a href="liftcor.html">Lift Cor</a></li>
-      <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
+</head>
+<body>
 
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
+      <span>Sam Jaya Indah</span>
+    </div>
 
+    <button class="menu-btn" aria-label="Toggle Menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
 
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="project.html" class="active">Project</a></li>
+        <li><a href="betonan.html">Betonan</a></li>
+        <li><a href="penyewaan-alat.html">Penyewaan Alat</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
   <section class="hero" style="background-image: url('images/project.jpg');">
     <div class="hero-text">
       <h2>Project Kami</h2>
@@ -97,35 +40,24 @@
     </div>
   </section>
 
-  <section class="content-section">
-    <h2>Galeri Project</h2>
+  <!-- Galeri -->
+  <section class="content-section fade">
     <div class="filter-btns">
       <button class="active" onclick="filterGallery('all')">Semua</button>
-      <button onclick="filterGallery('kanopi')">Kanopi</button>
-      <button onclick="filterGallery('krawangan')">Krawangan</button>
-      <button onclick="filterGallery('dak')">Dak Cor</button>
-      <button onclick="filterGallery('pagar')">Pagar</button>
+      <button onclick="filterGallery('plafon')">Plafon</button>
+      <button onclick="filterGallery('relling')">Relling Tangga</button>
+      <button onclick="filterGallery('pagar')">Pagar Kanopi</button>
+      <button onclick="filterGallery('teralis')">Teralis</button>
+      <button onclick="filterGallery('harmonika')">Harmonika</button>
     </div>
 
     <div class="gallery-grid" id="gallery">
-      <div class="gallery-item kanopi">
-        <img src="images/project1.jpg" alt="Kanopi Baja Ringan">
-      </div>
-      <div class="gallery-item krawangan">
-        <img src="images/project2.jpg" alt="Krawangan">
-      </div>
-      <div class="gallery-item dak">
-        <img src="images/project3.jpg" alt="Pengecoran Dak">
-      </div>
-      <div class="gallery-item pagar">
-        <img src="images/project4.jpg" alt="Pagar Beton">
-      </div>
-      <div class="gallery-item kanopi">
-        <img src="images/project5.jpg" alt="Kanopi Spandek">
-      </div>
-      <div class="gallery-item krawangan">
-        <img src="images/project6.jpg" alt="Krawangan Minimalis">
-      </div>
+      <div class="gallery-item plafon fade"><img src="images/project1.jpg" alt="Plafon"></div>
+      <div class="gallery-item relling fade"><img src="images/project2.jpg" alt="Relling Tangga"></div>
+      <div class="gallery-item pagar fade"><img src="images/project3.jpg" alt="Pagar"></div>
+      <div class="gallery-item teralis fade"><img src="images/project4.jpg" alt="Teralis"></div>
+      <div class="gallery-item harmonika fade"><img src="images/project5.jpg" alt="Pintu Harmonika"></div>
+      <div class="gallery-item pagar fade"><img src="images/project6.jpg" alt="Kanopi"></div>
     </div>
   </section>
 
@@ -138,37 +70,6 @@
     <p>© 2025 Sam Jaya Indah</p>
   </footer>
 
-  <script>
-    // Filter function
-    function filterGallery(category) {
-      const items = document.querySelectorAll('.gallery-item');
-      const buttons = document.querySelectorAll('.filter-btns button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
-      });
-    });
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
