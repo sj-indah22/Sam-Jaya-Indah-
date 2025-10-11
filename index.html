@@ -9,25 +9,26 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- === NAVBAR === -->
   <header class="navbar">
     <div class="logo">
       <img src="images/logo.png" alt="Logo Sam Jaya Indah">
       <span>Sam Jaya Indah</span>
     </div>
+    <button class="menu-btn" id="menu-btn">☰</button>
     <nav>
-      <ul>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="active">Beranda</a></li>
         <li><a href="project.html">Project</a></li>
-        <li><a href="beton.html">Beton</a></li>
-        <li><a href="liftcor.html">Lift Cor</a></li>
+        <li><a href="betonan.html">Betonan</a></li>
+        <li><a href="penyewaan-alat.html">Penyewaan Alat</a></li>
         <li><a href="katalog.html">Katalog</a></li>
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- === HERO === -->
   <section class="hero">
     <div class="hero-text">
       <h1>Solusi Bangunan Profesional</h1>
@@ -36,72 +37,69 @@
     </div>
   </section>
 
-  <!-- Layanan Kami -->
+  <!-- === LAYANAN === -->
   <section id="layanan" class="services">
     <h2>Layanan Kami</h2>
     <div class="service-grid">
       <a href="project.html" class="service-card">
         <img src="images/project.jpg" alt="Project" />
         <h3>Project</h3>
-        <p>Berbagai pekerjaan seperti kanopi, krawangan, dan lain-lain.</p>
+        <p>Berbagai pekerjaan seperti plafon, pagar, teralis, harmonika, dan lainnya.</p>
       </a>
 
-      <a href="beton.html" class="service-card">
-        <img src="images/beton.jpg" alt="Beton" />
-        <h3>Beton</h3>
-        <p>Produk dan pemasangan material beton berkualitas tinggi.</p>
+      <a href="betonan.html" class="service-card">
+        <img src="images/beton.jpg" alt="Betonan" />
+        <h3>Betonan</h3>
+        <p>Produk dan pemasangan material beton seperti list plang, krawangan, pilar, dan lainnya.</p>
       </a>
 
-      <a href="liftcor.html" class="service-card">
-        <img src="images/liftcor.jpg" alt="Lift Cor" />
-        <h3>Lift Cor</h3>
-        <p>Sistem lift cor modern untuk efisiensi pengecoran bangunan.</p>
+      <a href="penyewaan-alat.html" class="service-card">
+        <img src="images/liftcor.jpg" alt="Penyewaan Alat" />
+        <h3>Penyewaan Alat</h3>
+        <p>Lift cor, mini crane, scaffolding, molen, dan bor untuk kebutuhan proyek Anda.</p>
       </a>
 
       <a href="katalog.html" class="service-card">
         <img src="images/katalog.jpg" alt="Katalog" />
         <h3>Katalog</h3>
-        <p>Kumpulan produk Sam Jaya Indah untuk kebutuhan proyek Anda.</p>
+        <p>Kumpulan produk Sam Jaya Indah untuk kebutuhan bangunan Anda.</p>
       </a>
     </div>
   </section>
 
-  <!-- Tentang Kami -->
+  <!-- === TENTANG KAMI === -->
   <section class="about">
     <h2>Tentang Kami</h2>
     <p>Sam Jaya Indah adalah perusahaan kontraktor dan penyedia material bangunan yang berkomitmen pada kualitas, ketepatan waktu, dan kepuasan pelanggan. Kami melayani berbagai proyek mulai dari perumahan hingga komersial dengan tenaga profesional berpengalaman.</p>
   </section>
 
-  <!-- Kontak -->
+  <!-- === KONTAK === -->
   <section id="kontak" class="contact">
     <h2>Hubungi Kami</h2>
-    <p>Untuk pemesanan atau konsultasi proyek, isi form di bawah ini untuk langsung terhubung via WhatsApp.</p>
-    
-    <form id="contactForm">
-      <input type="text" id="nama" placeholder="Nama Anda" required>
-      <input type="text" id="pesan" placeholder="Pesan atau kebutuhan proyek Anda" required>
-      <button type="submit" class="btn-whatsapp">Kirim ke WhatsApp</button>
-    </form>
-
+    <p>Untuk pemesanan atau konsultasi proyek, hubungi kami melalui:</p>
     <div class="contact-info">
       <p>📞 0812-3456-7890</p>
       <p>📧 samjayain@gmail.com</p>
+      <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Chat Sekarang</a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- === FOOTER === -->
   <footer>
     <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
   </footer>
 
+  <!-- === SCRIPT BURGER MENU === -->
   <script>
-    // Kirim Form ke WhatsApp
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nama = document.getElementById("nama").value;
-      const pesan = document.getElementById("pesan").value;
-      const text = `Halo, saya ${nama}. %0A%0A${pesan}`;
-      window.open(`https://wa.me/6281234567890?text=${text}`, "_blank");
+    const menuBtn = document.getElementById('menu-btn');
+    const navLinks = document.getElementById('nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+      }
     });
   </script>
 
