@@ -8,68 +8,52 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-      <span>Sam Jaya Indah</span>
-    </div>
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo">
+    <span>Sam Jaya Indah</span>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="project.html" class="active">Project</a>
+    <a href="betonan.html">Betonan</a>
+    <a href="penyewaan.html">Penyewaan Alat</a>
+    <a href="katalog.html">Katalog</a>
+  </nav>
+  <div class="burger" id="burger"><div></div><div></div><div></div></div>
+</header>
 
-    <button class="menu-btn" aria-label="Toggle Menu">
-      <div></div>
-      <div></div>
-      <div></div>
-    </button>
+<section class="hero" style="background-image:url('images/project.jpg')">
+  <div class="hero-text">
+    <h2>Project Kami</h2>
+    <p>Hasil kerja terbaik dari tim Sam Jaya Indah</p>
+  </div>
+</section>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="project.html" class="active">Project</a></li>
-        <li><a href="betonan.html">Betonan</a></li>
-        <li><a href="penyewaan-alat.html">Penyewaan Alat</a></li>
-        <li><a href="katalog.html">Katalog</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" style="background-image: url('images/project.jpg');">
-    <div class="hero-text">
-      <h2>Project Kami</h2>
-      <p>Hasil kerja terbaik dari tim Sam Jaya Indah</p>
-    </div>
-  </section>
-
-  <!-- Galeri -->
-  <section class="content-section fade">
-    <div class="filter-btns">
-      <button class="active" onclick="filterGallery('all')">Semua</button>
-      <button onclick="filterGallery('plafon')">Plafon</button>
-      <button onclick="filterGallery('relling')">Relling Tangga</button>
-      <button onclick="filterGallery('pagar')">Pagar Kanopi</button>
-      <button onclick="filterGallery('teralis')">Teralis</button>
-      <button onclick="filterGallery('harmonika')">Harmonika</button>
-    </div>
-
-    <div class="gallery-grid" id="gallery">
-      <div class="gallery-item plafon fade"><img src="images/project1.jpg" alt="Plafon"></div>
-      <div class="gallery-item relling fade"><img src="images/project2.jpg" alt="Relling Tangga"></div>
-      <div class="gallery-item pagar fade"><img src="images/project3.jpg" alt="Pagar"></div>
-      <div class="gallery-item teralis fade"><img src="images/project4.jpg" alt="Teralis"></div>
-      <div class="gallery-item harmonika fade"><img src="images/project5.jpg" alt="Pintu Harmonika"></div>
-      <div class="gallery-item pagar fade"><img src="images/project6.jpg" alt="Kanopi"></div>
-    </div>
-  </section>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <img src="" alt="Preview">
+<section class="content-section">
+  <div class="filter-btns">
+    <button class="active" onclick="filterGallery('all')">Semua</button>
+    <button onclick="filterGallery('plafon')">Plafon</button>
+    <button onclick="filterGallery('relling')">Relling Tangga</button>
+    <button onclick="filterGallery('kanopi')">Kanopi</button>
+    <button onclick="filterGallery('teralis')">Teralis</button>
+    <button onclick="filterGallery('pagar')">Pagar</button>
+    <button onclick="filterGallery('harmonika')">Harmonika</button>
   </div>
 
-  <footer>
-    <p>© 2025 Sam Jaya Indah</p>
-  </footer>
+  <div class="gallery-grid" id="gallery">
+    <div class="gallery-item kanopi"><img src="images/project1.jpg" alt="Kanopi"></div>
+    <div class="gallery-item plafon"><img src="images/project2.jpg" alt="Plafon"></div>
+    <div class="gallery-item relling"><img src="images/project3.jpg" alt="Relling"></div>
+    <div class="gallery-item pagar"><img src="images/project4.jpg" alt="Pagar"></div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Preview">
+</div>
+
+<footer><p>&copy; 2025 Sam Jaya Indah</p></footer>
+<script src="script.js"></script>
 </body>
 </html>
