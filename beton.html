@@ -1,258 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beton - Sam Jaya Indah</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    /* === BURGER MENU (RESPONSIVE NAVBAR) === */
-    .menu-btn {
-      display: none;
-      font-size: 1.8em;
-      color: #333;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .menu-btn {
-        display: block;
-      }
-
-      .navbar {
-        position: relative;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        background: white;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 25px;
-        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
-        transition: right 0.4s ease;
-        z-index: 999;
-      }
-
-      .nav-links.active {
-        right: 0;
-      }
-
-      .navbar ul {
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
-
-    /* === FILTER & GALERI === */
-    .filter-btns {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      margin: 40px 0 20px;
-    }
-    .filter-btns button {
-      background: #b71c1c;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .filter-btns button:hover,
-    .filter-btns button.active {
-      background: #8c1212;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 10px 20px 40px;
-    }
-
-    .gallery-item {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .gallery-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      cursor: pointer;
-    }
-
-    .gallery-item p {
-      padding: 12px;
-      font-weight: 500;
-    }
-
-    .btn-wa {
-      display: inline-block;
-      background: #25d366;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 25px;
-      text-decoration: none;
-      margin-bottom: 15px;
-      transition: 0.3s;
-    }
-    .btn-wa:hover {
-      background: #1ebe5d;
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    }
-    .lightbox.active {
-      display: flex;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betonan - Sam Jaya Indah</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
       <img src="images/logo.png" alt="Logo Sam Jaya Indah">
       <span>Sam Jaya Indah</span>
     </div>
-    <button class="menu-btn" id="menu-btn">☰</button>
+
+    <button class="menu-btn" aria-label="Toggle Menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
     <nav>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="index.html">Beranda</a></li>
         <li><a href="project.html">Project</a></li>
-        <li><a href="beton.html" class="active">Beton</a></li>
-        <li><a href="liftcor.html">Lift Cor</a></li>
+        <li><a href="betonan.html" class="active">Betonan</a></li>
+        <li><a href="penyewaan-alat.html">Penyewaan Alat</a></li>
         <li><a href="katalog.html">Katalog</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero" style="background-image: url('images/beton.jpg');">
     <div class="hero-text">
-      <h2>Produk & Pekerjaan Beton</h2>
-      <p>Kualitas tinggi untuk setiap kebutuhan konstruksi Anda</p>
+      <h2>Betonan</h2>
+      <p>Berbagai hasil pekerjaan beton berkualitas dari Sam Jaya Indah</p>
     </div>
   </section>
 
-  <section class="content-section">
+  <!-- Galeri -->
+  <section class="content-section fade">
     <div class="filter-btns">
       <button class="active" onclick="filterGallery('all')">Semua</button>
-      <button onclick="filterGallery('pagar')">Pagar Beton</button>
-      <button onclick="filterGallery('uditch')">U-Ditch</button>
-      <button onclick="filterGallery('paving')">Paving Block</button>
-      <button onclick="filterGallery('buis')">Buis Beton</button>
+      <button onclick="filterGallery('list')">List Plang</button>
+      <button onclick="filterGallery('krawangan')">Krawangan</button>
+      <button onclick="filterGallery('pilar')">Pilar</button>
+      <button onclick="filterGallery('mahkota')">Mahkota</button>
+      <button onclick="filterGallery('ramin')">Ramin</button>
     </div>
 
     <div class="gallery-grid" id="gallery">
-      <div class="gallery-item pagar">
-        <img src="images/beton1.jpg" alt="Pagar Beton">
-        <p>Pemasangan Pagar Beton</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn-wa">Chat Sekarang</a>
-      </div>
-
-      <div class="gallery-item uditch">
-        <img src="images/beton2.jpg" alt="U-Ditch">
-        <p>Pemasangan U-Ditch di Perumahan</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn-wa">Chat Sekarang</a>
-      </div>
-
-      <div class="gallery-item paving">
-        <img src="images/beton3.jpg" alt="Paving Block">
-        <p>Pekerjaan Paving Block Area Parkir</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn-wa">Chat Sekarang</a>
-      </div>
-
-      <div class="gallery-item buis">
-        <img src="images/beton4.jpg" alt="Buis Beton">
-        <p>Buis Beton untuk Saluran Air</p>
-        <a href="https://wa.me/6281234567890" target="_blank" class="btn-wa">Chat Sekarang</a>
-      </div>
+      <div class="gallery-item list fade"><img src="images/beton1.jpg" alt="List Plang"></div>
+      <div class="gallery-item krawangan fade"><img src="images/beton2.jpg" alt="Krawangan"></div>
+      <div class="gallery-item pilar fade"><img src="images/beton3.jpg" alt="Pilar Beton"></div>
+      <div class="gallery-item mahkota fade"><img src="images/beton4.jpg" alt="Mahkota"></div>
+      <div class="gallery-item ramin fade"><img src="images/beton5.jpg" alt="Ramin"></div>
+      <div class="gallery-item krawangan fade"><img src="images/beton6.jpg" alt="Krawangan Beton"></div>
     </div>
   </section>
 
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <img src="" alt="Preview">
   </div>
 
   <footer>
-    <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
+    <p>© 2025 Sam Jaya Indah</p>
   </footer>
 
-  <script>
-    // === Burger Menu ===
-    const menuBtn = document.getElementById('menu-btn');
-    const navLinks = document.getElementById('nav-links');
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-        navLinks.classList.remove('active');
-      }
-    });
-
-    // === Filter Gallery ===
-    function filterGallery(category) {
-      const items = document.querySelectorAll('.gallery-item');
-      const buttons = document.querySelectorAll('.filter-btns button');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      items.forEach(item => {
-        if (category === 'all' || item.classList.contains(category)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-
-    // === Lightbox ===
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('active');
-      });
-    });
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
