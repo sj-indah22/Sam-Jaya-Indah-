@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* RESET DASAR */
 * {
   margin: 0;
   padding: 0;
@@ -12,39 +12,85 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 15px 8%;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
-.navbar ul {
-  list-style: none;
+.logo {
   display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 55px;
+  height: auto;
+}
+
+.logo span {
+  font-weight: 600;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
   gap: 25px;
 }
 
-.navbar a {
+.nav-links a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
-.navbar a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: #b71c1c;
 }
 
-/* Hero Section */
+/* === BURGER MENU === */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-btn div {
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.menu-btn.open div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-btn.open div:nth-child(2) {
+  opacity: 0;
+}
+.menu-btn.open div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* HERO */
 .hero {
-  background: url("images/hero.jpg") center/cover no-repeat;
+  background: center/cover no-repeat;
   height: 90vh;
   display: flex;
   justify-content: center;
@@ -61,7 +107,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0,0,0,0.5);
 }
 
 .hero-text {
@@ -71,7 +117,7 @@ body {
   padding: 20px;
 }
 
-.hero h1 {
+.hero h1, .hero h2 {
   font-size: 2.5em;
   margin-bottom: 15px;
 }
@@ -89,29 +135,104 @@ body {
   text-decoration: none;
   transition: 0.3s;
 }
-
 .btn-primary:hover {
   background-color: #8c1212;
 }
 
-/* Layanan Kami */
-.services {
+/* FILTER BUTTON */
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+.filter-btns button {
+  background: #b71c1c;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.filter-btns button:hover,
+.filter-btns button.active {
+  background: #8c1212;
+}
+
+/* GALERI */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px 8%;
+}
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.gallery-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-item p {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.95em;
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+.lightbox.active {
+  display: flex;
+}
+
+/* SERVICES, ABOUT, CONTACT */
+.services, .about, .contact, .content-section {
   padding: 80px 8%;
-  background: #fafafa;
   text-align: center;
 }
-
-.services h2 {
-  font-size: 2em;
-  margin-bottom: 40px;
+.services {
+  background: #fafafa;
 }
-
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
 }
-
 .service-card {
   background: #fff;
   border-radius: 12px;
@@ -121,73 +242,25 @@ body {
   color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .service-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
-
 .service-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .service-card h3 {
   margin: 15px 0 5px;
   color: #b71c1c;
 }
-
 .service-card p {
   font-size: 0.95em;
   padding: 0 15px 20px;
 }
 
-/* Tentang Kami */
-.about {
-  padding: 80px 8%;
-  text-align: center;
-  background: #fff;
-}
-
-.about h2 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-/* Kontak */
-.contact {
-  background: #fafafa;
-  padding: 80px 8%;
-  text-align: center;
-}
-
-.contact h2 {
-  font-size: 2em;
-  margin-bottom: 15px;
-}
-
-.contact-info {
-  margin-top: 25px;
-  font-size: 1.1em;
-}
-
-.btn-whatsapp {
-  display: inline-block;
-  margin-top: 20px;
-  background: #25d366;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.btn-whatsapp:hover {
-  background: #1ebe5d;
-}
-
-/* Footer */
+/* FOOTER */
 footer {
   text-align: center;
   background: #b71c1c;
@@ -197,128 +270,36 @@ footer {
   margin-top: 40px;
 }
 
-/* Responsif */
+/* RESPONSIVE NAVBAR */
 @media (max-width: 768px) {
-  .navbar ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+  .menu-btn { display: flex; }
 
-  .hero h1 {
-    font-size: 2em;
-  }
-
-  .hero p {
-    font-size: 1em;
-  }
-
-  .services, .about, .contact {
-    padding: 60px 5%;
-  }
-}
-
-/* === LOGO + TEKS NAVBAR (Seragam di Semua Halaman) === */
-.navbar .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.navbar .logo img {
-  width: 55px;
-  height: auto;
-}
-
-.navbar .logo span {
-  font-size: 1.3em;
-  font-weight: 700;
-  color: #b71c1c;
-}
-
-/* === PERBAIKAN RESPONSIF LOGO + NAVBAR === */
-.navbar .logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.navbar .logo img {
-  width: 55px;
-  height: auto;
-  vertical-align: middle;
-}
-
-.navbar .logo span {
-  font-size: 1.4em;
-  font-weight: 600;
-  color: #333;
-  line-height: 1;
-}
-
-/* Atur pas di layar kecil (HP) */
-@media (max-width: 600px) {
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    padding: 15px 5%;
-  }
-
-  .navbar .logo {
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
-  .navbar .logo img {
-    width: 45px;
-  }
-
-  .navbar .logo span {
-    font-size: 1.1em;
-  }
-
-  .navbar ul {
-    gap: 15px;
-  }
-}
-
-/* === POSISI BURGER MENU SUPAYA MEJET POJOK KANAN === */
-@media (max-width: 768px) {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-  }
-
-  .navbar .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .menu-btn {
-    display: block;
-    font-size: 1.9em;
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
+  .nav-links {
+    display: none;
+    flex-direction: column;
     position: absolute;
-    right: 18px;  /* <== ini kuncinya bro */
-    top: 16px;
-    z-index: 1000;
+    top: 70px;
+    right: 8%;
+    background: rgba(255, 255, 255, 0.95);
+    width: 200px;
+    border-radius: 12px;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    animation: fadeIn 0.3s ease-in-out;
   }
+  .nav-links.active { display: flex; }
+  .nav-links a {
+    padding: 10px 0;
+    color: #333;
+  }
+  .nav-links a:hover {
+    color: #b71c1c;
+  }
+}
 
-  /* biar logo tetap di kiri */
-  .navbar .logo img {
-    width: 45px;
-    height: auto;
-  }
-
-  .navbar .logo span {
-    font-size: 1.1em;
-    font-weight: 600;
-  }
+/* ANIMASI */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
