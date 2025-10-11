@@ -8,72 +8,36 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="images/logo.png" alt="Logo Sam Jaya Indah" />
-      <span>Sam Jaya Indah</span>
-    </div>
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo" />
+    <span>Sam Jaya Indah</span>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="project.html">Project</a>
+    <a href="betonan.html">Betonan</a>
+    <a href="penyewaan.html">Penyewaan Alat</a>
+    <a href="katalog.html" class="active">Katalog</a>
+  </nav>
+  <div class="burger" id="burger"><div></div><div></div><div></div></div>
+</header>
 
-    <button class="menu-btn" aria-label="Toggle Menu">
-      <div></div>
-      <div></div>
-      <div></div>
-    </button>
+<section class="hero" style="background-image:url('images/katalog.jpg')">
+  <div class="hero-text">
+    <h2>Katalog Produk</h2>
+    <p>Berbagai produk dan material bangunan berkualitas tinggi</p>
+  </div>
+</section>
 
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="project.html">Project</a></li>
-        <li><a href="betonan.html">Betonan</a></li>
-        <li><a href="penyewaan-alat.html">Penyewaan Alat</a></li>
-        <li><a href="katalog.html" class="active">Katalog</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="gallery-grid">
+  <div class="gallery-item"><img src="images/prod1.jpg" alt="Produk 1"><p>Besi Hollow</p></div>
+  <div class="gallery-item"><img src="images/prod2.jpg" alt="Produk 2"><p>Wiremesh</p></div>
+  <div class="gallery-item"><img src="images/prod3.jpg" alt="Produk 3"><p>Beton Precast</p></div>
+  <div class="gallery-item"><img src="images/prod4.jpg" alt="Produk 4"><p>Pagar Beton</p></div>
+</section>
 
-  <!-- Hero -->
-  <section class="hero" style="background-image: url('images/katalog.jpg');">
-    <div class="hero-text">
-      <h2>Katalog Produk</h2>
-      <p>Kumpulan produk dan material unggulan Sam Jaya Indah</p>
-    </div>
-  </section>
-
-  <!-- Galeri Produk -->
-  <section class="content-section fade">
-    <div class="gallery-grid">
-      <div class="gallery-item fade">
-        <img src="images/prod1.jpg" alt="Besi Hollow" />
-        <p>Besi Hollow Galvanis</p>
-      </div>
-
-      <div class="gallery-item fade">
-        <img src="images/prod2.jpg" alt="Wiremesh" />
-        <p>Wiremesh M8 - M12</p>
-      </div>
-
-      <div class="gallery-item fade">
-        <img src="images/prod3.jpg" alt="Beton Precast" />
-        <p>Beton Precast</p>
-      </div>
-
-      <div class="gallery-item fade">
-        <img src="images/prod4.jpg" alt="Pagar Beton" />
-        <p>Pagar Beton Polos</p>
-      </div>
-
-      <div class="gallery-item fade">
-        <img src="images/prod5.jpg" alt="Lift Cor Unit" />
-        <p>Unit Lift Cor</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Sam Jaya Indah</p>
-  </footer>
-
-  <script src="script.js"></script>
+<footer><p>&copy; 2025 Sam Jaya Indah</p></footer>
+<script src="script.js"></script>
 </body>
 </html>
