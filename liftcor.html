@@ -1,60 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lift Cor - Sam Jaya Indah</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Penyewaan Alat - Sam Jaya Indah</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Navbar -->
   <header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo Sam Jaya Indah">
-    <span>Sam Jaya Indah</span>
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
+      <span>Sam Jaya Indah</span>
+    </div>
+
+    <button class="menu-btn" aria-label="Toggle Menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="project.html">Project</a></li>
+        <li><a href="betonan.html">Betonan</a></li>
+        <li><a href="penyewaan-alat.html" class="active">Penyewaan Alat</a></li>
+        <li><a href="katalog.html">Katalog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" style="background-image: url('images/liftcor.jpg');">
+    <div class="hero-text">
+      <h2>Penyewaan Alat</h2>
+      <p>Peralatan konstruksi berkualitas siap digunakan untuk proyek Anda</p>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section class="content-section fade">
+    <div class="filter-btns">
+      <button class="active" onclick="filterGallery('all')">Semua</button>
+      <button onclick="filterGallery('liftcor')">Lift Cor</button>
+      <button onclick="filterGallery('minicrane')">Mini Crane</button>
+      <button onclick="filterGallery('scaffolding')">Scaffolding</button>
+      <button onclick="filterGallery('molenbor')">Molen Bor</button>
+      <button onclick="filterGallery('lainnya')">Lainnya</button>
+    </div>
+
+    <div class="gallery-grid" id="gallery">
+      <div class="gallery-item liftcor fade"><img src="images/liftcor1.jpg" alt="Lift Cor"></div>
+      <div class="gallery-item minicrane fade"><img src="images/liftcor2.jpg" alt="Mini Crane"></div>
+      <div class="gallery-item scaffolding fade"><img src="images/liftcor3.jpg" alt="Scaffolding"></div>
+      <div class="gallery-item molenbor fade"><img src="images/liftcor4.jpg" alt="Molen Bor"></div>
+      <div class="gallery-item lainnya fade"><img src="images/liftcor5.jpg" alt="Peralatan Lain"></div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Preview">
   </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Beranda</a></li>
-      <li><a href="project.html">Project</a></li>
-      <li><a href="beton.html">Beton</a></li>
-      <li><a href="liftcor.html">Lift Cor</a></li>
-      <li><a href="katalog.html">Katalog</a></li>
-      <li><a href="#kontak">Kontak</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-  <section class="sub-hero" style="background-image:url('images/liftcor.jpg');">
-    <div class="overlay">
-      <h1>Lift Cor</h1>
-      <p>Solusi efisien untuk pengecoran cepat dan rapi</p>
-    </div>
-  </section>
-
-  <section class="gallery">
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="images/liftcor1.jpg" alt="Lift Cor Site 1">
-        <p>Lift Cor Proyek Apartemen</p>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/liftcor2.jpg" alt="Lift Cor Site 2">
-        <p>Instalasi Lift Cor di Lokasi Pembangunan</p>
-      </div>
-
-      <div class="gallery-item">
-        <img src="images/liftcor3.jpg" alt="Lift Cor Site 3">
-        <p>Pengoperasian Lift Cor</p>
-      </div>
-    </div>
-  </section>
 
   <footer>
-    <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
+    <p>© 2025 Sam Jaya Indah</p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
