@@ -9,15 +9,21 @@
 </head>
 <body>
 
-  <!-- === NAVBAR === -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-      <img src="images/logo.png" alt="Logo Sam Jaya Indah">
+      <img src="images/logo.png" alt="Logo Sam Jaya Indah" />
       <span>Sam Jaya Indah</span>
     </div>
-    <button class="menu-btn" id="menu-btn">☰</button>
+
+    <button class="menu-btn" aria-label="Toggle Menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </button>
+
     <nav>
-      <ul class="nav-links" id="nav-links">
+      <ul class="nav-links">
         <li><a href="index.html" class="active">Beranda</a></li>
         <li><a href="project.html">Project</a></li>
         <li><a href="betonan.html">Betonan</a></li>
@@ -28,7 +34,7 @@
     </nav>
   </header>
 
-  <!-- === HERO === -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
       <h1>Solusi Bangunan Profesional</h1>
@@ -37,71 +43,58 @@
     </div>
   </section>
 
-  <!-- === LAYANAN === -->
+  <!-- Layanan Kami -->
   <section id="layanan" class="services">
     <h2>Layanan Kami</h2>
     <div class="service-grid">
-      <a href="project.html" class="service-card">
+      <a href="project.html" class="service-card fade">
         <img src="images/project.jpg" alt="Project" />
         <h3>Project</h3>
-        <p>Berbagai pekerjaan seperti plafon, pagar, teralis, harmonika, dan lainnya.</p>
+        <p>Berbagai pekerjaan seperti kanopi, krawangan, dan lain-lain.</p>
       </a>
 
-      <a href="betonan.html" class="service-card">
-        <img src="images/beton.jpg" alt="Betonan" />
+      <a href="betonan.html" class="service-card fade">
+        <img src="images/beton.jpg" alt="Beton" />
         <h3>Betonan</h3>
-        <p>Produk dan pemasangan material beton seperti list plang, krawangan, pilar, dan lainnya.</p>
+        <p>Produk dan pemasangan material beton berkualitas tinggi.</p>
       </a>
 
-      <a href="penyewaan-alat.html" class="service-card">
-        <img src="images/liftcor.jpg" alt="Penyewaan Alat" />
+      <a href="penyewaan-alat.html" class="service-card fade">
+        <img src="images/liftcor.jpg" alt="Lift Cor" />
         <h3>Penyewaan Alat</h3>
-        <p>Lift cor, mini crane, scaffolding, molen, dan bor untuk kebutuhan proyek Anda.</p>
+        <p>Lift cor, mini crane, scaffolding, molen bor, dan alat proyek lainnya.</p>
       </a>
 
-      <a href="katalog.html" class="service-card">
+      <a href="katalog.html" class="service-card fade">
         <img src="images/katalog.jpg" alt="Katalog" />
         <h3>Katalog</h3>
-        <p>Kumpulan produk Sam Jaya Indah untuk kebutuhan bangunan Anda.</p>
+        <p>Kumpulan produk Sam Jaya Indah untuk kebutuhan proyek Anda.</p>
       </a>
     </div>
   </section>
 
-  <!-- === TENTANG KAMI === -->
-  <section class="about">
+  <!-- Tentang Kami -->
+  <section class="about fade">
     <h2>Tentang Kami</h2>
     <p>Sam Jaya Indah adalah perusahaan kontraktor dan penyedia material bangunan yang berkomitmen pada kualitas, ketepatan waktu, dan kepuasan pelanggan. Kami melayani berbagai proyek mulai dari perumahan hingga komersial dengan tenaga profesional berpengalaman.</p>
   </section>
 
-  <!-- === KONTAK === -->
-  <section id="kontak" class="contact">
+  <!-- Kontak -->
+  <section id="kontak" class="contact fade">
     <h2>Hubungi Kami</h2>
     <p>Untuk pemesanan atau konsultasi proyek, hubungi kami melalui:</p>
     <div class="contact-info">
       <p>📞 0812-3456-7890</p>
       <p>📧 samjayain@gmail.com</p>
-      <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Chat Sekarang</a>
+      <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">Chat via WhatsApp</a>
     </div>
   </section>
 
-  <!-- === FOOTER === -->
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sam Jaya Indah. All Rights Reserved.</p>
   </footer>
 
-  <!-- === SCRIPT BURGER MENU === -->
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const navLinks = document.getElementById('nav-links');
-    menuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    document.addEventListener('click', (e) => {
-      if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-        navLinks.classList.remove('active');
-      }
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
