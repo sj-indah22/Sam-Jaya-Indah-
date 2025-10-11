@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Betonan - Sam Jaya Indah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <img src="images/logo.png" alt="Logo" />
+    <span>Sam Jaya Indah</span>
+  </div>
+  <nav class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="project.html">Project</a>
+    <a href="betonan.html" class="active">Betonan</a>
+    <a href="penyewaan.html">Penyewaan Alat</a>
+    <a href="katalog.html">Katalog</a>
+  </nav>
+  <div class="burger" id="burger"><div></div><div></div><div></div></div>
+</header>
+
+<section class="hero" style="background-image:url('images/beton.jpg')">
+  <div class="hero-text">
+    <h2>Produk & Pekerjaan Betonan</h2>
+    <p>Kualitas tinggi untuk setiap kebutuhan konstruksi Anda</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="filter-btns">
+    <button class="active" onclick="filterGallery('all')">Semua</button>
+    <button onclick="filterGallery('plang')">List Plang</button>
+    <button onclick="filterGallery('krawangan')">Krawangan</button>
+    <button onclick="filterGallery('pilar')">Pilar</button>
+    <button onclick="filterGallery('mahkota')">Mahkota</button>
+    <button onclick="filterGallery('ramin')">Ramin</button>
+  </div>
+
+  <div class="gallery-grid" id="gallery">
+    <div class="gallery-item plang"><img src="images/beton1.jpg" alt="Plang Beton"></div>
+    <div class="gallery-item krawangan"><img src="images/beton2.jpg" alt="Krawangan"></div>
+    <div class="gallery-item pilar"><img src="images/beton3.jpg" alt="Pilar Beton"></div>
+    <div class="gallery-item mahkota"><img src="images/beton4.jpg" alt="Mahkota"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Preview">
+</div>
+
+<footer><p>&copy; 2025 Sam Jaya Indah</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
