@@ -283,31 +283,42 @@ footer {
   }
 }
 
-/* === PERBAIKAN POSISI LOGO & BURGER DI MOBILE === */
+/* === POSISI BURGER MENU SUPAYA MEJET POJOK KANAN === */
 @media (max-width: 768px) {
   .navbar {
-    flex-wrap: nowrap;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 6%;
+    padding: 12px 16px;
   }
 
   .navbar .logo {
-    justify-content: flex-start;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .menu-btn {
-    position: relative;
+    display: block;
+    font-size: 1.9em;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 18px;  /* <== ini kuncinya bro */
+    top: 16px;
     z-index: 1000;
   }
 
-  /* pastikan menu muncul dari kanan */
-  .nav-links {
-    right: -100%;
+  /* biar logo tetap di kiri */
+  .navbar .logo img {
+    width: 45px;
+    height: auto;
   }
 
-  .nav-links.active {
-    right: 0;
+  .navbar .logo span {
+    font-size: 1.1em;
+    font-weight: 600;
   }
 }
