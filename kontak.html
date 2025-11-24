@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kontak — Sam Jaya Indah</title>
+
+<style>
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('assets/background-hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: top;
+    color: white;
+
+    display: flex;
+    flex-direction: column; /* untuk sticky footer */
+}
+
+/* ==== NAVBAR ==== */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    box-sizing: border-box;
+}
+
+/* kiri */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+/* menu kanan desktop */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    transition: 0.2s;
+    text-decoration: none; 
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff4747;
+}
+
+/* burger */
+/* Burger & Mobile Nav */
+.burger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* Mobile nav */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0,0,0,0.92);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.mobile-nav.show {
+    right: 0;
+}
+
+.mobile-nav a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none; 
+}
+
+/* Active link style */
+.nav-links a.active,
+.mobile-nav a.active {
+    color: #ff4747;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: block; }
+}
+
+
+
+/* ===== CONTENT WRAPPER ===== */
+.content {
+    flex: 1; /* dorong footer ke bawah */
+    padding-top: 140px; /* biar tidak ketutup navbar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/* ===== CONTACT SHAPE ===== */
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5f5f5;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: 0.2s ease;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+.contact-box:hover {
+    box-shadow: 0 0 12px rgba(255,0,0,0.6);
+}
+
+.contact-box img {
+
+    width: 32px;
+    height: 32px;
+}
+
+.contact-box span {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;   /* jadi tersusun atas–bawah */
+    gap: 15px;                /* jarak antar box */
+    width: 100%;
+    max-width: 350px;         /* biar rapi di desktop */
+    margin: 0 auto;           /* center */
+}
+
+.contact-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+}
+   
+
+/* CAPTION di belakang shape */
+.contact-caption {
+    background: rgba(255,255,255,0.35);
+    padding: 12px 15px;
+    border-radius: 12px 12px 12px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    position: center;
+    top: -8px;       /* dorong naik agar menempel di bentuk atas */
+    z-index: 1;      /* lebih belakang dari shape */
+}
+
+
+/* Wrapper seluruh bagian kontak */
+.contact-section {
+    margin-top: 80px;   /* jarak dari navbar */
+    margin-bottom: 80px; /* jarak dari footer */
+}
+
+/* Atur agar konten tetap rapi */
+.contact-section .content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .contact-section {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ===== FOOTER ===== */
+.footer {
+    background: rgb(184,184,184);
+    color: black;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-icon {
+    width: 28px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.footer-icon:hover {
+    transform: scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="navbar-left">
+        <img src="assets/navbar-logo.png" alt="" class="navbar-logo">
+        <div class="logo">SAM JAYA INDAH</div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="betonan.html">Betonan</a>
+        <a href="penyewaan.html">Penyewaan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="katalog.html">Katalog</a>
+    </nav>
+
+    <div class="burger">☰</div>
+
+</header>
+
+<div class="mobile-nav">
+  <div class="mobile-close">×</div> <!-- tombol X -->
+    <a href="index.html">Beranda</a>
+    <a href="proyek.html">Proyek</a>
+    <a href="betonan.html">Betonan</a>
+    <a href="penyewaan.html">Penyewaan</a>
+    <a href="kontak.html">Kontak</a>
+    <a href="katalog.html">Katalog</a>
+</div>
+
+<!-- CONTENT -->
+<section class="contact-section">
+
+    <div class="content">
+
+        <div class="contact-wrap">
+            <a href="https://wa.me/6287816471783" class="contact-box">
+                <img src="assets/wa.png">
+                <span>WhatsApp</span>
+            </a>
+            <div class="contact-caption">Proyek</div>
+        </div>
+
+        <div class="contact-wrap">
+            <a href="https://wa.me/6287816471783" class="contact-box">
+                <img src="assets/wa.png">
+                <span>WhatsApp</span>
+            </a>
+            <div class="contact-caption">Proyek</div>
+        </div>
+
+        <div class="contact-wrap">
+            <a href="https://wa.me/6287816471783" class="contact-box">
+                <img src="assets/wa.png">
+                <span>WhatsApp</span>
+            </a>
+            <div class="contact-caption">Penyewaan</div>
+        </div>
+
+        <div class="contact-wrap">
+            <a href="https://wa.me/6287816471783" class="contact-box">
+                <img src="assets/wa.png">
+                <span>WhatsApp</span>
+            </a>
+            <div class="contact-caption">Toko</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    Ikuti Kami:
+    
+    <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank">
+        <img src="assets/ig.png" class="footer-icon">
+    </a>
+
+    <a href="https://www.facebook.com/sam.j.indah.9" target="_blank">
+        <img src="assets/fb.png" class="footer-icon">
+    </a>
+
+    <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank">
+        <img src="assets/yt.png" class="footer-icon">
+    </a>
+
+    <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank">
+        <img src="assets/tt.png" class="footer-icon">
+    </a>
+
+    <a href="https://maps.app.goo.gl/C3RVfPeEH7uAS7mk6" target="_blank">
+        <img src="assets/gps.png" class="footer-icon">
+    </a>
+</footer>
+
+
+
+<script>
+/* BURGER MENU */
+const burger = document.querySelector(".burger");
+const mobileNav = document.querySelector(".mobile-nav");
+const mobileClose = document.querySelector(".mobile-close");
+
+burger.onclick = () => {
+    mobileNav.classList.add("show");
+};
+
+mobileClose.onclick = () => {
+    mobileNav.classList.remove("show");
+};
+
+document.addEventListener("click", (e) => {
+    if (!mobileNav.contains(e.target) && !burger.contains(e.target)) {
+        mobileNav.classList.remove("show");
+    }
+});
+
+/* ACTIVE NAV */
+(function(){
+    let page = location.pathname.split("/").pop();
+    if (page === "") page = "index.html";
+
+    document.querySelectorAll(".nav-links a, .mobile-nav a").forEach(a=>{
+        if (a.getAttribute("href") === page){
+            a.classList.add("active");
+        }
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,53 +1,45 @@
-// ===== BURGER MENU =====
-const burger = document.getElementById('burger');
-const nav = document.querySelector('.nav-links');
+const burger = document.querySelector(".burger");
+const mobileNav = document.querySelector(".mobile-nav");
 
-burger.addEventListener('click', () => {
-  nav.classList.toggle('active');
-  burger.classList.toggle('open');
+// Toggle mobile menu
+burger.addEventListener("click", () => {
+    mobileNav.classList.toggle("show");
+    burger.classList.toggle("active");
 });
 
-// ===== FILTER GALLERY =====
-function filterGallery(category) {
-  const items = document.querySelectorAll('.gallery-item');
-  const buttons = document.querySelectorAll('.filter-btns button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-
-  items.forEach(item => {
-    if (category === 'all' || item.classList.contains(category)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
-
-// ===== LIGHTBOX PREVIEW =====
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
-
-if (lightboxImg) {
-  document.querySelectorAll('.gallery-item img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
+// Close menu saat link diklik (mobile)
+const mobileLinks = document.querySelectorAll(".mobile-nav a");
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        mobileNav.classList.remove("show");
+        burger.classList.remove("active");
     });
-  });
+});
 
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-  });
-}
+// Highlight active link
+const currentPage = window.location.pathname.split("/").pop();
 
-// ===== FADE-IN ON SCROLL =====
-const fadeEls = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+const allLinks = document.querySelectorAll(".nav-links a, .mobile-nav a");
+allLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    if (href === currentPage || (href.startsWith("#") && href === window.location.hash)) {
+        link.classList.add("active");
     }
-  });
-}, { threshold: 0.2 });
+});
 
-fadeEls.forEach(el => observer.observe(el));
+const mobileClose = document.querySelector(".mobile-close");
+
+mobileClose.addEventListener("click", () => {
+    mobileNav.classList.remove("show");
+    burger.classList.remove("active");
+});
+
+// Klik di luar mobile menu menutup menu
+document.addEventListener("click", (e) => {
+    if (mobileNav.classList.contains("show") &&
+        !mobileNav.contains(e.target) &&
+        !burger.contains(e.target)) {
+        mobileNav.classList.remove("show");
+        burger.classList.remove("active");
+    }
+});

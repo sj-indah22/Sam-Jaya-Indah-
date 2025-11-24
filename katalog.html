@@ -1,80 +1,756 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Betonan — Sam Jaya Indah</title>
 
-  <title>Katalog Produk | Material & Perlengkapan Bangunan</title>
-  <meta name="description" content="Katalog produk material bangunan seperti besi hollow, wiremesh, pagar beton, beton precast, dan perlengkapan proyek.">
-  <meta name="keywords" content="katalog material bangunan, besi hollow, wiremesh, pagar beton, precast">
+<style>
+/* ==== COPY STYLE SAMA DARI PROYEK === */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('assets/background-hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: top;
+    color: white;
+}
+section { padding: 100px 30px; }
+h1, h2, h3 { margin: 0 0 15px; }
+a { text-decoration: none; color: white; }
 
-  <!-- OG -->
-  <meta property="og:title" content="Katalog Produk - Sam Jaya Indah">
-  <meta property="og:description" content="Material bangunan lengkap: hollow, wiremesh, beton, precast.">
-  <meta property="og:image" content="https://samjayaindah.com/images/katalog.jpg">
-  <meta property="og:url" content="https://samjayaindah.com/katalog.html">
+/* ==== NAVBAR ==== */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    box-sizing: border-box;
+}
 
-  <!-- STRUCTURED DATA -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Katalog Produk Sam Jaya Indah",
-    "url": "https://samjayaindah.com/katalog.html",
-    "image": "https://samjayaindah.com/images/katalog.jpg",
-    "description": "Material dan perlengkapan konstruksi."
-  }
-  </script>
+/* kiri */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-  <link rel="stylesheet" href="style.css">
+.navbar-logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+/* menu kanan desktop */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff4747;
+}
+
+/* Burger & Mobile Nav */
+.burger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* tampilkan X saat aktif */
+.burger.active {
+  font-size: 36px;
+  transform: rotate(0deg);
+}
+
+/* Mobile nav */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0,0,0,0.92);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.mobile-nav.show {
+    right: 0;
+}
+
+.mobile-nav a {
+    color: white;
+    font-size: 18px;
+}
+
+/* Active link style */
+.nav-links a.active,
+.mobile-nav a.active {
+    color: #ff4747;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: block; }
+}
+
+/* HERO */
+.hero { padding:130px 0 40px; text-align:center; }
+.hero h1 { font-size:60px; color:#ff4747; text-shadow:5px 5px 10px black; }
+
+
+@media (max-width: 600px) {
+
+    .hero h1 { font-size:40px; color:#ff4747; text-shadow:5px 5px 10px black; }
+    
+}
+
+
+/* GALERI */
+.gallery-container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:20px;
+}
+.gallery-item { background:rgba(247, 2, 2, 0.925); border-radius:12px; overflow:hidden; }
+.gallery-item img { width:100%; height:180px; object-fit:cover; }
+
+.caption-row {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 14px;
+}
+.caption { font-size:18px; margin:0; }
+.more-btn {
+    background:#ff4747; padding:6px 14px; border-radius:6px;
+    font-size:13px; font-weight:600; white-space:nowrap;
+}
+.more-btn:hover { background:#d93737; transform:translateY(-2px); }
+
+/* Overlay Background */
+.preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+/* Gambar Preview */
+.preview-overlay img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+/* Tombol Close */
+.close-preview {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+.close-preview:hover {
+    color: #ff4747;
+}
+
+
+/* === MOBILE GRID 3 KOLOM === */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* biar lebih rapat */
+    }
+
+    .gallery-item img {
+        height: 100px; /* biar proporsional di layar kecil */
+    }
+
+    .caption-row {
+        padding: 6px 8px;
+        flex-direction: column; /* optional */
+        gap: 4px;
+        text-align: center;
+    }
+
+    .caption {
+        font-size: 14px;
+    }
+
+    .more-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+
+/* FOOTER */
+.footer {
+    display:flex; align-items:center;
+    padding:40px 30px; background:rgb(184,184,184); color:black;
+    gap:20px; flex-wrap:wrap;
+}
+.footer-icon { width:28px; cursor:pointer; transition:.3s; }
+.footer-icon:hover { transform:scale(1.1); }
+
+</style>
 </head>
 
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo" />
-    <span>Sam Jaya Indah</span>
-  </div>
-  <nav class="nav-links">
-    <a href="index.html">Beranda</a>
-    <a href="project.html">Project</a>
-    <a href="betonan.html">Betonan</a>
-    <a href="penyewaan.html">Penyewaan Alat</a>
-    <a href="katalog.html" class="active">Katalog</a>
-    <a href="index.html#kontak">Kontak</a>
-  </nav>
-  <div class="burger" id="burger"><div></div><div></div><div></div></div>
+    <div class="navbar-left">
+        <img src="assets/navbar-logo.png" class="navbar-logo">
+        <div class="logo">SAM JAYA INDAH</div>
+    </div>
+
+    <nav class="nav-links">
+        <a href="index.html">Beranda</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="betonan.html">Betonan</a>
+        <a href="penyewaan.html">Penyewaan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="katalog.html">Katalog</a>
+
+    </nav>
+
+    <div class="burger">☰</div>
 </header>
 
-<section class="hero" style="background-image:url('images/katalog.jpg')">
-  <div class="hero-text">
-    <h2>Katalog Produk</h2>
-    <p>Berbagai produk dan material bangunan berkualitas tinggi</p>
-  </div>
+<div class="mobile-nav">
+    <div class="mobile-close">×</div>
+        <a href="index.html">Beranda</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="betonan.html">Betonan</a>
+        <a href="penyewaan.html">Penyewaan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="katalog.html">Katalog</a>
+</div>
+
+<section class="hero">
+    <h1>Katalog</h1>
+
 </section>
 
-<section class="gallery-grid">
-  <div class="gallery-item"><img src="images/produk1.jpg" alt="Produk 1"><p>Wall Angle</p></div>
-  <div class="gallery-item"><img src="images/produk2.jpg" alt="Produk 2"><p>Wall Angle</p></div>
-  <div class="gallery-item"><img src="images/produk3.jpg" alt="Produk 3"><p>Dynabolt</p></div>
-  <div class="gallery-item"><img src="images/produk4.jpg" alt="Produk 4"><p>Dynabolt</p></div>
-  <div class="gallery-item"><img src="images/produk5.jpg" alt="Produk 5"><p>Dynabolt</p></div>
-  <div class="gallery-item"><img src="images/produk6.jpg" alt="Produk 6"><p>Dynabolt</p></div>
-  <div class="gallery-item"><img src="images/produk7.jpg" alt="Produk 7"><p>Fiberglass</p></div>
-  <div class="gallery-item"><img src="images/produk8.jpg" alt="Produk 8"><p>Hook Eye</p></div>
-  <div class="gallery-item"><img src="images/produk9.jpg" alt="Produk 9"><p>Hook Eye</p></div>
-  <div class="gallery-item"><img src="images/produk10.jpg" alt="Produk 10"><p>Paku Misiu</p></div>
-  <div class="gallery-item"><img src="images/produk11.jpg" alt="Produk 11"><p>Wallpanel PVC</p></div>
-  <div class="gallery-item"><img src="images/produk12.jpg" alt="Produk 12"><p>Wallpanel PVC</p></div>
-  <div class="gallery-item"><img src="images/produk13.jpg" alt="Produk 13"><p>Wallpanel PVC</p></div>
-  <div class="gallery-item"><img src="images/produk14.jpg" alt="Produk 14"><p>Wallpanel PVC</p></div>
-  <div class="gallery-item"><img src="images/produk15.jpg" alt="Produk 15"><p>Wallpanel PVC</p></div>
-  <div class="gallery-item"><img src="images/produk16.jpg" alt="Produk 16"><p>Angle Clip</p></div>
-                                                                                              
+<section class="content-wrap">
+
+    <div class="gallery-container">
+
+        <div class="gallery-item">
+            <img src="assets/katalog/20250918_040305.jpg">
+            <div class="caption-row">
+                <p class="caption">Sekrup Kalsiboard 6x3/4</p>
+            
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/katalog/20250918_040841.jpg">
+            <div class="caption-row">
+                <p class="caption">Sekrup Drywall 6x1</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/katalog/20250918_041312.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton Viper X</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_041459.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton Viper X</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_042351.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton Eiffel 1-1/4"x3.0mm</p>
+                
+            </div>
+        </div>
+
+         <div class="gallery-item">
+            <img src="assets/Katalog/20250918_042626.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton Viper X 2"</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_042858.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton Viper X 1"</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_043404.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton YSK 1-1/2"x3.2</p>
+                
+            </div>
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_043404.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Beton YSK 1-1/2"x3.2</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_043628.jpg">
+            <div class="caption-row">
+                <p class="caption">sekrup drilling G #12-24*75 125pcs</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_043820.jpg">
+            <div class="caption-row">
+                <p class="caption">sekrup drilling OGG #12*50 250pcs</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_043940.jpg">
+            <div class="caption-row">
+                <p class="caption">sekrup drilling OGG #12*20 500pcs</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250918_134342.jpg">
+            <div class="caption-row">
+                <p class="caption">sekrup drilling G #12-24*100</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250919_134448.jpg">
+            <div class="caption-row">
+                <p class="caption">Kasa Perekat</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250919_135135.jpg">
+            <div class="caption-row">
+                <p class="caption">Lakban Kasa Perekat ViperX 3cm x 30m</p>
+                
+            </div>
+        </div>
+       
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250919_135714.jpg">
+            <div class="caption-row">
+                <p class="caption">Skrup Conwood 6x25 800pcs</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20250919_140654.jpg">
+            <div class="caption-row">
+                <p class="caption">Skrup Drilling W 8x13 2000pcs</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20251007_091628.jpg">
+            <div class="caption-row">
+                <p class="caption">Ammex gypsum Additive 50gr</p>
+                
+            </div>
+        </div>
+
+    
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20251018_112506.jpg">
+            <div class="caption-row">
+                <p class="caption"></p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20251018_113024.jpg">
+            <div class="caption-row">
+                <p class="caption"></p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20251018_113540.jpg">
+            <div class="caption-row">
+                <p class="caption">Amplas Oliq</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20251018_114246.jpg">
+            <div class="caption-row">
+                <p class="caption">WD Potong</p>
+                
+            </div>
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/20251018_114724.jpg">
+            <div class="caption-row">
+                <p class="caption">WD Iron & Steel Grinding</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk1.jpg">
+            <div class="caption-row">
+                <p class="caption">Shadow Line 3m 0,25mm </p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk2.jpg">
+            <div class="caption-row">
+                <p class="caption">Shadow Line 3m o,30mm </p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk3.jpg">
+            <div class="caption-row">
+                <p class="caption">Dynabolt8x40</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk4.jpg">
+            <div class="caption-row">
+                <p class="caption">Dynabolt 8x65</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk5.jpg">
+            <div class="caption-row">
+                <p class="caption">Dynabolt 10x40</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk6.jpg">
+            <div class="caption-row">
+                <p class="caption">Dynabolt 10x65</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk7.jpg">
+            <div class="caption-row">
+                <p class="caption">Roving Fiberglas</p>
+                
+            </div>
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk8.jpg">
+            <div class="caption-row">
+                <p class="caption">Jarum Keras M16</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk9.jpg">
+            <div class="caption-row">
+                <p class="caption">Angle Clip</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk9(1).jpg">
+            <div class="caption-row">
+                <p class="caption">Jarum Keras M12</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk10.jpg">
+            <div class="caption-row">
+                <p class="caption">Paku Missiu</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk11.jpg">
+            <div class="caption-row">
+                <p class="caption">WPC Wall Panel 3m 001</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk12.jpg">
+            <div class="caption-row">
+                <p class="caption">WPC Wall Panel 3m 002</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk13.jpg">
+            <div class="caption-row">
+                <p class="caption">WPC Wall Panel 3m 003</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk14.jpg">
+            <div class="caption-row">
+                <p class="caption">sWPC Wall Panel 3m 004</p>
+                
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/Katalog/produk15.jpg">
+            <div class="caption-row">
+                <p class="caption">WPC Wall Panel 3m 005 </p>
+                
+            </div>
+        </div>
+
+
+    </div>
+
 </section>
 
-<footer><p>&copy; 2025 Sam Jaya Indah</p></footer>
-<script src="script.js"></script>
+
+<!-- PREVIEW OVERLAY -->
+<div id="imgPreview" class="preview-overlay">
+    <span class="close-preview">×</span>
+    <img id="previewImg" src="">
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+    Ikuti Kami:
+    
+    <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank">
+        <img src="assets/ig.png" class="footer-icon">
+    </a>
+
+    <a href="https://www.facebook.com/sam.j.indah.9" target="_blank">
+        <img src="assets/fb.png" class="footer-icon">
+    </a>
+
+    <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank">
+        <img src="assets/yt.png" class="footer-icon">
+    </a>
+
+    <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank">
+        <img src="assets/tt.png" class="footer-icon">
+    </a>
+
+    <a href="https://maps.app.goo.gl/C3RVfPeEH7uAS7mk6" target="_blank">
+        <img src="assets/gps.png" class="footer-icon">
+    </a>
+</footer>
+
+ <script>
+
+/* --- element refs --- */
+const burger = document.querySelector(".burger");
+const mobileNav = document.querySelector(".mobile-nav");
+const mobileClose = document.querySelector(".mobile-close");
+
+/* safety */
+if (burger && mobileNav) {
+
+  /* toggle function */
+  function openMobile() {
+    mobileNav.classList.add("show");
+    burger.classList.add("active");
+    mobileNav.setAttribute("aria-hidden","false");
+  }
+  function closeMobile() {
+    mobileNav.classList.remove("show");
+    burger.classList.remove("active");
+    mobileNav.setAttribute("aria-hidden","true");
+  }
+
+  /* click burger */
+  burger.addEventListener("click", (e) => {
+    e.stopPropagation(); // penting! jangan biarkan event jatuh ke document
+    mobileNav.classList.toggle("show");
+    burger.classList.toggle("active");
+  });
+
+  /* keyboard accessibility: Enter / Space */
+  burger.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      burger.click();
+    }
+  });
+
+  /* close button inside mobile */
+  if (mobileClose) {
+    mobileClose.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeMobile();
+    });
+  }
+
+  /* close when a mobile link clicked */
+  document.querySelectorAll(".mobile-nav a").forEach(a => {
+    a.addEventListener("click", () => {
+      closeMobile();
+    });
+  });
+
+  /* click outside mobile menu -> close */
+  document.addEventListener("click", (e) => {
+    if (mobileNav.classList.contains("show") &&
+        !mobileNav.contains(e.target) &&
+        !burger.contains(e.target)) {
+      closeMobile();
+    }
+  });
+
+  /* ESC to close */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && mobileNav.classList.contains("show")) {
+      closeMobile();
+    }
+  });
+}
+
+/* --- active link highlighting (robust) --- */
+(function markActive(){
+  let path = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
+  if (!path) path = "index.html";
+
+  document.querySelectorAll(".nav-links a, .mobile-nav a").forEach(link=>{
+    const href = (link.getAttribute("href") || "").split("?")[0].split("#")[0];
+    if (href === path) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+})();
+</script>
+
+<script>
+const previewBox = document.getElementById("imgPreview");
+const previewImg = document.getElementById("previewImg");
+const closePreview = document.querySelector(".close-preview");
+
+document.querySelectorAll(".gallery-item img").forEach(img => {
+    img.addEventListener("click", () => {
+        previewImg.src = img.src;
+        previewBox.style.display = "flex";
+    });
+});
+
+closePreview.addEventListener("click", () => {
+    previewBox.style.display = "none";
+});
+
+// Klik area gelap = tutup
+previewBox.addEventListener("click", (e) => {
+    if (e.target === previewBox) {
+        previewBox.style.display = "none";
+    }
+});
+</script>
+
+
+
 </body>
 </html>
