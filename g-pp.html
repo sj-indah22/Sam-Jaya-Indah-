@@ -139,6 +139,7 @@ a { text-decoration: none; color: white; }
 .hero { padding:130px 0 40px; text-align:center; }
 .hero h1 { font-size:60px; color:#ff4747; text-shadow:5px 5px 10px black; }
 
+
 .content-wrap h2 {
     display: inline-block;
     background: #c20000;   /* warna merah */
@@ -150,127 +151,93 @@ a { text-decoration: none; color: white; }
       /* jarak samping */
     margin-left: 20px;
     margin-right: 20px;
-    
 }
 
+.content-wrap h3 {
+    display: inline-block;
+    background: #c20000;   /* warna merah */
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 8px;   /* biar jadi shape */
+    font-weight: 700;
+
+      /* jarak samping */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
 
 @media (max-width: 600px) {
 
     .hero h1 { font-size:40px; color:#ff4747; text-shadow:5px 5px 10px black; }
+    .content-wrap {
+        text-align: center;
+    }
+
     .content-wrap h2 {
         font-size:15px;
         margin-left: auto;
         margin-right: auto;
         display: inline-block;
     }
-    
-}
 
-
-.single-photo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 20px;
-}
-
-.photo-item {
-    background: rgba(243, 5, 5, 0.461);
-    border-radius: 14px;   /* LENGKUNG */
-    overflow: hidden;      /* wajib agar lengkungan foto tidak keluar */
-}
-
-/* FOTO */
-.photo-item img {
-    width: 100%;
-    height: auto;          /* biar ukuran asli */
-    object-fit: contain;   /* tidak crop */
-    display: block;
-    border-radius: 14px 14px 0 0; /* sudut atas tetap lengkung */
-}
-
-.caption-row {
-    padding: 12px 14px;
-    text-align: center;
-    background: rgba(0,0,0,0.3);
-}
-
-.caption {
-    font-size: 18px;
-    margin: 0;
-    font-weight: 600;
-}
-
-/* MOBILE: jadi 1 kolom */
-@media (max-width: 600px) {
-    .single-photo {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .caption {
-        font-size: 16px;
+    .content-wrap h3 {
+        font-size:15px;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
     }
 }
 
 
-
-
-
-/* ===== GALERI — DESKTOP (3 kolom fix) ===== */
+/* GALERI */
 .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom fix */
-    gap: 25px;
-    padding: 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    padding:20px;
 }
+.gallery-item { background:rgba(255,255,255,0.05); border-radius:12px; overflow:hidden; }
+.gallery-item img { width:100%; height:180px; object-fit:cover; }
 
-.gallery-item {
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* FOTO */
-.gallery-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-
-/* CAPTION */
 .caption-row {
-    padding: 12px 14px;
-    text-align: left; /* rata kiri */
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 14px;
 }
-
-.caption {
-    font-size: 16px;
-    margin: 0;
+.caption { font-size:18px; margin:0; }
+.more-btn {
+    background:#ff4747; padding:6px 14px; border-radius:6px;
+    font-size:13px; font-weight:600; white-space:nowrap;
 }
+.more-btn:hover { background:#d93737; transform:translateY(-2px); }
 
-/* ===== MOBILE (2 kolom, teks kiri) ===== */
+/* === MOBILE GRID 3 KOLOM === */
 @media (max-width: 600px) {
     .gallery-container {
-        grid-template-columns: repeat(2, 1fr); /* dari 3 → 2 kolom */
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* biar lebih rapat */
     }
 
     .gallery-item img {
-        height: 120px; /* proporsional */
+        height: 100px; /* biar proporsional di layar kecil */
     }
 
     .caption-row {
-        padding: 8px 10px;
-        text-align: left; /* tetap kiri */
+        padding: 6px 8px;
+        flex-direction: column; /* optional */
+        gap: 4px;
+        text-align: center;
     }
 
     .caption {
-        font-size: 13px;
+        font-size: 14px;
+    }
+
+    .more-btn {
+        font-size: 12px;
+        padding: 4px 8px;
     }
 }
-
 
 /* Overlay Background */
 .preview-overlay {
@@ -339,6 +306,8 @@ a { text-decoration: none; color: white; }
         <a href="galeri-railing.html">Railing</a> 
         <a href="galeri-kanopi.html">Kanopi</a>
         <a href="galeri-fi.html">Finishing Interior</a>
+        
+        
 
     </nav>
 
@@ -358,52 +327,50 @@ a { text-decoration: none; color: white; }
 </div>
 
 <section class="hero">
-    <h1>Galeri Pagar</h1>
+    <h1>Galeri Plafon PVC</h1>
 
 </section>
 
-<section class="single-photo">
 
-    <div class="photo-item">
-        <img src="assets/pgr/pgr1.jpg" class="previewable">
 
-        <div class="caption-row">
-            <p class="caption">CNC</p>
-        </div>
-    </div>
 
-    <div class="photo-item">
-        <img src="assets/pgr/pgr2.jpg" class="previewable">
-        <div class="caption-row">
-            <p class="caption">STANDART</p>
-        </div>
-    </div>
-
-</section>
-
- 
 <section class="content-wrap">
-    <h2 class="section-title">Galeri Proyek Pagar</h2>
+
     <div class="gallery-container">
 
         <div class="gallery-item">
-            <img src="assets/pgr/Project Pagar Rumah Bpk Toni Menganti Permai.jpg">
+            <img src="assets/pp/proyek plafon pvc bpk toni perum taman pondok indah wiyung.jpg">
             <div class="caption-row">
-                <p class="caption">Proyek Pagar Rumah Bpk Toni Menganti Permai</p>
-                
+                <p class="caption">Proyek Plafon PVC bpk.Toni Perum Taman Pondok Indah, wiyung Surabaya</p>
+            
             </div>
         </div>
 
         <div class="gallery-item">
-            <img src="assets/pgr/Project Pagar Rumah Mas Indra Pranti.jpg">
+            <img src="assets/pp/proyek plafon pvc ibu lasmi bongso.jpg">
             <div class="caption-row">
-                <p class="caption">Proyek Pagar Rumah Mas Indra Pranti</p>
-                
+                <p class="caption">Proyek Plafon PVC ibu.lasmi Bongso, Pengalangan Gresik </p>
+            
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/pp/proyek plafon pvc MBG Hulaan Menganti.jpg">
+            <div class="caption-row">
+                <p class="caption">Proyek Plafon PVC Dapur MBG Hulaan, Menganti Gresik</p>
+            
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="assets/pp/proyek plafon pvc perum pondok benowo indah.jpg">
+            <div class="caption-row">
+                <p class="caption">Proyek Plafon PVC Perum Pondok Benowo Indah, Surabaya</p>
+            
             </div>
         </div>
 
     </div>
-
 </section>
 
 
@@ -411,7 +378,6 @@ a { text-decoration: none; color: white; }
     <span class="close-preview">×</span>
     <img id="previewImg" src="">
 </div>
-
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -448,7 +414,7 @@ const previewBox = document.getElementById("imgPreview");
 const previewImg = document.getElementById("previewImg");
 const closePreview = document.querySelector(".close-preview");
 
-document.querySelectorAll(".gallery-item img, .previewable").forEach(img => {
+document.querySelectorAll(".gallery-item img").forEach(img => {
     img.addEventListener("click", () => {
         previewImg.src = img.src;
         previewBox.style.display = "flex";
