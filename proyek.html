@@ -243,6 +243,34 @@ a { text-decoration: none; color: white; }
 .footer-icon:hover { transform:scale(1.1); }
 
 </style>
+<!-- Event snippet for Kontak conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+      'value': 1.0,
+      'currency': 'IDR'
+  });
+</script>
+<!-- Event snippet for Kontak conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+      'value': 1.0,
+      'currency': 'IDR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
 </head>
 
 <body>
