@@ -17,12 +17,14 @@ mobileLinks.forEach(link => {
 });
 
 // Highlight active link
-const currentPage = window.location.pathname.split("/").pop();
+// Ganti bagian Highlight active link dengan ini:
+const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
 const allLinks = document.querySelectorAll(".nav-links a, .mobile-nav a");
 allLinks.forEach(link => {
     const href = link.getAttribute("href");
-    if (href === currentPage || (href.startsWith("#") && href === window.location.hash)) {
+    // Cek jika href sama dengan halaman saat ini
+    if (href === currentPage) {
         link.classList.add("active");
     }
 });

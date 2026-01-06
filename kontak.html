@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
-    <!-- Google tag (gtag.js) -->
+<head>
+        <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,7 +10,26 @@
 
   gtag('config', 'AW-17790192059');
 </script>
-<head>
+
+<!-- Event snippet for Kontak conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+      'value': 1.0,
+      'currency': 'IDR',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
@@ -279,32 +299,8 @@ body {
 .footer-icon:hover {
     transform: scale(1.1);
 }
+
 </style>
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR'
-  });
-</script>
-<!-- Event snippet for Kontak conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
 
 </head>
 
@@ -345,34 +341,44 @@ function gtag_report_conversion(url) {
 
     <div class="content">
 
-        <div class="contact-wrap">
-            <a href="https://wa.me/6285731872819" class="contact-box">
-                <img src="assets/wa.png">
-                <span>WhatsApp</span>
-            </a>
-            <div class="contact-caption">Proyek</div>
-        </div>
+        <div class="content">
 
-        <div class="contact-wrap">
-            <a href="https://wa.me/6282111123395" class="contact-box">
-                <img src="assets/wa.png">
-                <span>WhatsApp</span>
-            </a>
-            <div class="contact-caption">Proyek</div>
-        </div>
+    <div class="contact-wrap">
+        <a href="https://wa.me/6285731872819" 
+           onclick="return gtag_report_conversion('https://wa.me/6285731872819');" 
+           class="contact-box">
+            <img src="assets/wa.png" alt="WhatsApp">
+            <span>WhatsApp</span>
+        </a>
+        <div class="contact-caption">Proyek</div>
+    </div>
 
-        <div class="contact-wrap">
-            <a href="https://wa.me/6288902250632" class="contact-box">
-                <img src="assets/wa.png">
-                <span>WhatsApp</span>
-            </a>
-            <div class="contact-caption">Penyewaan</div>
-        </div>
+    <div class="contact-wrap">
+        <a href="https://wa.me/6282111123395" 
+           onclick="return gtag_report_conversion('https://wa.me/6282111123395');" 
+           class="contact-box">
+            <img src="assets/wa.png" alt="WhatsApp">
+            <span>WhatsApp</span>
+        </a>
+        <div class="contact-caption">Proyek</div>
+    </div>
 
-        <div class="contact-wrap">
-            <a href="https://wa.me/628993668708" class="contact-box">
-                <img src="assets/wa.png">
-                <span>WhatsApp</span>
+    <div class="contact-wrap">
+        <a href="https://wa.me/6288902250632" 
+           onclick="return gtag_report_conversion('https://wa.me/6288902250632');" 
+           class="contact-box">
+            <img src="assets/wa.png" alt="WhatsApp">
+            <span>WhatsApp</span>       
+        </a>
+        <div class="contact-caption">Penyewaan</div>
+    </div>
+
+    <div class="contact-wrap">
+        <a href="https://wa.me/628993668708" 
+           onclick="return gtag_report_conversion('https://wa.me/628993668708');" 
+           class="contact-box">
+            <img src="assets/wa.png" alt="WhatsApp">
+            <span>WhatsApp</span>            
             </a>
             <div class="contact-caption">Toko</div>
         </div>
