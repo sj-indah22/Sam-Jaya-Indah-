@@ -74,12 +74,19 @@ body {
 
 .hero-inner {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Pakai stretch supaya tinggi kanan-kiri sama */
     gap: 50px;
     flex-wrap: wrap;
 }
 
-.hero-left { flex: 1; min-width: 350px; }
+.hero-left { 
+    flex: 1; 
+    min-width: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Teks tetap di tengah secara vertikal */
+}
+
 .hero-logo { height: 60px; margin-bottom: 20px; border-radius: 10px; }
 .hero-left h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; color: var(--dark-blue); }
 .text-red { color: var(--red-primary); }
@@ -99,14 +106,31 @@ body {
 .btn-outline { border: 2px solid var(--red-primary); color: var(--red-primary); }
 .btn-outline:hover { background: var(--red-primary); color: var(--white); }
 
-.hero-right { flex: 1; min-width: 350px; }
+.hero-right { 
+    flex: 1; 
+    min-width: 350px; 
+}
 .video-container {
     width: 100%;
+    height: 100%; /* Mengikuti tinggi hero-left */
+    min-height: 400px; /* Batas minimal biar nggak kekecilan di layar tanggung */
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
-.hero-video { width: 100%; display: block; }
+.hero-video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Ini kuncinya! Video bakal memenuhi container tanpa gepeng */
+    display: block; 
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        height: 300px; /* Di HP jangan terlalu tinggi, biar nggak makan tempat */
+        min-height: auto;
+    }
+}
 
 /* --- Section Styling --- */
 .section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}
