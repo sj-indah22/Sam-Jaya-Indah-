@@ -2,200 +2,196 @@
 <html lang="id">
 
 <head>
-     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17790192059');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17790192059');
+
+        // Fungsi tracking untuk konversi
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+                'value': 1.0,
+                'currency': 'IDR',
+                'event_callback': callback
+            });
+            return false;
+        }
     </script>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
-<link rel="apple-touch-icon" href="assets/png/favicon.png">
-<link rel="shortcut icon" href="assets/png/favicon.png">
-<title>Sam Jaya Indah | Kontraktor Betonan & Supplier Material Gresik</title>
-<meta name="description" content="Sam Jaya Indah menyediakan jasa konstruksi profesional, beton berkualitas, dan penyewaan alat berat terpercaya untuk proyek Anda.">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Sam Jaya Indah | Kontraktor Bangunan & Supplier Beton Profesional</title>
+    <meta name="description" content="Sam Jaya Indah - Solusi konstruksi terbaik untuk proyek bangunan, renovasi, pengecoran beton (ready mix), dan penyewaan alat berat terpercaya.">
+    <meta name="keywords" content="kontraktor bangunan, jasa beton cor, sewa alat berat, supplier material bangunan, Sam Jaya Indah">
+    <meta name="author" content="Sam Jaya Indah">
 
-
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR'
-  });
-</script>
-<!-- Event snippet for Kontak conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
+    <link rel="apple-touch-icon" href="assets/png/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
 
-  <nav class="navbar">
-
-    <div class="navbar-left">
-        <img src="assets/png/logo1.png" alt="Sam Jaya Inda logo" class="navbar-logo">
-        <div class="logo">SAM JAYA INDAH</div>
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="index.html">Beranda</a></li>
-        <li><a href="proyek.html">Proyek</a></li>
-        <li><a href="betonan.html">Betonan</a></li>
-        <li><a href="penyewaan.html">Penyewaan</a></li>
-        <li><a href="kontak.html">Kontak</a></li>
-        <li><a href="katalog.html">Katalog</a></li>
-    </ul>
-
-    <div class="burger">☰</div>
-
-  </nav>
-
-
-
-<div class="mobile-nav">
-  <div class="mobile-close">×</div> <!-- tombol X -->
-    <a href="index.html">Beranda</a>
-    <a href="proyek.html">Proyek</a>
-    <a href="betonan.html">Betonan</a>
-    <a href="penyewaan.html">Penyewaan</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="katalog.html">Katalog</a>
-</div>
-
-
-
-<!-- HERO -->
-<header class="hero" id="hero">
-    <div class="hero-content">
-          <img src="assets/png/logo2.jpeg" alt="" class="hero-logo">
-          <h1>Solusi Konstruksi & <span class="highlight">Beton Berkualitas</span></h1>
-          <p>Melayani proyek bangunan, renovasi, hingga penyewaan alat berat dengan tenaga ahli berpengalaman.</p>
-        <div class="hero-btns">
-                <a href="#layanan" class="btn-primary">Lihat Layanan</a>
-                <a href="#proyek" class="btn-secondary">Portofolio Kami</a>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="assets/png/logo1.png" alt="Logo Sam Jaya Indah" class="navbar-logo">
+            <div class="logo">SAM JAYA INDAH</div>
         </div>
+
+        <nav class="nav-links">
+            <a href="index.html" class="active">Beranda</a>
+            <a href="proyek.html">Proyek</a>
+            <a href="betonan.html">Betonan</a>
+            <a href="penyewaan.html">Penyewaan</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html" class="btn-nav">Kontak</a>
+        </nav>
+
+        <div class="burger">☰</div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-close">×</div>
+        <a href="index.html">Beranda</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="betonan.html">Betonan</a>
+        <a href="penyewaan.html">Penyewaan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="katalog.html">Katalog</a>
     </div>
 
-      <div class="hero-right">
-          <!-- video portrait (rounded). If you prefer image, replace video tag with <img> -->
-          <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-photo.jpg">
-              <source src="assets/lv_0_20251204153556.mp4" type="video/mp4">
-          </video>
-      </div>
-</header>
+    <section class="hero" id="hero">
+        <div class="container hero-inner">
+            <div class="hero-left">
+                <img src="assets/png/logo2.jpeg" alt="Sam Jaya Indah" class="hero-logo">
+                <h1>Solusi Bangunan <br><span class="text-red">Profesional & Terpercaya</span></h1>
+                <p class="lead">Dari penyediaan material berkualitas hingga eksekusi proyek ahli. Kami hadir memastikan konstruksi Anda kuat, rapi, dan tahan lama.</p>
+                <div class="hero-btns">
+                    <a href="kontak.html" onclick="return gtag_report_conversion('kontak.html');" class="btn btn-red">Hubungi Kami</a>
+                    <a href="#services" class="btn btn-outline">Lihat Layanan</a>
+                </div>
+            </div>
 
-<!-- TENTANG -->
-<section class="tentang">
-    <h2>Tentang<br>Sam Jaya Indah</h2>
-
-    <div class="tentang-box">
-        <img src="assets/png/ttg.png" class="foto-tentang">
-
-        <div class="text-tentang">
-            <p>Sam Jaya Indah merupakan perusahaan yang bergerak di bidang kontraktor sekaligus penyedia material bangunan. Kami melayani berbagai kebutuhan konstruksi seperti proyek bangunan, renovasi, hingga penyewaan alat berat dan peralatan kerja. Didukung oleh tenaga ahli berpengalaman, kami berkomitmen memberikan layanan yang profesional, efisien, dan berkualitas tinggi.
-Kami memahami bahwa setiap proyek memiliki tantangan dan kebutuhan berbeda, sehingga kami menyediakan solusi yang tepat, mulai dari pemilihan material yang sesuai hingga pelaksanaan yang aman dan terukur. Prioritas kami adalah menghadirkan hasil yang kuat, rapi, dan tahan lama agar setiap pelanggan merasa puas dengan pekerjaan yang kami lakukan.</p>
+            <div class="hero-right">
+                <div class="video-container">
+                    <video class="hero-video" autoplay muted loop playsinline poster="assets/hero-photo.jpg">
+                        <source src="assets/lv_0_20251204153556.mp4" type="video/mp4">
+                        Video tidak didukung oleh browser Anda.
+                    </video>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <section class="tentang section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tentang Sam Jaya Indah</h2>
+                <div class="underline"></div>
+            </div>
 
-<!-- LAYANAN -->
-<section class="serivices" id="layanan">
-  <h2>Layanan Kami</h2>
+            <div class="tentang-box">
+                <div class="img-wrapper">
+                    <img src="assets/png/ttg.png" alt="Tentang Kami - Sam Jaya Indah" class="foto-tentang">
+                </div>
+                <div class="text-tentang">
+                    <p>Sam Jaya Indah merupakan perusahaan kontraktor dan penyedia material bangunan yang berkomitmen pada kualitas tinggi. Kami melayani berbagai kebutuhan konstruksi seperti proyek bangunan baru, renovasi, hingga penyewaan alat berat.</p>
+                    <p>Didukung oleh tenaga ahli berpengalaman, prioritas kami adalah menghadirkan hasil pengerjaan yang presisi, aman, dan efisien demi kepuasan setiap pelanggan kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="layanan-container">
+    <section class="layanan section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Unggulan Kami</h2>
+                <p>Solusi lengkap untuk segala kebutuhan konstruksi Anda.</p>
+            </div>
 
-    <!-- Card Proyek -->
-    <a href="proyek.html" class="card">
-      <img src="assets/layanan-proyek_64_11zon.webp" alt="Proyek">
-      <div class="card-overlay">Lihat Selengkapnya</div>
-      <div class="card-text">
-        <div class="card-title">Proyek Profesional</div>
-        <p class="card-desc">Mulai dari perencanaan hingga eksekusi.</p>
-      </div>
-    </a>
+            <div class="layanan-container">
+                <a href="proyek.html" class="card">
+                    <div class="card-img">
+                        <img src="assets/layanan-proyek_64_11zon.webp" alt="Jasa Proyek Bangunan Profesional">
+                        <div class="card-overlay">Detail Proyek</div>
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Proyek Profesional</h3>
+                        <p class="card-desc">Perencanaan hingga eksekusi pembangunan gedung dan rumah.</p>
+                    </div>
+                </a>
 
-    <!-- Card Betonan -->
-    <a href="betonan.html" class="card">
-      <img src="assets/layanan-betonan_62_11zon.webp" alt="Betonan">
-      <div class="card-overlay">Lihat Selengkapnya</div>
-      <div class="card-text">
-        <div class="card-title">Betonan Berkualitas</div>
-        <p class="card-desc">Kuat, rapi, dan tahan lama.</p>
-      </div>
-    </a>
+                <a href="betonan.html" class="card">
+                    <div class="card-img">
+                        <img src="assets/layanan-betonan_62_11zon.webp" alt="Jasa Betonan Cor Berkualitas">
+                        <div class="card-overlay">Detail Betonan</div>
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Betonan Berkualitas</h3>
+                        <p class="card-desc">Layanan pengecoran dengan material beton standar tinggi.</p>
+                    </div>
+                </a>
 
-    <!-- Card Penyewaan -->
-    <a href="penyewaan.html" class="card">
-      <img src="assets/lifcor4_65_11zon.webp" alt="Penyewaan">
-      <div class="card-overlay">Lihat Selengkapnya</div>
-      <div class="card-text">
-        <div class="card-title">Penyewaan Alat</div>
-        <p class="card-desc">Peralatan lengkap untuk proyek Anda.</p>
-      </div>
-    </a>
+                <a href="penyewaan.html" class="card">
+                    <div class="card-img">
+                        <img src="assets/lifcor4_65_11zon.webp" alt="Sewa Alat Berat Konstruksi">
+                        <div class="card-overlay">Detail Penyewaan</div>
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Penyewaan Alat</h3>
+                        <p class="card-desc">Sewa alat berat dan peralatan kerja proyek terlengkap.</p>
+                    </div>
+                </a>
 
-    <!-- Card Penyewaan -->
-    <a href="katalog.html" class="card">
-      <img src="assets/katalog_19_11zon.webp" alt="Penyewaan">
-      <div class="card-overlay">Lihat Selengkapnya</div>
-      <div class="card-text">
-        <div class="card-title">Katalog</div>
-        <p class="card-desc">Temukan semua material bangunan berkualitas untuk proyek Anda.</p>
-      </div>
-    </a>
+                <a href="katalog.html" class="card">
+                    <div class="card-img">
+                        <img src="assets/katalog_19_11zon.webp" alt="Katalog Material Bangunan">
+                        <div class="card-overlay">Lihat Katalog</div>
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Katalog Material</h3>
+                        <p class="card-desc">Pilihan material bangunan terbaik untuk proyek Anda.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <footer class="footer">
+        <div class="container">
+            <p><strong>SAM JAYA INDAH</strong></p>
+            <p>Ikuti media sosial kami untuk update proyek terbaru:</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank" aria-label="Instagram">
+                    <img src="assets/png/ig.png" class="footer-icon" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/sam.j.indah.9" target="_blank" aria-label="Facebook">
+                    <img src="assets/png/fb.png" class="footer-icon" alt="Facebook">
+                </a>
+                <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank" aria-label="YouTube">
+                    <img src="assets/png/yt.png" class="footer-icon" alt="YouTube">
+                </a>
+                <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank" aria-label="TikTok">
+                    <img src="assets/png/tt.png" class="footer-icon" alt="TikTok">
+                </a>
+                <a href="https://maps.google.com/?q=Sam+Jaya+Indah" target="_blank" aria-label="Lokasi">
+                    <img src="assets/png/gps.png" class="footer-icon" alt="Google Maps">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Sam Jaya Indah. All rights reserved.</p>
+        </div>
+    </footer>
 
-
-
-<!-- FOOTER -->
-<footer class="footer">
-    Ikuti Kami:
-    
-    <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank">
-        <img src="assets/png/ig.png" class="footer-icon">
-    </a>
-
-    <a href="https://www.facebook.com/sam.j.indah.9" target="_blank">
-        <img src="assets/png/fb.png" class="footer-icon">
-    </a>
-
-    <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank">
-        <img src="assets/png/yt.png" class="footer-icon">
-    </a>
-
-    <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank">
-        <img src="assets/png/tt.png" class="footer-icon">
-    </a>
-
-    <a href="https://maps.app.goo.gl/C3RVfPeEH7uAS7mk6" target="_blank">
-        <img src="assets/png/gps.png" class="footer-icon">
-    </a>
-</footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>

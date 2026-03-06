@@ -1,59 +1,66 @@
-const burger = document.querySelector(".burger");
-const mobileNav = document.querySelector(".mobile-nav");
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. Mobile Navigation Toggle ---
+    const burger = document.querySelector('.burger');
+    const mobileNav = document.querySelector('.mobile-nav');
+    const closeNav = document.querySelector('.mobile-close');
+    const mobileLinks = document.querySelectorAll('.mobile-nav a');
 
-// Toggle mobile menu
-burger.addEventListener("click", () => {
-    mobileNav.classList.toggle("show");
-    burger.classList.toggle("active");
-});
-
-// Close menu saat link diklik (mobile)
-const mobileLinks = document.querySelectorAll(".mobile-nav a");
-mobileLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        mobileNav.classList.remove("show");
-        burger.classList.remove("active");
+    burger.addEventListener('click', () => {
+        mobileNav.classList.add('active');
     });
-});
 
-// Highlight active link
-// Ganti bagian Highlight active link dengan ini:
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    closeNav.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+    });
 
-const allLinks = document.querySelectorAll(".nav-links a, .mobile-nav a");
-allLinks.forEach(link => {
-    const href = link.getAttribute("href");
-    // Cek jika href sama dengan halaman saat ini
-    if (href === currentPage) {
-        link.classList.add("active");
-    }
-});
+    // Tutup nav saat link diklik
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+    });
 
-const mobileClose = document.querySelector(".mobile-close");
+    // --- 2. Scroll Animation (Reveal on Scroll) ---
+    const reveal = () => {
+        const reveals = document.querySelectorAll('.card, .tentang-box, .section-header');
+        
+        reveals.forEach(el => {
+            const windowHeight = window.innerHeight;
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 100;
 
-mobileClose.addEventListener("click", () => {
-    mobileNav.classList.remove("show");
-    burger.classList.remove("active");
-});
+            if (elementTop < windowHeight - elementVisible) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
 
-// Klik di luar mobile menu menutup menu
-document.addEventListener("click", (e) => {
-    if (mobileNav.classList.contains("show") &&
-        !mobileNav.contains(e.target) &&
-        !burger.contains(e.target)) {
-        mobileNav.classList.remove("show");
-        burger.classList.remove("active");
-    }
-});
+    // Set initial state untuk animasi
+    const initAnimation = () => {
+        const elementsToAnimate = document.querySelectorAll('.card, .tentang-box, .section-header');
+        elementsToAnimate.forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+        });
+    };
 
-window.addEventListener('scroll', () => {
-    const cards = document.querySelectorAll('.service-card');
-    cards.forEach(card => {
-        const speed = 2;
-        const rect = card.getBoundingClientRect();
-        if(rect.top < window.innerHeight) {
-            card.style.opacity = 1;
-            card.style.transform = 'translateY(0)';
+    initAnimation();
+    window.addEventListener('scroll', reveal);
+    reveal(); // Jalankan sekali saat load
+
+    // --- 3. Navbar Background Change on Scroll ---
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.padding = '10px 5%';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        } else {
+            navbar.style.padding = '15px 5%';
+            navbar.style.background = '#ffffff';
         }
     });
+
 });
