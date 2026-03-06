@@ -45,3 +45,15 @@ document.addEventListener("click", (e) => {
         burger.classList.remove("active");
     }
 });
+
+window.addEventListener('scroll', () => {
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach(card => {
+        const speed = 2;
+        const rect = card.getBoundingClientRect();
+        if(rect.top < window.innerHeight) {
+            card.style.opacity = 1;
+            card.style.transform = 'translateY(0)';
+        }
+    });
+});
