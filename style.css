@@ -109,7 +109,7 @@ body {
 .hero-video { width: 100%; display: block; }
 
 /* --- Section Styling --- */
-.section-padding { padding: 80px 0; }
+.section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}
 .section-header { text-align: center; margin-bottom: 50px; }
 .section-header h2 { font-size: 2.2rem; color: var(--dark-blue); margin-bottom: 10px; }
 .underline { width: 60px; height: 4px; background: var(--red-primary); margin: 0 auto; }
