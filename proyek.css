@@ -223,12 +223,13 @@ a { text-decoration: none; color: white; }
 /* === MOBILE GRID 3 KOLOM === */
 @media (max-width: 600px) {
     .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px; /* biar lebih rapat */
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom lebih manusiawi untuk HP */
+        gap: 12px;
+        padding: 10px;
     }
 
     .gallery-item img {
-        height: 100px; /* biar proporsional di layar kecil */
+        height: 140px; /* biar proporsional di layar kecil */
     }
 
     .caption-row {
@@ -240,11 +241,12 @@ a { text-decoration: none; color: white; }
 
     .caption {
         font-size: 14px;
+        font-weight: bold;
     }
 
     .more-btn {
-        font-size: 12px;
-        padding: 4px 8px;
+        font-size: 11px;
+        padding: 4px 10px;
     }
 }
 
