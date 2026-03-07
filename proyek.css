@@ -68,96 +68,111 @@ body {
 
 /* --- Hero Section --- */
 .hero {
-    padding: 80px 0; /* Ukuran sedang */
+    padding: 120px 0 80px; /* Tambah padding atas karena ada navbar fixed */
     background: linear-gradient(to right, #ffffff, #84df8b);
-    overflow: hidden;
+    min-height: 60vh;
     display: flex;
     align-items: center;
 }
 
 .hero-inner {
     display: flex;
-    align-items: stretch; /* Membuat tinggi hero-left dan hero-right sejajar */
+    align-items: center; /* Sejajarin vertikal teks dan fitur */
+    justify-content: space-between;
     gap: 40px;
-    width: 100%;
-    max-width: 1200px; /* Sesuaikan dengan container Anda */
-    margin: 0 auto;
 }
 
 /* Bagian Teks */
 .hero-left { 
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Teks tetap di tengah secara vertikal */
+    flex: 1;
 }
-
 
 .hero-left h1 { 
-    font-size: 6rem; 
-    line-height: 1.2; 
+    font-size: 3.5rem; /* Ukuran lebih masuk akal dibanding 6rem */
+    line-height: 1.1; 
     margin-bottom: 20px; 
-    margin-left: 20px;
     color: var(--dark-blue); 
+    font-weight: 800;
 }
-.text-red { color: var(--red-primary); }
-.lead { font-size: 1.8rem; color: var(--text-light); margin-bottom: 30px; max-width: 500px; }
 
-.hero-right { 
-    flex: 0.8; /* Video dibuat sedikit lebih kecil dari kolom teks */
-    display: flex;
-    align-items: stretch;
+.text-red { color: #ff4747; }
+
+.lead { 
+    font-size: 1.2rem; 
+    color: #555; 
+    line-height: 1.6;
+    max-width: 450px; 
 }
+
+/* Bagian Fitur Kanan */
+.hero-right { 
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Dorong ke kanan di desktop */
+}
+
 .features-mini {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    flex-direction: column; /* Fitur berjejer ke bawah biar rapi di samping teks */
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .feature-item {
-    background: #fdf2f2; /* Merah sangat muda */
-    padding: 15px 25px;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.8); /* Putih transparan biar clean */
+    padding: 15px 20px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    border: 1px dashed var(--red-primary);
+    gap: 15px;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateX(-10px); /* Efek geser dikit pas di hover */
+    background: #ffffff;
 }
 
 .feature-item span {
-    font-weight: 700;
-    color: var(--red-primary);
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
 }
 
-@media (max-width: 768px) {
-    .hero {
-        padding: 60px 20px;
-    }
-
+/* --- Mobile Responsive --- */
+@media (max-width: 900px) {
     .hero-inner {
-        flex-direction: column; /* Teks di atas, video di bawah */
+        flex-direction: column;
         text-align: center;
-        align-items: center;
+        gap: 30px;
     }
 
-    .hero-left {
-        order: 1; /* Teks muncul pertama */
-        align-items: center;
+    .hero-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .lead {
+        margin: 0 auto 20px;
     }
 
     .hero-right {
-        order: 2; /* Video muncul di bawah tombol */
-        width: 100%;
         justify-content: center;
+        width: 100%;
+    }
+
+    .features-mini {
+        flex-direction: row; /* Di HP fitur berjejer ke samping atau bungkus */
+        justify-content: center;
+        max-width: 100%;
     }
     
-    .hero-left h1 {
-        font-size: 2rem;
+    .feature-item {
+        padding: 10px 15px;
     }
 }
-
 /* --- Section Styling --- */
 .section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}
 .section-header { text-align: center; margin-bottom: 50px; }
