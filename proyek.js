@@ -84,18 +84,34 @@ if (burger && mobileNav) {
   });
 })();
 
+
+
 let counter = 0;
+const gap = 20;
+
+function updateSlider() {
+    const slideWidth = document.querySelector('.feature-slide').offsetWidth;
+    slider.style.transform = `translateX(${-counter * (slideWidth + gap)}px)`;
+}
 
 nextBtn.addEventListener('click', () => {
-    if (counter < 2) { // Sesuaikan jumlah slide
+    const maxSlides = document.querySelectorAll('.feature-slide').length - 1;
+    if (counter < maxSlides) {
         counter++;
-        slider.style.transform = `translateX(${-counter * 220}px)`;
+        updateSlider();
     }
 });
 
 prevBtn.addEventListener('click', () => {
     if (counter > 0) {
         counter--;
-        slider.style.transform = `translateX(${-counter * 220}px)`;
+        updateSlider();
     }
 });
+
+// Respon kalau layar di-resize
+window.addEventListener('resize', updateSlider);
+
+
+
+

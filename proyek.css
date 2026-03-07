@@ -246,4 +246,38 @@ body {
     .hero-left h1 { font-size: 2.2rem; }
 }
 
+/* Update CSS Slider biar Responsive */
+.features-slider-wrapper {
+    padding: 10px; /* Jeda biar shadow nggak kepotong */
+}
+
+.feature-slide {
+    min-width: 250px; /* Lebarin dikit biar teks enak dibaca */
+    flex-shrink: 0;
+}
+
+/* Biar Grid Layanan rapi di HP */
+.section-title-modern {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #202124;
+}
+
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Auto geser kalau gak muat */
+    gap: 25px;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.8rem; /* Biar judul gak kegedean di HP */
+    }
+    .layanan-grid {
+        grid-template-columns: 1fr; /* Satu kolom aja di HP */
+    }
+}
+
 
