@@ -92,9 +92,24 @@ body {
 }
 
 .hero-logo {
-    max-width: 200px; 
+    /* Ukuran sedang biasanya berkisar antara 150px - 180px */
+    max-width: 120px; 
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Memberi jarak lebih lega ke judul (h1) */
+    display: block;
+    object-fit: contain;
+    
+    /* Opsional: Tambahkan sedikit filter jika logo ingin terlihat lebih tajam */
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.05));
+}
+
+/* Penyesuaian untuk Mobile */
+@media (max-width: 768px) {
+    .hero-logo {
+        max-width: 130px; /* Sedikit lebih kecil di HP agar tidak memakan ruang */
+        margin-left: auto;
+        margin-right: auto; /* Agar logo tetap di tengah jika teks di-center */
+    }
 }
 
 .hero-left h1 { 

@@ -1,0 +1,259 @@
+
+/* ==== COPY STYLE SAMA DARI PROYEK === */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-image: url('assets/background-hero_21_11zon.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: top;
+    color: white;
+}
+section { padding: 100px 30px; }
+h1, h2, h3 { margin: 0 0 15px; }
+a { text-decoration: none; color: white; }
+
+/* ==== NAVBAR ==== */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    box-sizing: border-box;
+}
+
+/* kiri */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-logo {
+    width: 40px;
+    height: auto;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+/* menu kanan desktop */
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff4747;
+}
+
+/* Burger & Mobile Nav */
+.burger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* tampilkan X saat aktif */
+.burger.active {
+  font-size: 36px;
+  transform: rotate(0deg);
+}
+
+/* Mobile nav */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0,0,0,0.92);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.mobile-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.mobile-nav.show {
+    right: 0;
+}
+
+.mobile-nav a {
+    color: white;
+    font-size: 18px;
+}
+
+/* Active link style */
+.nav-links a.active,
+.mobile-nav a.active {
+    color: #ff4747;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: block; }
+}
+
+/* HERO */
+.hero { padding:130px 0 40px; text-align:center; }
+.hero h1 { font-size:60px; color:#ff4747; text-shadow:5px 5px 10px black; }
+.hero p { margin-top:15px; text-shadow:2px 2px 5px black; }
+
+.content-wrap h2.section-title {
+    background: var(--red-primary);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px; /* Bentuk pill lebih modern */
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+
+    .hero h1 { font-size:40px; color:#ff4747; text-shadow:5px 5px 10px black; }
+    .hero p { font-size:13px; margin-top:15px; text-shadow:2px 2px 5px black; }
+    .content-wrap {
+        text-align: center;
+    }
+
+    .content-wrap h2 {
+        font-size:15px;
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+    }
+}
+
+.features-mini {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background: #fdf2f2; /* Merah sangat muda */
+    padding: 15px 25px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px dashed var(--red-primary);
+}
+
+.feature-item span {
+    font-weight: 700;
+    color: var(--red-primary);
+}
+
+
+/* GALERI */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ukuran lebih besar dari sebelumnya */
+    gap: 30px;
+    padding: 20px 0;
+}
+.gallery-item {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border: 1px solid #eee; /* Beri border tipis agar clean */
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px; /* Lebih tinggi agar foto proyek jelas */
+    object-fit: cover;
+}
+
+.caption-row {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:12px 14px;
+}
+.caption { font-size:18px; margin:0; }
+.more-btn {
+    background:#ff4747; padding:6px 14px; border-radius:6px;
+    font-size:13px; font-weight:600; white-space:nowrap;
+}
+.more-btn:hover { background:#d93737; transform:translateY(-2px); }
+
+/* === MOBILE GRID 3 KOLOM === */
+@media (max-width: 600px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* biar lebih rapat */
+    }
+
+    .gallery-item img {
+        height: 100px; /* biar proporsional di layar kecil */
+    }
+
+    .caption-row {
+        padding: 6px 8px;
+        flex-direction: column; /* optional */
+        gap: 4px;
+        text-align: center;
+    }
+
+    .caption {
+        font-size: 14px;
+    }
+
+    .more-btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+}
+
+
+/* FOOTER */
+.footer {
+    display:flex; align-items:center;
+    padding:40px 30px; background:rgb(184,184,184); color:black;
+    gap:20px; flex-wrap:wrap;
+}
+.footer-icon { width:28px; cursor:pointer; transition:.3s; }
+.footer-icon:hover { transform:scale(1.1); }
