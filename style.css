@@ -67,29 +67,42 @@ body {
 
 /* --- Hero Section --- */
 .hero {
-    padding: 100px 0;
+    padding: 80px 0; /* Ukuran sedang */
     background: linear-gradient(to right, #ffffff, #84df8b);
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .hero-inner {
     display: flex;
-    align-items: center; /* Pakai stretch supaya tinggi kanan-kiri sama */
+    align-items: stretch; /* Membuat tinggi hero-left dan hero-right sejajar */
     gap: 40px;
+    width: 100%;
+    max-width: 1200px; /* Sesuaikan dengan container Anda */
+    margin: 0 auto;
 }
 
+/* Bagian Teks */
 .hero-left { 
-    flex: 1.2; 
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Teks tetap di tengah secara vertikal */
 }
 
 .hero-logo {
-    max-width: 250px; /* Batasin lebar maksimalnya biar nggak menonjol banget */
-    height: auto;     /* Biar tingginya menyesuaikan, nggak ketarik */
+    max-width: 200px; 
+    height: auto;
     margin-bottom: 20px;
-    display: block;
-    object-fit: contain;
 }
-.hero-left h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; color: var(--dark-blue); }
+
+.hero-left h1 { 
+    font-size: 2.8rem; 
+    line-height: 1.2; 
+    margin-bottom: 20px; 
+    color: var(--dark-blue); 
+}
 .text-red { color: var(--red-primary); }
 .lead { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; max-width: 500px; }
 
@@ -110,13 +123,11 @@ body {
 .hero-right { 
     flex: 0.8; /* Video dibuat sedikit lebih kecil dari kolom teks */
     display: flex;
-    justify-content: center;
+    align-items: stretch;
 }
 .video-container {
     width: 100%;
     max-width: 450px; /* Batasin lebar maksimal video biar nggak kebesaran */
-    aspect-ratio: 9 / 16; /* Kalau videonya portrait (HP), pake ini */
-    /* aspect-ratio: 16 / 9; <--- Hapus komen ini kalau videonya landscape */
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
@@ -129,9 +140,40 @@ body {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero-inner {
+        flex-direction: column; /* Teks di atas, video di bawah */
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-left {
+        order: 1; /* Teks muncul pertama */
+        align-items: center;
+    }
+
+    .hero-right {
+        order: 2; /* Video muncul di bawah tombol */
+        width: 100%;
+        justify-content: center;
+    }
+
     .video-container {
-        height: 300px; /* Di HP jangan terlalu tinggi, biar nggak makan tempat */
-        min-height: auto;
+        max-width: 100%;
+        height: 350px; /* Batasi tinggi di mobile agar tidak terlalu panjang */
+        aspect-ratio: 16 / 9; /* Kembali ke aspect ratio standar di mobile jika perlu */
+    }
+
+    .hero-btns {
+        justify-content: center;
+        margin-bottom: 40px; /* Jarak antara tombol dan video di bawahnya */
+    }
+    
+    .hero-left h1 {
+        font-size: 2rem;
     }
 }
 
