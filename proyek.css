@@ -66,112 +66,117 @@ body {
     border-radius: 5px;
 }
 
-/* --- Hero Section --- */
-.hero {
-    padding: 120px 0 80px; /* Tambah padding atas karena ada navbar fixed */
-    background: linear-gradient(to right, #ffffff, #84df8b);
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
+/* --- HERO MODERN --- */
+.hero-modern {
+    padding: 140px 0 60px;
+    background: #f8f9fa; /* Warna terang ala Google */
+    text-align: center;
 }
 
-.hero-inner {
-    display: flex;
-    align-items: center; /* Sejajarin vertikal teks dan fitur */
-    justify-content: space-between;
-    gap: 40px;
-}
-
-/* Bagian Teks */
-.hero-left { 
-    flex: 1;
-}
-
-.hero-left h1 { 
-    font-size: 3.5rem; /* Ukuran lebih masuk akal dibanding 6rem */
-    line-height: 1.1; 
-    margin-bottom: 20px; 
-    color: var(--dark-blue); 
+.hero-title {
+    font-size: 4.5rem; /* Teks Besar */
     font-weight: 800;
+    color: #202124;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #ffffff; /* Shadow Putih sesuai request */
 }
 
-.text-red { color: #ff4747; }
-
-.lead { 
-    font-size: 1.2rem; 
-    color: #555; 
-    line-height: 1.6;
-    max-width: 450px; 
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #5f6368;
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
-/* Bagian Fitur Kanan */
-.hero-right { 
-    flex: 1;
+/* --- FITUR GESER (SLIDER) --- */
+.features-slider-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.features-slider {
     display: flex;
-    justify-content: flex-end; /* Dorong ke kanan di desktop */
+    gap: 20px;
+    transition: transform 0.4s ease-in-out;
 }
 
-.features-mini {
-    display: flex;
-    flex-direction: column; /* Fitur berjejer ke bawah biar rapi di samping teks */
-    gap: 15px;
-    width: 100%;
-    max-width: 300px;
-}
-
-.feature-item {
-    background: rgba(255, 255, 255, 0.8); /* Putih transparan biar clean */
-    padding: 15px 20px;
+.feature-slide {
+    min-width: 200px;
+    background: #ffffff;
+    padding: 20px;
     border-radius: 12px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Shadow halus */
+}
+
+.slider-nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
     gap: 15px;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: 0.3s;
 }
 
-.feature-item:hover {
-    transform: translateX(-10px); /* Efek geser dikit pas di hover */
+.slider-nav button {
+    background: #e8f0fe;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #1a73e8;
+}
+
+/* --- KARTU LAYANAN MODERN --- */
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-modern {
     background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: 0.3s;
+    border: 1px solid #f1f3f4;
 }
 
-.feature-item span {
+.card-modern:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.card-img-wrap {
+    height: 220px;
+}
+
+.card-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+.card-label {
+    font-size: 1.4rem;
+    color: #202124;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 0px #ffffff; /* Shadow Putih */
+}
+
+.btn-detail-modern {
+    display: inline-block;
+    margin-top: 15px;
+    color: #1a73e8;
     font-weight: 600;
-    color: #333;
-    font-size: 0.95rem;
-}
-
-/* --- Mobile Responsive --- */
-@media (max-width: 900px) {
-    .hero-inner {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-left h1 {
-        font-size: 2.5rem;
-    }
-
-    .lead {
-        margin: 0 auto 20px;
-    }
-
-    .hero-right {
-        justify-content: center;
-        width: 100%;
-    }
-
-    .features-mini {
-        flex-direction: row; /* Di HP fitur berjejer ke samping atau bungkus */
-        justify-content: center;
-        max-width: 100%;
-    }
-    
-    .feature-item {
-        padding: 10px 15px;
-    }
+    text-decoration: none;
 }
 /* --- Section Styling --- */
 .section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}

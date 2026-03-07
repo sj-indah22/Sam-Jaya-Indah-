@@ -2,6 +2,10 @@
 const burger = document.querySelector(".burger");
 const mobileNav = document.querySelector(".mobile-nav");
 const mobileClose = document.querySelector(".mobile-close");
+const slider = document.querySelector('.features-slider');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
 
 /* safety */
 if (burger && mobileNav) {
@@ -79,3 +83,19 @@ if (burger && mobileNav) {
     }
   });
 })();
+
+let counter = 0;
+
+nextBtn.addEventListener('click', () => {
+    if (counter < 2) { // Sesuaikan jumlah slide
+        counter++;
+        slider.style.transform = `translateX(${-counter * 220}px)`;
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (counter > 0) {
+        counter--;
+        slider.style.transform = `translateX(${-counter * 220}px)`;
+    }
+});
