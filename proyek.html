@@ -1,111 +1,108 @@
 <!DOCTYPE html>
 <html lang="id">
 
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17790192059');
+
+        // Fungsi tracking untuk konversi
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+                'value': 1.0,
+                'currency': 'IDR',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Sam Jaya Indah | Kontraktor Bangunan & Supplier Beton Profesional</title>
+    <meta name="description" content="Sam Jaya Indah - Solusi konstruksi terbaik untuk proyek bangunan, renovasi, pengecoran beton (ready mix), dan penyewaan alat berat terpercaya.">
+    <meta name="keywords" content="kontraktor bangunan, jasa beton cor, sewa alat berat, supplier material bangunan, Sam Jaya Indah">
+    <meta name="author" content="Sam Jaya Indah">
+
     <link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
     <link rel="apple-touch-icon" href="assets/png/favicon.png">
-    <link rel="shortcut icon" href="assets/png/favicon.png">
-    <link rel="stylesheet" href="proyek.css">
-    <script defer src="proyek.js"></script>
-    <title>Proyek — Sam Jaya Indah</title>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17790192059');
-  
-
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR',
-      'event_callback': callback
-  });
-  return false;
-}
-
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR'
-  });
-</script>
-
-
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="navbar-left">
-        <img src="assets/png/logo1.png" class="navbar-logo">
-        <div class="logo">SAM JAYA INDAH</div>
-    </div>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="assets/png/logo1.png" alt="Logo Sam Jaya Indah" class="navbar-logo">
+            <div class="logo">SAM JAYA INDAH</div>
+        </div>
 
-    <nav class="nav-links">
+        <nav class="nav-links">
+            <a href="index.html" class="active">Beranda</a>
+            <a href="proyek.html">Proyek</a>
+            <a href="betonan.html">Betonan</a>
+            <a href="penyewaan.html">Penyewaan</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html" class="btn-nav">Kontak</a>
+        </nav>
+
+        <div class="burger">☰</div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-close">×</div>
         <a href="index.html">Beranda</a>
         <a href="proyek.html">Proyek</a>
         <a href="betonan.html">Betonan</a>
         <a href="penyewaan.html">Penyewaan</a>
         <a href="kontak.html">Kontak</a>
         <a href="katalog.html">Katalog</a>
-    </nav>
-
-    <div class="burger">☰</div>
-</header>
-
-<div class="mobile-nav">
-    <div class="mobile-close">×</div>
-    <a href="index.html">Beranda</a>
-    <a href="proyek.html">Proyek</a>
-    <a class="active" href="betonan.html">Betonan</a>
-    <a href="penyewaan.html">Penyewaan</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="katalog.html">Katalog</a>
-</div>
-
-<section class="hero" style="background: linear-gradient(to right, #ffffff, #84df8b); text-align: center;">
-    <div class="container">
-        <h1 style="font-size: 3rem; color: var(--dark-blue);">Portofolio <span class="text-red">Proyek</span></h1>
-        <p class="lead" style="margin: 0 auto 30px;">Bukti nyata kualitas pengerjaan tim Sam Jaya Indah di berbagai lokasi.</p>
-        
-        <div class="features-mini">
-            <div class="feature-item">
-                <img src="assets/png/check-icon.png" width="20" alt=""> 
-                <span>Gratis Konsultasi</span>
-            </div>
-            <div class="feature-item">
-                <img src="assets/png/credit-icon.png" width="20" alt=""> 
-                <span>Bisa Cicilan 0%*</span>
-            </div>
-            <div class="feature-item">
-                <img src="assets/png/shield-icon.png" width="20" alt=""> 
-                <span>Garansi Pekerjaan</span>
-            </div>
-        </div>
     </div>
-</section>
+
+    <section class="hero" id="hero">
+        <div class="container hero-inner">
+            <div class="hero-left">
+                <h1>Portofolio<br><span class="text-red">Proyek</span></h1>
+                <p class="lead">Bukti nyata kualitas pengerjaan tim Sam Jaya Indah di berbagai lokasi.</p>
+                    
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="features-mini">
+                        <div class="feature-item">
+                            <img src="assets/konsul.png" width="20" alt=""> 
+                            <span>Gratis Konsultasi</span>
+                        </div>
+                        <div class="feature-item">
+                            <img src="assets/png/credit-icon.png" width="20" alt=""> 
+                            <span>Bisa Cicilan 0%*</span>
+                        </div>
+                        <div class="feature-item">
+                            <img src="assets/png/shield-icon.png" width="20" alt=""> 
+                            <span>Garansi Pekerjaan</span>
+                        </div>
+                    </div>
+            </div>
+    </section>
 
 
-<section class="content-wrap section-padding">
-    <div class="container">
-        <div class="section-header">
-            <h2>Galeri Pekerjaan</h2>
-            <div class="underline"></div>
-        </div>
+<section class="layanan section-padding" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Galeri Pekerjaan</h2>
+            </div>
 
         <div class="layanan-container">
             <a href="galeri-pagar.html" class="card">
@@ -186,6 +183,7 @@ function gtag_report_conversion(url) {
                 </div>
             </a>
         </div>
+    </div>
 </section>
 
 
