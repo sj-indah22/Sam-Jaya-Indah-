@@ -67,81 +67,56 @@ body {
 
 
 /* Kontainer Utama */
-/* HERO */
-
-.hero{
-padding:60px 0;
+/* Container Utama Kartu */
+.payment-card {
+    background-color: #ffffff;
+    border: 8px solid #b32a2a; /* Warna merah sesuai brand */
+    border-radius: 25px;       /* Sudut membulat yang elegan */
+    padding: 30px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    max-width: 450px;          /* Menjaga agar tidak terlalu lebar di desktop */
+    margin: 0 auto;            /* Agar rata tengah */
 }
 
-.hero-inner{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:40px;
+/* List Styling */
+.payment-card ul {
+    list-style: none;          /* Hilangkan bullet standar */
+    padding: 0;
+    margin: 0;
 }
 
-.hero-left{
-flex:1;
+.payment-card ul li {
+    position: relative;
+    padding-left: 25px;        /* Ruang untuk custom bullet */
+    margin-bottom: 12px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;          /* Membuat teks tebal/bold */
+    font-size: 1rem;
+    color: #222;
+    text-transform: uppercase; /* Membuat teks jadi kapital semua */
+    line-height: 1.4;
 }
 
-.hero-left h1{
-font-size:2.6rem;
-margin-bottom:15px;
-color:#0a192f;
+/* Custom Bullet Point (Titik Hitam) */
+.payment-card ul li::before {
+    content: "✔";
+    color: #b32a2a; /* Warna merah agar senada dengan border */
+    font-weight: bold;
+    margin-right: 10px;
 }
 
-.hero-left .text-red{
-color:#d32f2f;
-}
-
-.hero-left .lead{
-font-size:1rem;
-color:#555;
-line-height:1.7;
-}
-
-.hero-right{
-flex:0 0 380px;
-}
-
-/* gambar hero */
-
-.hero-images{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.hero-images img{
-width:100%;
-height:auto;
-max-height:160px;
-object-fit:contain;
-border-radius:10px;
-display:block;
-box-shadow:0 10px 20px rgba(0,0,0,0.15);
-}
-
-/* Responsif: Di HP, gambar pindah ke bawah teks */
-@media (max-width:768px){
-
-.hero-inner{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-right{
-width:100%;
-}
-
-.hero-images img{
-max-height:70px;
-}
-
-.hero-left h1{
-font-size:2rem;
-}
-
+/* Responsif: Penyesuaian untuk HP */
+@media (max-width: 768px) {
+    .payment-card {
+        border-width: 5px;     /* Garis lebih tipis di HP */
+        padding: 20px 15px;
+        margin-top: 20px;
+    }
+    
+    .payment-card ul li {
+        font-size: 0.85rem;    /* Teks sedikit lebih kecil agar muat satu baris */
+        margin-bottom: 10px;
+    }
 }
 
 .section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}
