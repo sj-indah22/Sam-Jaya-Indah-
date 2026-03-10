@@ -79,12 +79,11 @@ body {
 
 /* Kolom Teks */
 .hero-left {
-    flex: 0 0 60%; /* Teks mengambil 60% lebar layar */
+    flex: 0 0 55%;
 }
 
-/* Kolom Gambar */
 .hero-right {
-    flex: 0 0 35%; /* Kolom gambar mengambil 35% lebar layar agar tidak terlalu besar */
+    flex: 0 0 40%;
 }
 
 .img-stack {
@@ -98,28 +97,39 @@ body {
 }
 
 .foto-kecil {
-    width: 100%; /* Lebar mengikuti 35% kolom kanan */
-    height: 150px; /* Tentukan tinggi tetap agar tidak "zoom" parah */
-    object-fit: cover; /* Memotong gambar secara proporsional agar tidak gepeng */
+    width: 100%;
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
     border-radius: 8px;
-    display: block; /* Menghilangkan spasi aneh di bawah gambar */
+    display: block;
 }
 
 /* Responsif: Di HP, gambar pindah ke bawah teks */
 @media (max-width: 768px) {
+
     .hero-inner {
         flex-direction: column;
     }
-    .hero-left, .hero-right {
+
+    .hero-left,
+    .hero-right {
         flex: 0 0 100%;
         width: 100%;
     }
+
     .img-stack {
-        flex-direction: row; /* Di HP, gambar berjejer ke samping (opsional) */
+        flex-direction: row;
+        gap: 8px;
     }
+
     .foto-kecil {
-        height: 100px; /* Kecilkan tinggi di layar HP */
+        width: 33%;
+        height: auto;
+        max-height: 100px;
+        object-fit: contain;
     }
+
 }
 
 .section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}
