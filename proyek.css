@@ -67,68 +67,78 @@ body {
 
 
 /* Kontainer Utama */
-.hero-inner {
-    display: flex;
-    align-items: center; /* Teks & gambar sejajar tengah secara vertikal */
-    justify-content: space-between;
-    gap: 20px;
-    padding: 40px 0;
-    max-width: 1200px; /* Batasi lebar maksimal seluruh konten */
-    margin: 0 auto;
+/* HERO */
+
+.hero{
+padding:60px 0;
 }
 
-/* Kolom Teks */
-.hero-left {
-    flex: 0 0 55%;
+.hero-inner{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
 }
 
-.hero-right {
-    flex: 0 0 40%;
+.hero-left{
+flex:1;
 }
 
-.img-stack {
-    display: flex;
-    flex-direction: column; /* Berjejer atas ke bawah */
-    gap: 10px;
+.hero-left h1{
+font-size:2.6rem;
+margin-bottom:15px;
+color:#0a192f;
 }
 
-.img-stack img{
-    width:100%;
+.hero-left .text-red{
+color:#d32f2f;
 }
 
-.foto-kecil {
-    width: 100%;
-    height: auto;
-    max-height: 160px;
-    object-fit: contain;
-    border-radius: 8px;
-    display: block;
+.hero-left .lead{
+font-size:1rem;
+color:#555;
+line-height:1.7;
+}
+
+.hero-right{
+flex:0 0 380px;
+}
+
+/* gambar hero */
+
+.hero-images{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.hero-images img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* Responsif: Di HP, gambar pindah ke bawah teks */
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    .hero-inner {
-        flex-direction: column;
-    }
+.hero-inner{
+flex-direction:column;
+text-align:center;
+}
 
-    .hero-left,
-    .hero-right {
-        flex: 0 0 100%;
-        width: 100%;
-    }
+.hero-right{
+width:100%;
+}
 
-    .img-stack {
-        flex-direction: row;
-        gap: 8px;
-    }
+.hero-images img{
+height:140px;
+}
 
-    .foto-kecil {
-        width: 33%;
-        height: auto;
-        max-height: 100px;
-        object-fit: contain;
-    }
+.hero-left h1{
+font-size:2rem;
+}
 
 }
 
