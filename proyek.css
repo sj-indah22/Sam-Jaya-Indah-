@@ -93,6 +93,10 @@ body {
     gap: 10px;
 }
 
+.img-stack img{
+    width:100%;
+}
+
 .foto-kecil {
     width: 100%; /* Lebar mengikuti 35% kolom kanan */
     height: 150px; /* Tentukan tinggi tetap agar tidak "zoom" parah */
@@ -119,6 +123,21 @@ body {
 }
 
 .section-padding { padding: 80px 0; background: linear-gradient(to right, #ffffff, #84df8b);}
+.section-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-header h2{
+    font-size:2rem;
+    color:var(--dark-blue);
+}
+
+.section-header p{
+    color:var(--red-primary);
+    font-weight:600;
+}
+
 
 /* --- Layanan Cards --- */
 .layanan-container {
@@ -134,6 +153,7 @@ body {
     transition: var(--transition);
     text-decoration: none;
     color: inherit;
+    border:1px solid #eee;
 }
 .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
@@ -151,6 +171,10 @@ body {
     font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
+}
+
+.btn-detail:hover{
+    background:var(--red-hover);
 }
 
 .card-text { padding: 20px; }
