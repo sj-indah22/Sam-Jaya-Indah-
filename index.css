@@ -216,9 +216,10 @@ body {
 /* --- Layanan Cards --- */
 .layanan-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ukuran lebih pas untuk 3 kolom */
     gap: 30px;
 }
+
 .card {
     background: var(--white);
     border-radius: 15px;
@@ -227,28 +228,74 @@ body {
     transition: var(--transition);
     text-decoration: none;
     color: inherit;
+    border: 1px solid #eee;
+    
+    /* Tambahan Kunci: */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Pastikan semua kartu di satu baris tingginya sama */
 }
-.card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
-.card-img { position: relative; height: 200px; overflow: hidden; }
-.card-img img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-.card:hover .card-img img { scale: 1.1; }
+.card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+}
+
+.card-img { 
+    position: relative; 
+    height: 200px; 
+    overflow: hidden; 
+    flex-shrink: 0; /* Gambar tidak akan gepeng */
+}
+
+.card-img img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: var(--transition); 
+}
+
+.card-text { 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Mengambil sisa ruang agar tombol terdorong ke bawah */
+}
+
+.card-title { 
+    font-size: 1.2rem; 
+    margin-bottom: 10px; 
+    color: var(--dark-blue); 
+    font-weight: 700;
+}
+
+.card-desc { 
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 25px; /* Jarak aman sebelum tombol */
+    flex-grow: 1;        /* Mendorong tombol tetap di dasar kartu */
+}
 
 /* Tombol Aksi */
 .btn-detail {
-    display: inline-block;
+    display: block;
     background: #ff4747;
     color: white !important;
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-align: center;
+    text-decoration: none;
+    margin-top: auto; /* Memastikan nempel di bawah meskipun teks pendek */
+    transition: var(--transition);
+    border: none;
 }
 
-.card-text { padding: 20px; }
-.card-title { font-size: 1.25rem; margin-bottom: 10px; color: var(--dark-blue); }
-.card-desc { font-size: 0.9rem; color: var(--text-light); }
+.btn-detail:hover {
+    background: var(--red-hover);
+    transform: translateY(-2px);
+}
 
 /* --- Footer --- */
 .footer { background: var(--dark-blue); color: var(--white); padding: 50px 0 20px; text-align: center; }
