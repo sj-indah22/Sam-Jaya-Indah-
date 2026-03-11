@@ -206,20 +206,35 @@ body {
     display: inline-block;
     background: #ff4747;
     color: white !important;
-    padding: 8px 15px;
+    padding: 10px 20px;     /* Sedikit lebih besar agar mudah diklik di HP */
     border-radius: 5px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-align: center;
+    align-self: flex-start; /* Agar tombol tidak melebar selebar kartu */
+    margin-top: auto;       /* TEKNIK KUNCI: Mendorong tombol ke paling bawah */
+    transition: var(--transition);
 }
 
 .btn-detail:hover{
     background:var(--red-hover);
 }
 
-.card-text { padding: 20px; }
+.card-text { 
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Susun elemen ke bawah */
+    height: 100%;           /* Pastikan mengambil tinggi sisa */
+    min-height: 200px;      /* Sesuaikan agar semua kartu punya tinggi yang sama */
+}
+
 .card-title { font-size: 1.25rem; margin-bottom: 10px; color: var(--dark-blue); }
-.card-desc { font-size: 0.9rem; color: var(--text-light); }
+.card-desc { 
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;    /* Memberikan jarak minimal dari teks ke tombol */
+    flex-grow: 1;          /* Membuat deskripsi mengambil ruang yang tersisa agar tombol selalu di bawah */
+}
 
 /* --- Footer --- */
 .footer { background: var(--dark-blue); color: var(--white); padding: 50px 0 20px; text-align: center; }
@@ -244,6 +259,10 @@ body {
 .mobile-close { font-size: 2.5rem; align-self: flex-end; cursor: pointer; }
 .mobile-nav a { text-decoration: none; color: var(--dark-blue); font-size: 1.2rem; font-weight: 600; }
 
+.btn-whatsapp-mobile {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .burger { display: block; }
@@ -255,5 +274,40 @@ body {
     }
     .lead {
         margin: 0 auto;
+    }
+
+    .hero-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px; /* Jarak antara kartu dan tombol */
+    }
+
+    .btn-whatsapp-mobile {
+        display: flex; /* Munculkan hanya di HP */
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #25d366; /* Warna Hijau WA */
+        color: white !important;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        width: 100%; /* Selebar kartu payment */
+        max-width: 450px;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        transition: transform 0.2s ease;
+    }
+
+    .btn-whatsapp-mobile:active {
+        transform: scale(0.98); /* Efek membal saat ditekan */
+    }
+
+    .wa-icon-small {
+        height: 20px;
+        width: 20px;
+        filter: brightness(0) invert(1); /* Membuat ikon jadi putih jika perlu */
     }
 }
