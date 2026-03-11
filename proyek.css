@@ -194,6 +194,8 @@ body {
     text-decoration: none;
     color: inherit;
     border:1px solid #eee;
+    display: flex;
+    flex-direction: column;
 }
 .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
 
@@ -203,7 +205,7 @@ body {
 
 /* Tombol Aksi */
 .btn-detail {
-    display: inline-block;
+    display: block;
     background: #ff4747;
     color: white !important;
     padding: 10px 20px;     /* Sedikit lebih besar agar mudah diklik di HP */
@@ -224,8 +226,8 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column; /* Susun elemen ke bawah */
-    height: 100%;           /* Pastikan mengambil tinggi sisa */
-    min-height: 200px;      /* Sesuaikan agar semua kartu punya tinggi yang sama */
+    flex-grow: 1;
+    
 }
 
 .card-title { font-size: 1.25rem; margin-bottom: 10px; color: var(--dark-blue); }
