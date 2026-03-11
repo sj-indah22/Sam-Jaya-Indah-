@@ -65,6 +65,47 @@ body {
     border-radius: 5px;
 }
 
+/* --- Hero Section Styles --- */
+.hero {
+    padding: 60px 0;
+    /* Background gradasi agar menyambung dengan section bawah */
+    background: linear-gradient(to right, #ffffff, #84df8b); 
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-left h1 {
+    font-size: 3rem;
+    color: var(--dark-blue);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.text-red {
+    color: var(--red-primary);
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    max-width: 600px;
+}
+
 
 /* Kontainer Utama */
 /* Container Utama Kartu */
@@ -86,36 +127,38 @@ body {
 }
 
 .payment-card ul li {
-    position: relative;
-    padding-left: 25px;        /* Ruang untuk custom bullet */
-    margin-bottom: 12px;
-    font-family: 'Arial', sans-serif;
-    font-weight: 700;          /* Membuat teks tebal/bold */
-    font-size: 1rem;
+    display: flex; /* Menggunakan flex agar ikon dan teks sejajar rapi */
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif; /* Mengikuti font global */
+    font-weight: 700;
+    font-size: 0.95rem;
     color: #222;
-    text-transform: uppercase; /* Membuat teks jadi kapital semua */
+    text-transform: uppercase;
     line-height: 1.4;
+    padding-left: 0; /* Reset padding karena sudah pakai gap */
 }
 
-/* Custom Bullet Point (Titik Hitam) */
+/* Hapus bagian li::before yang lama dan ganti dengan ini agar lebih presisi */
 .payment-card ul li::before {
     content: "✔";
-    color: #b32a2a; /* Warna merah agar senada dengan border */
-    font-weight: bold;
-    margin-right: 10px;
+    color: #b32a2a;
+    font-weight: 900;
+    flex-shrink: 0; /* Ikon tidak akan gepeng jika teks panjang */
 }
-
 /* Responsif: Penyesuaian untuk HP */
 @media (max-width: 768px) {
     .payment-card {
-        border-width: 5px;     /* Garis lebih tipis di HP */
-        padding: 20px 15px;
-        margin-top: 20px;
+        width: 100%;
+        max-width: 100%;
+        border-width: 6px;
+        padding: 25px 15px;
     }
     
     .payment-card ul li {
         font-size: 0.85rem;    /* Teks sedikit lebih kecil agar muat satu baris */
-        margin-bottom: 10px;
+        text-align: left;
     }
 }
 
@@ -200,4 +243,12 @@ body {
     .nav-links { display: none; }
     .burger { display: block; }
     .hero-left h1 { font-size: 2.2rem; }
+    .hero-inner {
+        flex-direction: column; /* Tumpuk vertikal di HP */
+        text-align: center;
+        gap: 30px;
+    }
+    .lead {
+        margin: 0 auto;
+    }
 }
