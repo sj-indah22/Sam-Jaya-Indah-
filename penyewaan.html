@@ -1,468 +1,186 @@
 <!DOCTYPE html>
 <html lang="id">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17790192059');
-</script>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
-<link rel="apple-touch-icon" href="assets/png/favicon.png">
-<link rel="shortcut icon" href="assets/png/favicon.png">
-<title>Penyewaan — Sam Jaya Indah</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17790192059');
 
-<style>
-/* ==== COPY STYLE SAMA DARI PROYEK === */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-image: url('assets/background-hero_21_11zon.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: top;
-    color: white;
-}
-section { padding: 100px 30px; }
-h1, h2, h3 { margin: 0 0 15px; }
-a { text-decoration: none; color: white; }
+        // Fungsi tracking untuk konversi
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+                'value': 1.0,
+                'currency': 'IDR',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 
-/* ==== NAVBAR ==== */
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    background: rgba(0,0,0,0.25);
-    backdrop-filter: blur(6px);
-    box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* kiri */
-.navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    <title>Sewa Alat Konstruksi Gresik | Lift Cor, Molen & Scaffolding - Sam Jaya Indah</title>
+    <meta name="description"
+        content="Jasa penyewaan alat konstruksi terpercaya di Gresik. Sedia Lift Cor, Minicrane, Molen beton, dan Scaffolding berkualitas untuk mempercepat proyek pembangunan Anda.">
+    <meta name="keywords"
+        content="Sewa Lift Cor Gresik, Rental Molen Beton, Sewa Scaffolding Murah, Sewa Minicrane Proyek, Sam Jaya Indah, Alat Konstruksi Gresik">
+    <meta name="author" content="Sam Jaya Indah">
 
-.navbar-logo {
-    width: 40px;
-    height: auto;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-}
-
-/* menu kanan desktop */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
-    transition: 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff4747;
-}
-
-/* Burger & Mobile Nav */
-.burger {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100000;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* tampilkan X saat aktif */
-.burger.active {
-  font-size: 36px;
-  transform: rotate(0deg);
-}
-
-/* Mobile nav */
-.mobile-nav {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 250px;
-    height: 100vh;
-    background: rgba(0,0,0,0.92);
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    transition: 0.3s ease;
-    z-index: 9999;
-}
-
-.mobile-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 36px;
-    cursor: pointer;
-    color: white;
-}
-
-
-.mobile-nav.show {
-    right: 0;
-}
-
-.mobile-nav a {
-    color: white;
-    font-size: 18px;
-}
-
-/* Active link style */
-.nav-links a.active,
-.mobile-nav a.active {
-    color: #ff4747;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .nav-links { display: none; }
-    .burger { display: block; }
-}
-
-/* HERO */
-.hero { padding:130px 0 40px; text-align:center; }
-.hero h1 { font-size:60px; color:#ff4747; text-shadow:5px 5px 10px black; }
-.hero p { margin-top:15px; text-shadow:2px 2px 5px black; }
-
-.content-wrap h2 {
-    display: inline-block;
-    /* warna merah */
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 8px;   /* biar jadi shape */
-    font-weight: 700;
-
-      /* jarak samping */
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-@media (max-width: 600px) {
-
-    .hero h1 { font-size:40px; color:#ff4747; text-shadow:5px 5px 10px black; }
-    .hero p { 
-        font-size:13px; 
-        margin-top:15px; 
-        text-shadow:2px 2px 5px black;
-        margin-left: 35px;
-        margin-right: 35px; }
-    .content-wrap {
-        text-align: center;
-    }
-
-    .content-wrap h2 {
-        font-size:15px;
-        margin-left: auto;
-        margin-right: auto;
-        display: inline-block;
-    }
-}
-
-
-/* GALERI */
-.gallery-container {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    padding:20px;
-}
-.gallery-item { background:rgba(255,255,255,0.05); border-radius:12px; overflow:hidden; }
-.gallery-item img { width:100%; height:180px; object-fit:cover; }
-
-.caption-row {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:12px 14px;
-}
-.caption { font-size:18px; margin:0; }
-.more-btn {
-    background:#ff4747; padding:6px 14px; border-radius:6px;
-    font-size:13px; font-weight:600; white-space:nowrap;
-}
-.more-btn:hover { background:#d93737; transform:translateY(-2px); }
-
-/* === MOBILE GRID 3 KOLOM === */
-@media (max-width: 600px) {
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px; /* biar lebih rapat */
-    }
-
-    .gallery-item img {
-        height: 100px; /* biar proporsional di layar kecil */
-    }
-
-    .caption-row {
-        padding: 6px 8px;
-        flex-direction: column; /* optional */
-        gap: 4px;
-        text-align: center;
-    }
-
-    .caption {
-        font-size: 14px;
-    }
-
-    .more-btn {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
-}
-
-
-/* FOOTER */
-.footer {
-    display:flex; align-items:center;
-    padding:40px 30px; background:rgb(184,184,184); color:black;
-    gap:20px; flex-wrap:wrap;
-}
-.footer-icon { width:28px; cursor:pointer; transition:.3s; }
-.footer-icon:hover { transform:scale(1.1); }
-
-</style>
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR'
-  });
-</script>
-<!-- Event snippet for Kontak conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
-      'value': 1.0,
-      'currency': 'IDR',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
-
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
+    <link rel="apple-touch-icon" href="assets/png/favicon.png">
+    <link rel="stylesheet" href="penyewaan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script defer src="penyewaan.js"></script>
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="navbar-left">
-        <img src="assets/png/logo1.png" class="navbar-logo">
-        <div class="logo">SAM JAYA INDAH</div>
-    </div>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="assets/png/logo1.png" alt="Logo Sam Jaya Indah" class="navbar-logo">
+            <div class="logo">SAM JAYA INDAH</div>
+        </div>
 
-    <nav class="nav-links">
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="proyek.html">Proyek</a>
+            <a href="betonan.html" class="active">Betonan</a>
+            <a href="penyewaan.html">Penyewaan</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html" class="btn-nav">Kontak</a>
+        </nav>
+
+        <div class="burger">☰</div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-close">×</div>
         <a href="index.html">Beranda</a>
         <a href="proyek.html">Proyek</a>
         <a href="betonan.html">Betonan</a>
         <a href="penyewaan.html">Penyewaan</a>
         <a href="kontak.html">Kontak</a>
         <a href="katalog.html">Katalog</a>
-    </nav>
-
-    <div class="burger">☰</div>
-</header>
-
-<div class="mobile-nav">
-    <div class="mobile-close">×</div>
-    <a href="index.html">Beranda</a>
-    <a href="proyek.html">Proyek</a>
-    <a class="active" href="betonan.html">Betonan</a>
-    <a href="penyewaan.html">Penyewaan</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="katalog.html">Katalog</a>
-</div>
-
-<section class="hero">
-    <h1>Penyewaan Alat</h1>
-    <p>Kami menyediaka berbagai alat konstruksi untuk kebutuhan proyek anda.</p>
-</section>
-
-<section class="content-wrap">
-
-    <h2 class="section-title"></h2>
-
-    <div class="gallery-container">
-
-        <div class="gallery-item">
-            <img src="assets/m/20251029_104006AMByGPSMapCamera_2_11zon.jpg ">
-            <div class="caption-row">
-                <p class="caption">Lift Cor</p>
-                <a href="g-lc.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/m/minicrane.jpeg">
-            <div class="caption-row">
-                <p class="caption">Minicrane</p>
-                <a href="galeri-mc.html" class="more-btn"></a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/m/scaffolding.jpeg">
-            <div class="caption-row">
-                <p class="caption">Scaffolding</p>
-                <a href="galeri-sf.html" class="more-btn"></a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/m/molen.jpeg">
-            <div class="caption-row">
-                <p class="caption">Molen</p>
-                <a href="galeri-ml.html" class="more-btn"></a>
-            </div>
-        </div>
-
     </div>
 
-</section>
+    <section class="hero">
+        <div class="container hero-inner">
+
+            <div class="hero-left">
+                <h1>Penyewaan Alat<br><span class="text-red">Sam Jaya Indah</span></h1>
+                <p class="lead">
+                    Tingkatkan efisiensi proyek Anda dengan dukungan alat konstruksi yang andal. Kami menyediakan
+                    layanan penyewaan Lift Cor, Molen, hingga Scaffolding dengan kondisi mesin yang prima dan siap
+                    pakai. Solusi praktis untuk kontraktor dan pembangunan mandiri dengan harga yang kompetitif.
+                </p>
+            </div>
+
+            <div class="hero-right">
+
+                <a href="https://wa.me/6288902250632?text=Halo%20Sam%20Jaya%20Indah,%20saya%20ingin%20konsultasi%20mengenai%20proyek..."
+                    class="btn-whatsapp-mobile" onclick="return gtag_report_conversion('https://wa.me/6288902250632');">
+                    Hubungi Kami
+                </a>
+
+            </div>
+        </div>
+    </section>
 
 
-<!-- FOOTER -->
-<footer class="footer">
-    Ikuti Kami:
-    
-    <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank">
-        <img src="assets/png/ig.png" class="footer-icon">
-    </a>
+    <section class="layanan section-padding" id="services">
+        <div class="container">
 
-    <a href="https://www.facebook.com/sam.j.indah.9" target="_blank">
-        <img src="assets/png/fb.png" class="footer-icon">
-    </a>
+            <div class="layanan-container">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/m/20251029_104006AMByGPSMapCamera_2_11zon.jpg"
+                            alt="Sewa Lift Cor Proyek Sam Jaya Indah" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Lift Cor</h3>
+                        <p class="card-desc">Solusi pengangkutan material beton ke lantai atas dengan cepat dan aman,
+                            meningkatkan efisiensi waktu kerja proyek gedung.</p>
+                        <a href="g-lc.html" class="btn-detail">Sewa Sekarang</a>
+                    </div>
+                </div>
 
-    <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank">
-        <img src="assets/png/yt.png" class="footer-icon">
-    </a>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/m/minicrane.jpeg" alt="Sewa Minicrane Portable Gresik" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Minicrane</h3>
+                        <p class="card-desc">Alat angkat beban portable yang fleksibel untuk area sempit, memudahkan
+                            pemindahan material berat di lokasi konstruksi.</p>
+                    </div>
+                </div>
 
-    <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank">
-        <img src="assets/png/tt.png" class="footer-icon">
-    </a>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/m/scaffolding.jpeg" alt="Sewa Scaffolding Steger Besi" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Scaffolding</h3>
+                        <p class="card-desc">Penyewaan steger besi yang kokoh dan stabil. Menjamin keamanan pekerja
+                            untuk pengerjaan dinding luar atau plafon tinggi.</p>
+                    </div>
+                </div>
 
-    <a href="https://maps.app.goo.gl/C3RVfPeEH7uAS7mk6" target="_blank">
-        <img src="assets/png/gps.png" class="footer-icon">
-    </a>
-</footer>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/m/molen.jpeg" alt="Rental Mesin Molen Beton" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Molen</h3>
+                        <p class="card-desc">Mesin pengaduk semen dengan performa mesin yang tangguh, memastikan
+                            campuran beton proyek Anda homogen dan sempurna.</p>
+                    </div>
+                </div>
+            </div>
 
- <script>
+        </div>
+        </div>
+    </section>
 
-/* --- element refs --- */
-const burger = document.querySelector(".burger");
-const mobileNav = document.querySelector(".mobile-nav");
-const mobileClose = document.querySelector(".mobile-close");
 
-/* safety */
-if (burger && mobileNav) {
-
-  /* toggle function */
-  function openMobile() {
-    mobileNav.classList.add("show");
-    burger.classList.add("active");
-    mobileNav.setAttribute("aria-hidden","false");
-  }
-  function closeMobile() {
-    mobileNav.classList.remove("show");
-    burger.classList.remove("active");
-    mobileNav.setAttribute("aria-hidden","true");
-  }
-
-  /* click burger */
-  burger.addEventListener("click", (e) => {
-    e.stopPropagation(); // penting! jangan biarkan event jatuh ke document
-    mobileNav.classList.toggle("show");
-    burger.classList.toggle("active");
-  });
-
-  /* keyboard accessibility: Enter / Space */
-  burger.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      burger.click();
-    }
-  });
-
-  /* close button inside mobile */
-  if (mobileClose) {
-    mobileClose.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeMobile();
-    });
-  }
-
-  /* close when a mobile link clicked */
-  document.querySelectorAll(".mobile-nav a").forEach(a => {
-    a.addEventListener("click", () => {
-      closeMobile();
-    });
-  });
-
-  /* click outside mobile menu -> close */
-  document.addEventListener("click", (e) => {
-    if (mobileNav.classList.contains("show") &&
-        !mobileNav.contains(e.target) &&
-        !burger.contains(e.target)) {
-      closeMobile();
-    }
-  });
-
-  /* ESC to close */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileNav.classList.contains("show")) {
-      closeMobile();
-    }
-  });
-}
-
-/* --- active link highlighting (robust) --- */
-(function markActive(){
-  let path = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
-  if (!path) path = "index.html";
-
-  document.querySelectorAll(".nav-links a, .mobile-nav a").forEach(link=>{
-    const href = (link.getAttribute("href") || "").split("?")[0].split("#")[0];
-    if (href === path) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-})();
-</script>
-
+    <footer class="footer">
+        <div class="container">
+            <p><strong>SAM JAYA INDAH</strong></p>
+            <p>Ikuti media sosial kami untuk update proyek terbaru:</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank"
+                    aria-label="Instagram">
+                    <img src="assets/png/ig.png" class="footer-icon" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/sam.j.indah.9" target="_blank" aria-label="Facebook">
+                    <img src="assets/png/fb.png" class="footer-icon" alt="Facebook">
+                </a>
+                <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank" aria-label="YouTube">
+                    <img src="assets/png/yt.png" class="footer-icon" alt="YouTube">
+                </a>
+                <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank"
+                    aria-label="TikTok">
+                    <img src="assets/png/tt.png" class="footer-icon" alt="TikTok">
+                </a>
+                <a href="https://maps.google.com/?q=Sam+Jaya+Indah" target="_blank" aria-label="Lokasi">
+                    <img src="assets/png/gps.png" class="footer-icon" alt="Google Maps">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Sam Jaya Indah. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
