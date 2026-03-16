@@ -1,526 +1,287 @@
 <!DOCTYPE html>
 <html lang="id">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17790192059');
-</script>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
-<link rel="apple-touch-icon" href="assets/png/favicon.png">
-<link rel="shortcut icon" href="assets/png/favicon.png">
-<title>Betonan — Sam Jaya Indah</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17790192059');
 
-<style>
+        // Fungsi tracking untuk konversi
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+                'value': 1.0,
+                'currency': 'IDR',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-image: url('assets/background-hero_21_11zon.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: top;
-    color: white;
-}
-section { padding: 100px 30px; }
-h1, h2, h3 { margin: 0 0 15px; }
-a { text-decoration: none; color: white; }
+    <title>Galeri Beton GRC & Precast | Sam Jaya Indah - Ornamen Bangunan Berkualitas</title>
+    <meta name="description" content="Katalog produk beton precast & GRC Sam Jaya Indah. Menyediakan Lis Plang, Krawangan, Pilar Doriq, Roster, dan ornamen dekoratif bangunan dengan detail presisi dan daya tahan tinggi.">
+    <meta name="keywords" content="Beton GRC, Lis Plang Beton, Krawangan Minimalis, Pilar Doriq, Roster Beton, Ornamen Bangunan, Beton Precast Gresik, Sam Jaya Indah, Galeri Betonan SJI">
+    <meta name="author" content="Sam Jaya Indah">
 
-/* ==== NAVBAR ==== */
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    background: rgba(0,0,0,0.25);
-    backdrop-filter: blur(6px);
-    box-sizing: border-box;
-}
-
-/* kiri */
-.navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.navbar-logo {
-    width: 40px;
-    height: auto;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-}
-
-/* menu kanan desktop */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
-    transition: 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff4747;
-}
-
-/* Burger & Mobile Nav */
-.burger {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100000;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* tampilkan X saat aktif */
-.burger.active {
-  font-size: 36px;
-  transform: rotate(0deg);
-}
-
-/* Mobile nav */
-.mobile-nav {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 250px;
-    height: 100vh;
-    background: rgba(0,0,0,0.92);
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    transition: 0.3s ease;
-    z-index: 9999;
-}
-
-.mobile-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 36px;
-    cursor: pointer;
-    color: white;
-}
-
-
-.mobile-nav.show {
-    right: 0;
-}
-
-.mobile-nav a {
-    color: white;
-    font-size: 18px;
-}
-
-/* Active link style */
-.nav-links a.active,
-.mobile-nav a.active {
-    color: #ff4747;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .nav-links { display: none; }
-    .burger { display: block; }
-}
-
-/* HERO */
-.hero { padding:130px 0 40px; text-align:center; }
-.hero h1 { font-size:60px; color:#ff4747; text-shadow:5px 5px 10px black; }
-.hero p { margin-top:15px; text-shadow:2px 2px 5px black; }
-
-.content-wrap h2 {
-    display: inline-block;
-    background: #c20000;   /* warna merah */
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 8px;   /* biar jadi shape */
-    font-weight: 700;
-
-      /* jarak samping */
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-@media (max-width: 600px) {
-
-    .hero h1 { font-size:40px; color:#ff4747; text-shadow:5px 5px 10px black; }
-    .hero p { 
-        font-size:13px; 
-        margin-top:15px; 
-        text-shadow:2px 2px 5px black;
-        margin-left: 35px;
-        margin-right: 35px; }
-    .content-wrap {
-        text-align: center;
-    }
-
-    .content-wrap h2 {
-        font-size:15px;
-        margin-left: auto;
-        margin-right: auto;
-        display: inline-block;
-    }
-}
-
-
-/* GALERI */
-.gallery-container {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-    padding:20px;
-}
-.gallery-item { background:rgba(255,255,255,0.05); border-radius:12px; overflow:hidden; }
-.gallery-item img { width:100%; height:180px; object-fit:cover; }
-
-.caption-row {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:12px 14px;
-}
-.caption { font-size:18px; margin:0; }
-.more-btn {
-    background:#ff4747; padding:6px 14px; border-radius:6px;
-    font-size:13px; font-weight:600; white-space:nowrap;
-}
-.more-btn:hover { background:#d93737; transform:translateY(-2px); }
-
-/* === MOBILE GRID 3 KOLOM === */
-@media (max-width: 600px) {
-    .gallery-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px; /* biar lebih rapat */
-    }
-
-    .gallery-item img {
-        height: 100px; /* biar proporsional di layar kecil */
-    }
-
-    .caption-row {
-        padding: 6px 8px;
-        flex-direction: column; /* optional */
-        gap: 4px;
-        text-align: center;
-    }
-
-    .caption {
-        font-size: 14px;
-    }
-
-    .more-btn {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
-}
-
-
-/* FOOTER */
-.footer {
-    display:flex; align-items:center;
-    padding:40px 30px; background:rgb(184,184,184); color:black;
-    gap:20px; flex-wrap:wrap;
-}
-.footer-icon { width:28px; cursor:pointer; transition:.3s; }
-.footer-icon:hover { transform:scale(1.1); }
-
-</style>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
+    <link rel="apple-touch-icon" href="assets/png/favicon.png">
+    <link rel="stylesheet" href="betonan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script defer src="betonan.js"></script>
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="navbar-left">
-        <img src="assets/png/logo1.png" class="navbar-logo">
-        <div class="logo">SAM JAYA INDAH</div>
-    </div>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="assets/png/logo1.png" alt="Logo Sam Jaya Indah" class="navbar-logo">
+            <div class="logo">SAM JAYA INDAH</div>
+        </div>
 
-    <nav class="nav-links">
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="proyek.html">Proyek</a>
+            <a href="betonan.html" class="active">Betonan</a>
+            <a href="penyewaan.html">Penyewaan</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html" class="btn-nav">Kontak</a>
+        </nav>
+
+        <div class="burger">☰</div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-close">×</div>
         <a href="index.html">Beranda</a>
         <a href="proyek.html">Proyek</a>
         <a href="betonan.html">Betonan</a>
         <a href="penyewaan.html">Penyewaan</a>
         <a href="kontak.html">Kontak</a>
         <a href="katalog.html">Katalog</a>
-    </nav>
-
-    <div class="burger">☰</div>
-</header>
-
-<div class="mobile-nav">
-    <div class="mobile-close">×</div>
-    <a href="index.html">Beranda</a>
-    <a href="proyek.html">Proyek</a>
-    <a class="active" href="betonan.html">Betonan</a>
-    <a href="penyewaan.html">Penyewaan</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="katalog.html">Katalog</a>
-</div>
-
-<section class="hero">
-    <h1>Betonan</h1>
-    <p>Dokumentasi pekerjaan pengecoran, pembesian, bekisting, dan konstruksi beton lainnya.</p>
-</section>
-
-<section class="content-wrap">
-
-    <h2 class="section-title">Galeri Betonan</h2>
-
-    <div class="gallery-container">
-
-        <div class="gallery-item">
-            <img src="assets/katalog-1.png">
-            <div class="caption-row">
-                <p class="caption">Lis Plang</p>
-                <a href="g-lp.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/CN-16.png">
-            <div class="caption-row">
-                <p class="caption">List Gypsum (CN) </p>
-                <a href="g-lg.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/3d-16.png">
-            <div class="caption-row">
-                <p class="caption">3D</p>
-                <a href="g-3d.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/Krawangan-4.png">
-            <div class="caption-row">
-                <p class="caption">Krawangan</p>
-                <a href="g-kr.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/pilar doriq-1.png">
-            <div class="caption-row">
-                <p class="caption">Pilar Doriq</p>
-                <a href="g-pd.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/ornamen -1.png">
-            <div class="caption-row">
-                <p class="caption">Ornamen Lampu</p>
-                <a href="g-or.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/LOSTER-4.png">
-            <div class="caption-row">
-                <p class="caption">Roster</p>
-                <a href="g-rt.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/dumpal-1.png">
-            <div class="caption-row">
-                <p class="caption">Dumpal</p>
-                <a href="g-dp.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/ring pilar-1.png">
-            <div class="caption-row">
-                <p class="caption">Ring Pilar</p>
-                <a href="g-rp.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/MAHKOTA ATAS-1.png">
-            <div class="caption-row">
-                <p class="caption">Mahkota</p>
-                <a href="gm.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/lis moulding-1.png">
-            <div class="caption-row">
-                <p class="caption">lis Moulding</p>
-                <a href="g-lm.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/list beton SJI-1.png">
-            <div class="caption-row">
-                <p class="caption">lis Beton SJI </p>
-                <a href="g-lb.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        
-
-        <div class="gallery-item">
-            <img src="assets/TK-10.png">
-            <div class="caption-row">
-                <p class="caption">TK</p>
-                <a href="g-tk.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        <div class="gallery-item">
-            <img src="assets/korbel-1.png">
-            <div class="caption-row">
-                <p class="caption">Korbel </p>
-                <a href="g-kb.html" class="more-btn">Lihat</a>
-            </div>
-        </div>
-
-        
-
     </div>
 
-</section>
+<section class="hero">
+    <div class="container hero-inner">
+
+        <div class="hero-left">
+            <h1>Galeri Betonan<br><span class="text-red">Sam Jaya Indah</span></h1>
+
+            <p class="lead">
+                Temukan berbagai kebutuhan ornamen bangunan beton GRC di Galeri Betonan SJI. Kami menyediakan Lis Plang, Krawangan, Pilar Doriq, hingga Roster dengan desain eksklusif. Komitmen kami adalah menyediakan material dekoratif yang tidak hanya indah dipandang, tetapi juga memiliki durabilitas maksimal untuk konstruksi jangka panjang.
+            </p>
+        </div>
+
+        <div class="hero-right">
+
+            <a href="https://wa.me/6288902250632?text=Halo%20Sam%20Jaya%20Indah,%20saya%20ingin%20konsultasi%20mengenai%20proyek..." 
+                class="btn-whatsapp-mobile" 
+                onclick="return gtag_report_conversion('https://wa.me/6288902250632');">
+                Hubungi Kami
+            </a>
+
+        </div>
+
+     
+<section class="layanan section-padding" id="services">
+        <div class="container">
+
+            <div class="layanan-container">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/katalog-1.png" alt="Lis Plang Beton GRC Sam Jaya Indah" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Lis Plang</h3>
+                        <p class="card-desc">Elemen dekoratif tepi atap yang kokoh dan tahan cuaca, memberikan kesan rapi pada eksterior bangunan.</p>
+                        <a href="g-lp.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+        
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/CN-16.png" alt="List Gypsum Interior CN" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">List Gypsum (CN)</h3>
+                        <p class="card-desc">Bingkai plafon interior dengan detail motif yang halus untuk mempertegas kemewahan ruangan Anda.</p>
+                        <a href="g-lg.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/3d-16.png" alt="Ornamen 3D Dinding dan Plafon" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Ornamen 3D</h3>
+                        <p class="card-desc">Hiasan timbul artistik untuk dinding atau plafon yang memberikan dimensi dan karakter unik pada hunian.</p>
+                        <a href="g-3d.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/Krawangan-4.png" alt="Krawangan GRC Motif Custom" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Krawangan</h3>
+                        <p class="card-desc">Panel beton berlubang sebagai ventilasi artistik atau penyekat ruangan yang estetis dan modern.</p>
+                        <a href="g-kr.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>                
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/pilar doriq-1.png" alt="Pilar Doriq Klasik Modern" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Pilar Doriq</h3>
+                        <p class="card-desc">Tiang beton bergaya klasik yang memberikan kesan megah dan struktural pada fasad bangunan Anda.</p>
+                        <a href="g-pd.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/ornamen -1.png" alt="Ornamen Dudukan Lampu Plafon" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Ornamen Lampu</h3>
+                        <p class="card-desc">Dudukan lampu hias plafon dengan berbagai motif elegan untuk mempercantik titik pencahayaan ruangan.</p>
+                        <a href="g-or.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/LOSTER-4.png" alt="Roster Minimalis Ventilasi Udara" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Roster</h3>
+                        <p class="card-desc">Lubang angin beton minimalis yang berfungsi menjaga sirkulasi udara sekaligus pemanis dinding.</p>
+                        <a href="g-rt.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/dumpal-1.png" alt="Dumpal Alas Pilar Beton" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Dumpal</h3>
+                        <p class="card-desc">>Alas penyangga pilar beton dengan desain kokoh untuk memperkuat tampilan kaki-kaki tiang bangunan.</p>
+                        <a href="g-dp.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/ring pilar-1.png" alt="Ring Pilar Ornamen Tiang" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Ring Pilar</h3>
+                        <p class="card-desc">Aksesori pembatas pilar yang memberikan detail sambungan lebih rapi dan dekoratif.</p>
+                        <a href="g-rp.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/MAHKOTA ATAS-1.png" alt="Mahkota Atap Bangunan Klasik" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Mahkota</h3>
+                        <p class="card-desc">Hiasan puncak bangunan yang memberikan sentuhan akhir mewah dan ikonik pada struktur atap.</p>
+                        <a href="gm.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div> 
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/lis moulding-1.png" alt="Lis Moulding Dinding GRC" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">lis Moulding</h3>
+                        <p class="card- desc">Garis dekoratif dinding untuk menciptakan gaya profil yang elegan pada permukaan bangunan.</p>
+                        <a href="g-lm.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/list beton SJI-1.png" alt="List Beton SJI Kualitas Premium" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">List Beton SJI</h3>
+                        <p class="card-desc">Produk beton precast spesialis Sam Jaya Indah dengan campuran material yang lebih kuat dan tahan lama.</p>
+                        <a href="g-lb.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/TK-10.png" alt="Ornamen Beton Tipe TK" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">TK</h3>
+                        <p class="card-desc">Ornamen fungsional khusus dengan desain teknis yang disesuaikan untuk kebutuhan konstruksi spesifik.</p>
+                        <a href="g-tk.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/korbel-1.png" alt="Korbel Beton Penyangga Dekoratif" loading="lazy">
+                    </div>
+                    <div class="card-text">
+                        <h3 class="card-title">Korbel</h3>
+                        <p class="card-desc">Elemen penyangga hiasan di bawah atap atau pilar yang memberikan detail arsitektur klasik.</p>
+                        <a href="g-kb.html" class="btn-detail">Lihat Detail</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
-<!-- FOOTER -->
-<footer class="footer">
-    Ikuti Kami:
-    
-    <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank">
-        <img src="assets/png/ig.png" class="footer-icon">
-    </a>
-
-    <a href="https://www.facebook.com/sam.j.indah.9" target="_blank">
-        <img src="assets/png/fb.png" class="footer-icon">
-    </a>
-
-    <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank">
-        <img src="assets/png/yt.png" class="footer-icon">
-    </a>
-
-    <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank">
-        <img src="assets/png/tt.png" class="footer-icon">
-    </a>
-
-    <a href="https://maps.app.goo.gl/C3RVfPeEH7uAS7mk6" target="_blank">
-        <img src="assets/png/gps.png" class="footer-icon">
-    </a>
-</footer>
-
- <script>
-
-/* --- element refs --- */
-const burger = document.querySelector(".burger");
-const mobileNav = document.querySelector(".mobile-nav");
-const mobileClose = document.querySelector(".mobile-close");
-
-/* safety */
-if (burger && mobileNav) {
-
-  /* toggle function */
-  function openMobile() {
-    mobileNav.classList.add("show");
-    burger.classList.add("active");
-    mobileNav.setAttribute("aria-hidden","false");
-  }
-  function closeMobile() {
-    mobileNav.classList.remove("show");
-    burger.classList.remove("active");
-    mobileNav.setAttribute("aria-hidden","true");
-  }
-
-  /* click burger */
-  burger.addEventListener("click", (e) => {
-    e.stopPropagation(); // penting! jangan biarkan event jatuh ke document
-    mobileNav.classList.toggle("show");
-    burger.classList.toggle("active");
-  });
-
-  /* keyboard accessibility: Enter / Space */
-  burger.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      burger.click();
-    }
-  });
-
-  /* close button inside mobile */
-  if (mobileClose) {
-    mobileClose.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeMobile();
-    });
-  }
-
-  /* close when a mobile link clicked */
-  document.querySelectorAll(".mobile-nav a").forEach(a => {
-    a.addEventListener("click", () => {
-      closeMobile();
-    });
-  });
-
-  /* click outside mobile menu -> close */
-  document.addEventListener("click", (e) => {
-    if (mobileNav.classList.contains("show") &&
-        !mobileNav.contains(e.target) &&
-        !burger.contains(e.target)) {
-      closeMobile();
-    }
-  });
-
-  /* ESC to close */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileNav.classList.contains("show")) {
-      closeMobile();
-    }
-  });
-}
-
-/* --- active link highlighting (robust) --- */
-(function markActive(){
-  let path = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
-  if (!path) path = "index.html";
-
-  document.querySelectorAll(".nav-links a, .mobile-nav a").forEach(link=>{
-    const href = (link.getAttribute("href") || "").split("?")[0].split("#")[0];
-    if (href === path) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-})();
-</script>
-
+    <footer class="footer">
+        <div class="container">
+            <p><strong>SAM JAYA INDAH</strong></p>
+            <p>Ikuti media sosial kami untuk update proyek terbaru:</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank" aria-label="Instagram">
+                    <img src="assets/png/ig.png" class="footer-icon" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/sam.j.indah.9" target="_blank" aria-label="Facebook">
+                    <img src="assets/png/fb.png" class="footer-icon" alt="Facebook">
+                </a>
+                <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank" aria-label="YouTube">
+                    <img src="assets/png/yt.png" class="footer-icon" alt="YouTube">
+                </a>
+                <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank" aria-label="TikTok">
+                    <img src="assets/png/tt.png" class="footer-icon" alt="TikTok">
+                </a>
+                <a href="https://maps.google.com/?q=Sam+Jaya+Indah" target="_blank" aria-label="Lokasi">
+                    <img src="assets/png/gps.png" class="footer-icon" alt="Google Maps">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Sam Jaya Indah. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
+
 </html>
