@@ -19,6 +19,29 @@ closePreview.addEventListener("click", () => {
     previewBox.style.display = "none";
 });
 
+if (previewBox && previewImg) {
+        document.querySelectorAll(".previewable").forEach(img => {
+            img.style.cursor = "zoom-in"; // Kasih kursor biar user tau bisa diklik
+            img.addEventListener("click", () => {
+                previewImg.src = img.src;
+                previewBox.style.display = "flex";
+                document.body.style.overflow = "hidden"; // Biar halaman nggak bisa di-scroll pas preview
+            });
+        });
+
+        const closeAction = () => {
+            previewBox.style.display = "none";
+            document.body.style.overflow = "auto"; // Balikkin scroll
+        };
+
+        if (closePreview) closePreview.addEventListener("click", closeAction);
+
+        previewBox.addEventListener("click", (e) => {
+            if (e.target === previewBox) closeAction();
+        });
+}
+
+
 // Klik area gelap = tutup
 previewBox.addEventListener("click", (e) => {
     if (e.target === previewBox) {
