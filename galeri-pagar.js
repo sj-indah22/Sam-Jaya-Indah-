@@ -1,11 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- 1. Fungsi Toggle Mobile Menu ---
-    const burger = document.querySelector('.burger');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const mobileClose = document.querySelector('.mobile-close');
+// --- 1. Fungsi Toggle Mobile Menu ---
+const burger = document.querySelector('.burger');
+const mobileNav = document.querySelector('.mobile-nav');
+const mobileClose = document.querySelector('.mobile-close');
+const previewBox = document.getElementById("imgPreview");
+const previewImg = document.getElementById("previewImg");
+const closePreview = document.querySelector(".close-preview");
 
-    if (burger && mobileNav) {
+document.querySelectorAll(".gallery-item img, .previewable").forEach(img => {
+    img.addEventListener("click", () => {
+        previewImg.src = img.src;
+        previewBox.style.display = "flex";
+    });
+});
+
+closePreview.addEventListener("click", () => {
+    previewBox.style.display = "none";
+});
+
+// Klik area gelap = tutup
+previewBox.addEventListener("click", (e) => {
+    if (e.target === previewBox) {
+        previewBox.style.display = "none";
+    }
+});
+
+ if (burger && mobileNav) {
         burger.addEventListener('click', () => {
             mobileNav.classList.add('active');
         });
@@ -39,4 +60,5 @@ document.addEventListener('DOMContentLoaded', () => {
         
         revealObserver.observe(revealElement);
     }
-});  
+
+});
