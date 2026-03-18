@@ -1,588 +1,201 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
-<link rel="apple-touch-icon" href="assets/png/favicon.png">
-<link rel="shortcut icon" href="assets/png/favicon.png">
-<title>Betonan — Sam Jaya Indah</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17790192059"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-17790192059');
 
-<style>
-/* ==== COPY STYLE SAMA DARI PROYEK === */
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background-image: url('assets/background-hero_21_11zon.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    background-position: top;
-    color: white;
-}
-section { padding: 100px 30px; }
-h1, h2, h3 { margin: 0 0 15px; }
-a { text-decoration: none; color: white; }
+        // Fungsi tracking untuk konversi
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17790192059/tSNJCNnlz88bELuTg6NC',
+                'value': 1.0,
+                'currency': 'IDR',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
 
-/* ==== NAVBAR ==== */
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    background: rgba(0,0,0,0.25);
-    backdrop-filter: blur(6px);
-    box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* kiri */
-.navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+    <title>Galeri Proyek Kanopi Minimalis & Galvalum | Sam Jaya Indah</title>
+    <meta name="description"
+        content="Koleksi proyek kanopi rumah, ruko, dan area parkir oleh Sam Jaya Indah. Spesialis pasang kanopi galvalum, baja ringan, dan rangka besi di Gresik dan sekitarnya.">
+    <meta name="keywords"
+        content="pasang kanopi gresik, kanopi galvalum gresik, kanopi minimalis murah, jasa konstruksi kanopi, bengkel las kanopi, Sam Jaya Indah kanopi">
+    <meta name="author" content="Sam Jaya Indah">
 
-.navbar-logo {
-    width: 40px;
-    height: auto;
-}
-
-.logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-}
-
-/* menu kanan desktop */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-links a {
-    color: white;
-    transition: 0.2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff4747;
-}
-
-/* Burger & Mobile Nav */
-.burger {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 100000;
-    font-size: 30px;
-    cursor: pointer;
-}
-
-/* tampilkan X saat aktif */
-.burger.active {
-  font-size: 36px;
-  transform: rotate(0deg);
-}
-
-/* Mobile nav */
-.mobile-nav {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 250px;
-    height: 100vh;
-    background: rgba(0,0,0,0.92);
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    transition: 0.3s ease;
-    z-index: 9999;
-}
-
-.mobile-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 36px;
-    cursor: pointer;
-    color: white;
-}
-
-
-.mobile-nav.show {
-    right: 0;
-}
-
-.mobile-nav a {
-    color: white;
-    font-size: 18px;
-}
-
-/* Active link style */
-.nav-links a.active,
-.mobile-nav a.active {
-    color: #ff4747;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .nav-links { display: none; }
-    .burger { display: block; }
-}
-
-/* HERO */
-.hero { padding:130px 0 40px; text-align:center; }
-.hero h1 { font-size:60px; color:#ff4747; text-shadow:5px 5px 10px black; }
-
-.content-wrap h2 {
-    display: inline-block;
-    background: #c20000;   /* warna merah */
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 8px;   /* biar jadi shape */
-    font-weight: 700;
-
-      /* jarak samping */
-    margin-left: 20px;
-    margin-right: 20px;
-    
-}
-
-
-@media (max-width: 600px) {
-
-    .hero h1 { font-size:40px; color:#ff4747; text-shadow:5px 5px 10px black; }
-    .content-wrap h2 {
-        font-size:15px;
-        margin-left: auto;
-        margin-right: auto;
-        display: inline-block;
-    }
-    
-}
-
-
-.single-photo {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding: 20px;
-}
-
-.photo-item {
-    background: rgba(243, 5, 5, 0.461);
-    border-radius: 14px;   /* LENGKUNG */
-    overflow: hidden;      /* wajib agar lengkungan foto tidak keluar */
-}
-
-/* FOTO */
-.photo-item img {
-    width: 100%;
-    height: auto;          /* biar ukuran asli */
-    object-fit: contain;   /* tidak crop */
-    display: block;
-    border-radius: 14px 14px 0 0; /* sudut atas tetap lengkung */
-}
-
-.caption-row {
-    padding: 12px 14px;
-    text-align: center;
-    background: rgba(0,0,0,0.3);
-}
-
-.caption {
-    font-size: 18px;
-    margin: 0;
-    font-weight: 600;
-}
-
-/* MOBILE: jadi 1 kolom */
-@media (max-width: 600px) {
-    .single-photo {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .caption {
-        font-size: 16px;
-    }
-}
-
-
-
-
-
-/* ===== GALERI — DESKTOP (3 kolom fix) ===== */
-.gallery-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 kolom fix */
-    gap: 25px;
-    padding: 20px;
-}
-
-.gallery-item {
-    background: rgba(255,255,255,0.05);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* FOTO */
-.gallery-item img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-}
-
-/* CAPTION */
-.caption-row {
-    padding: 12px 14px;
-    text-align: left; /* rata kiri */
-}
-
-.caption {
-    font-size: 16px;
-    margin: 0;
-}
-
-/* ===== MOBILE (2 kolom, teks kiri) ===== */
-@media (max-width: 600px) {
-    .gallery-container {
-        grid-template-columns: repeat(2, 1fr); /* dari 3 → 2 kolom */
-        gap: 12px;
-    }
-
-    .gallery-item img {
-        height: 120px; /* proporsional */
-    }
-
-    .caption-row {
-        padding: 8px 10px;
-        text-align: left; /* tetap kiri */
-    }
-
-    .caption {
-        font-size: 13px;
-    }
-}
-
-/* Overlay Background */
-.preview-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-}
-
-/* Gambar Preview */
-.preview-overlay img {
-    max-width: 90%;
-    max-height: 85%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px black;
-}
-
-/* Tombol Close */
-.close-preview {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    font-size: 50px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-}
-.close-preview:hover {
-    color: #ff4747;
-}
-
-/* Overlay Background */
-.preview-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-}
-
-/* Gambar Preview */
-.preview-overlay img {
-    max-width: 90%;
-    max-height: 85%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px black;
-}
-
-/* Tombol Close */
-.close-preview {
-    position: absolute;
-    top: 25px;
-    right: 35px;
-    font-size: 50px;
-    cursor: pointer;
-    color: white;
-    font-weight: bold;
-}
-.close-preview:hover {
-    color: #ff4747;
-}
-
-
-
-/* FOOTER */
-.footer {
-    display:flex; align-items:center;
-    padding:40px 30px; background:rgb(184,184,184); color:black;
-    gap:20px; flex-wrap:wrap;
-}
-.footer-icon { width:28px; cursor:pointer; transition:.3s; }
-.footer-icon:hover { transform:scale(1.1); }
-
-</style>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/png/favicon.png">
+    <link rel="apple-touch-icon" href="assets/png/favicon.png">
+    <link rel="stylesheet" href="galeri-kanopi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script defer src="galeri-kanopi.js"></script>
 </head>
 
 <body>
 
-<header class="navbar">
-    <div class="navbar-left">
-        <img src="assets/png/logo1.png" class="navbar-logo">
-        <div class="logo">SAM JAYA INDAH</div>
-    </div>
-
-    <nav class="nav-links">
-        <a href="index.html">Beranda</a> 
-        <a href="galeri-pagar.html">Pagar</a> 
-        <a href="galeri-pg.html">Plafon gypsum</a>
-        <a href="g-pp.html">Plavon PVC</a> 
-        <a href="galeri-rangka.html">Rangka</a> 
-        <a href="galeri-railing.html">Railing</a> 
-        <a href="galeri-kanopi.html">Kanopi</a>
-        <a href="galeri-fi.html">Finishing Interior</a>
-
-    </nav>
-
-    <div class="burger">☰</div>
-</header>
-
-<div class="mobile-nav">
-    <div class="mobile-close">×</div>
-     <a href="index.html">Beranda</a> 
-        <a href="galeri-pagar.html">Pagar</a> 
-        <a href="galeri-pg.html">Plafon gypsum</a> 
-        <a href="g-pp.html">Plavon PVC</a>
-        <a href="galeri-rangka.html">Rangka</a> 
-        <a href="galeri-railing.html">Railing</a> 
-        <a href="galeri-kanopi.html">Kanopi</a>
-        <a href="galeri-fi.html">Finishing Interior</a>
-</div>
-
-<section class="hero">
-    <h1>Galeri Kanopi</h1>
-
-</section>
-
-<section class="single-photo">
-
-    <div class="photo-item">
-        <img src="assets/knopi/22218.jpeg" class="previewable">
-    </div>
-
-    <div class="photo-item">
-        <img src="assets/knopi/22219.jpeg" class="previewable">
-    </div>
-
-    <div class="photo-item">
-        <img src="assets/knopi/22220.jpeg" class="previewable">
-    </div>
-
-    <div class="photo-item">
-        <img src="assets/knopi/22221.jpeg" class="previewable">
-    </div>
-
-    <div class="photo-item">
-        <img src="assets/knopi/22222.jpeg" class="previewable">
-    </div>
-
-    <div class="photo-item">
-        <img src="assets/knopi/25068.jpeg" class="previewable">
-    </div>
-
-</section>
-
- 
-<section class="content-wrap">
-    <h2 class="section-title">Galeri Proyek Kanopi</h2>
-    <div class="gallery-container">
-
-        <div class="gallery-item">
-            <img src="assets/knopi/Project pasang kanopi Menganti_1_11zon.jpg" class="previewable">
-            <div class="caption-row">
-                <p class="caption">Proyek pasang kanopi Menganti</p>
-                
-            </div>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="assets/png/logo1.png" alt="Logo Sam Jaya Indah" class="navbar-logo">
+            <div class="logo">SAM JAYA INDAH</div>
         </div>
 
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="proyek.html">Proyek</a>
+            <a href="betonan.html">Betonan</a>
+            <a href="penyewaan.html">Penyewaan</a>
+            <a href="katalog.html">Katalog</a>
+            <a href="kontak.html" class="btn-nav">Kontak</a>
+        </nav>
+
+        <div class="burger">☰</div>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="mobile-close">×</div>
+        <a href="index.html">Beranda</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="betonan.html">Betonan</a>
+        <a href="penyewaan.html">Penyewaan</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="katalog.html">Katalog</a>
     </div>
 
-</section>
+    <section class="hero">
+        <div class="container hero-inner">
 
-<div id="imgPreview" class="preview-overlay">
-    <span class="close-preview">×</span>
-    <img id="previewImg" src="">
-</div>
+            <div class="hero-left">
+                <h1>katalog Proyek kanopi<br><span class="text-red">Sam Jaya Indah</span></h1>
+                <p class="lead">
+                    Lindungi area bangunan Anda dari cuaca dengan kanopi yang kokoh dan estetis.
+                    Sam Jaya Indah spesialis dalam pemasangan berbagai jenis kanopi, mulai dari rangka baja ringan,
+                    galvalum, hingga rangka besi dekoratif dengan hasil pengerjaan yang presisi dan tahan lama. </p>
+            </div>
 
+            <div class="hero-right">
 
-<!-- FOOTER -->
-<footer class="footer">
-    Ikuti Kami:
-    
-    <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank">
-        <img src="assets/png/ig.png" class="footer-icon">
-    </a>
+                <a href="https://wa.me/6288902250632?text=Halo%20Sam%20Jaya%20Indah,%20saya%20ingin%20konsultasi%20mengenai%20proyek..."
+                    class="btn-whatsapp-mobile" onclick="return gtag_report_conversion('https://wa.me/6288902250632');">
+                    Hubungi Kami
+                </a>
 
-    <a href="https://www.facebook.com/sam.j.indah.9" target="_blank">
-        <img src="assets/png/fb.png" class="footer-icon">
-    </a>
-
-    <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank">
-        <img src="assets/png/yt.png" class="footer-icon">
-    </a>
-
-    <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank">
-        <img src="assets/png/tt.png" class="footer-icon">
-    </a>
-
-    <a href="https://maps.app.goo.gl/C3RVfPeEH7uAS7mk6" target="_blank">
-        <img src="assets/png/gps.png" class="footer-icon">
-    </a>
-</footer>
-
- <script>
-
-/* --- element refs --- */
-const burger = document.querySelector(".burger");
-const mobileNav = document.querySelector(".mobile-nav");
-const mobileClose = document.querySelector(".mobile-close");
-const previewBox = document.getElementById("imgPreview");
-const previewImg = document.getElementById("previewImg");
-const closePreview = document.querySelector(".close-preview");
-
-document.querySelectorAll(".gallery-item img, .previewable").forEach(img => {
-    img.addEventListener("click", () => {
-        previewImg.src = img.src;
-        previewBox.style.display = "flex";
-    });
-});
+            </div>
+        </div>
+    </section>
 
 
-closePreview.addEventListener("click", () => {
-    previewBox.style.display = "none";
-});
+    <section class="layanan section-padding" id="services">
+        <div class="container">
 
-// Klik area gelap = tutup
-previewBox.addEventListener("click", (e) => {
-    if (e.target === previewBox) {
-        previewBox.style.display = "none";
-    }
-});
+            <div class="layanan-container">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/22218.jpeg" alt="Konstruksi Kanopi Minimalis Sam Jaya Indah"
+                            loading="lazy" class="previewable">
+                    </div>
+                </div>
 
-/* safety */
-if (burger && mobileNav) {
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/22219.jpeg" alt="Pemasangan Atap Kanopi Galvalum" loading="lazy"
+                            class="previewable">
+                    </div>
+                </div>
 
-  /* toggle function */
-  function openMobile() {
-    mobileNav.classList.add("show");
-    burger.classList.add("active");
-    mobileNav.setAttribute("aria-hidden","false");
-  }
-  function closeMobile() {
-    mobileNav.classList.remove("show");
-    burger.classList.remove("active");
-    mobileNav.setAttribute("aria-hidden","true");
-  }
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/22220.jpeg" alt="Proyek Kanopi Baja Ringan Gresik" loading="lazy"
+                            class="previewable">
+                    </div>
+                </div>
 
-  /* click burger */
-  burger.addEventListener("click", (e) => {
-    e.stopPropagation(); // penting! jangan biarkan event jatuh ke document
-    mobileNav.classList.toggle("show");
-    burger.classList.toggle("active");
-  });
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/22221.jpeg" alt="Rangka Kanopi Besi Hollow Berkualitas" loading="lazy"
+                            class="previewable">
+                    </div>
+                </div>
 
-  /* keyboard accessibility: Enter / Space */
-  burger.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" || e.key === " ") {
-      e.preventDefault();
-      burger.click();
-    }
-  });
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/22222.jpeg" alt="Kanopi Minimalis Sam Jaya Indah" loading="lazy"
+                            class="previewable">
+                    </div>
+                </div>
 
-  /* close button inside mobile */
-  if (mobileClose) {
-    mobileClose.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeMobile();
-    });
-  }
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/25068.jpeg" alt="Kanopi Gresik" loading="lazy" class="previewable">
+                    </div>
+                </div>
 
-  /* close when a mobile link clicked */
-  document.querySelectorAll(".mobile-nav a").forEach(a => {
-    a.addEventListener("click", () => {
-      closeMobile();
-    });
-  });
+                <div class="section-header">
+                    <h1>Galeri Proyek kanopi<br><span class="text-red">Sam Jaya Indah</span></h1>
+                    <p>Bukti nyata kualitas pengerjaan tim Sam Jaya Indah di berbagai lokasi.</p>
+                </div>
 
-  /* click outside mobile menu -> close */
-  document.addEventListener("click", (e) => {
-    if (mobileNav.classList.contains("show") &&
-        !mobileNav.contains(e.target) &&
-        !burger.contains(e.target)) {
-      closeMobile();
-    }
-  });
+                <div class="card">
+                    <div class="card-img">
+                        <img src="assets/knopi/Project pasang kanopi Menganti_1_11zon.jpg"
+                            alt="Project pasang kanopi Menganti - Sam Jaya Indah" loading="lazy" class="previewable">
+                    </div>
+                    <div class="card-text">
+                        <p class="card-desc">Project pasang kanopi Menganti</p>
+                    </div>
+                </div>
 
-  /* ESC to close */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && mobileNav.classList.contains("show")) {
-      closeMobile();
-    }
-  });
-}
+            </div>
+        </div>
+    </section>
 
-/* --- active link highlighting (robust) --- */
-(function markActive(){
-  let path = window.location.pathname.split("/").pop().split("?")[0].split("#")[0];
-  if (!path) path = "index.html";
 
-  document.querySelectorAll(".nav-links a, .mobile-nav a").forEach(link=>{
-    const href = (link.getAttribute("href") || "").split("?")[0].split("#")[0];
-    if (href === path) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-})();
-</script>
+    <footer class="footer">
+        <div class="container">
+            <p><strong>SAM JAYA INDAH</strong></p>
+            <p>Ikuti media sosial kami untuk update proyek terbaru:</p>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/sam.jayaindah?igsh=MWR5ejV2NjI3aHNteA==" target="_blank"
+                    aria-label="Instagram">
+                    <img src="assets/png/ig.png" class="footer-icon" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/sam.j.indah.9" target="_blank" aria-label="Facebook">
+                    <img src="assets/png/fb.png" class="footer-icon" alt="Facebook">
+                </a>
+                <a href="https://youtube.com/@samjayamedsos25?si=KYFYTJ3rHZDl0NQe" target="_blank" aria-label="YouTube">
+                    <img src="assets/png/yt.png" class="footer-icon" alt="YouTube">
+                </a>
+                <a href="https://www.tiktok.com/@samjayaindah0?_r=1&_t=ZS-91ZJOQFLU01" target="_blank"
+                    aria-label="TikTok">
+                    <img src="assets/png/tt.png" class="footer-icon" alt="TikTok">
+                </a>
+                <a href="https://maps.google.com/?q=Sam+Jaya+Indah" target="_blank" aria-label="Lokasi">
+                    <img src="assets/png/gps.png" class="footer-icon" alt="Google Maps">
+                </a>
+            </div>
+            <p class="copyright">&copy; 2026 Sam Jaya Indah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="imgPreview" class="preview-overlay" style="display: none;">
+        <span class="close-preview">&times;</span>
+        <img id="previewImg" src="" alt="Preview">
+
+    </div>
 
 
 </body>
+
 </html>
