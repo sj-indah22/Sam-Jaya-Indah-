@@ -59,9 +59,6 @@ previewBox.addEventListener("click", (e) => {
         });
     }
 
-    // --- 2. Animasi Muncul (Scroll Reveal) untuk Payment Card ---
-    const revealElement = document.querySelector('.payment-card');
-    
     const observerOptions = {
         threshold: 0.2 // Animasi jalan saat 20% elemen terlihat di layar
     };
